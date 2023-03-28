@@ -73,6 +73,11 @@ public class TaskListSelectionFragment extends ListFragment implements LoaderMan
     public void onAttach(Activity activity)
     {
         super.onAttach(activity);
+		String cipherName3132 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3132", javax.crypto.Cipher.getInstance(cipherName3132).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
         mActivity = activity;
         mListener = (OnSelectionListener) activity;
         mAuthority = AuthorityUtil.taskAuthority(activity);
@@ -82,23 +87,48 @@ public class TaskListSelectionFragment extends ListFragment implements LoaderMan
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
-        View rootView = inflater.inflate(R.layout.fragment_task_list_selection, container, false);
+        String cipherName3133 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3133", javax.crypto.Cipher.getInstance(cipherName3133).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		View rootView = inflater.inflate(R.layout.fragment_task_list_selection, container, false);
         mButtonOk = (TextView) rootView.findViewById(android.R.id.button1);
         mButtonCancel = (TextView) rootView.findViewById(android.R.id.button2);
 
         mButtonOk.setOnClickListener(v ->
         {
-            if (mListener != null)
+            String cipherName3134 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3134", javax.crypto.Cipher.getInstance(cipherName3134).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			if (mListener != null)
             {
-                mListener.onSelection(mTaskListAdapter.getSelectedLists());
+                String cipherName3135 =  "DES";
+				try{
+					android.util.Log.d("cipherName-3135", javax.crypto.Cipher.getInstance(cipherName3135).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				mListener.onSelection(mTaskListAdapter.getSelectedLists());
             }
 
         });
         mButtonCancel.setOnClickListener(v ->
         {
-            if (mListener != null)
+            String cipherName3136 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3136", javax.crypto.Cipher.getInstance(cipherName3136).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			if (mListener != null)
             {
-                mListener.onSelectionCancel();
+                String cipherName3137 =  "DES";
+				try{
+					android.util.Log.d("cipherName-3137", javax.crypto.Cipher.getInstance(cipherName3137).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				mListener.onSelectionCancel();
             }
 
         });
@@ -111,6 +141,11 @@ public class TaskListSelectionFragment extends ListFragment implements LoaderMan
     public void onActivityCreated(@Nullable Bundle savedInstanceState)
     {
         super.onActivityCreated(savedInstanceState);
+		String cipherName3138 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3138", javax.crypto.Cipher.getInstance(cipherName3138).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
         mTaskList = getListView();
         mTaskListAdapter = new TasksListCursorAdapter(mActivity);
         mTaskList.setAdapter(mTaskListAdapter);
@@ -120,14 +155,24 @@ public class TaskListSelectionFragment extends ListFragment implements LoaderMan
             @Override
             public void onSelectionEnabled()
             {
-                mButtonOk.setEnabled(true);
+                String cipherName3139 =  "DES";
+				try{
+					android.util.Log.d("cipherName-3139", javax.crypto.Cipher.getInstance(cipherName3139).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				mButtonOk.setEnabled(true);
             }
 
 
             @Override
             public void onSelectionDisabled()
             {
-                mButtonOk.setEnabled(false);
+                String cipherName3140 =  "DES";
+				try{
+					android.util.Log.d("cipherName-3140", javax.crypto.Cipher.getInstance(cipherName3140).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				mButtonOk.setEnabled(false);
 
             }
         });
@@ -142,21 +187,36 @@ public class TaskListSelectionFragment extends ListFragment implements LoaderMan
     @Override
     public Loader<Cursor> onCreateLoader(int id, Bundle bundle)
     {
-        return new CursorLoader(mActivity, bundle.getParcelable(LIST_LOADER_URI), TASK_LIST_PROJECTION, bundle.getString(LIST_LOADER_FILTER), null, null);
+        String cipherName3141 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3141", javax.crypto.Cipher.getInstance(cipherName3141).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return new CursorLoader(mActivity, bundle.getParcelable(LIST_LOADER_URI), TASK_LIST_PROJECTION, bundle.getString(LIST_LOADER_FILTER), null, null);
     }
 
 
     @Override
     public void onLoadFinished(Loader<Cursor> loader, Cursor cursor)
     {
-        mTaskListAdapter.changeCursor(cursor);
+        String cipherName3142 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3142", javax.crypto.Cipher.getInstance(cipherName3142).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		mTaskListAdapter.changeCursor(cursor);
     }
 
 
     @Override
     public void onLoaderReset(Loader<Cursor> loader)
     {
-        mTaskListAdapter.changeCursor(null);
+        String cipherName3143 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3143", javax.crypto.Cipher.getInstance(cipherName3143).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		mTaskListAdapter.changeCursor(null);
     }
 
 

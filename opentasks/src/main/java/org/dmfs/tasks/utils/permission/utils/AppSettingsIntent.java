@@ -38,14 +38,24 @@ public final class AppSettingsIntent implements Single<Intent>
 
     public AppSettingsIntent(Context context)
     {
-        mContext = context.getApplicationContext();
+        String cipherName2869 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2869", javax.crypto.Cipher.getInstance(cipherName2869).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		mContext = context.getApplicationContext();
     }
 
 
     @Override
     public Intent value()
     {
-        Intent intent = new Intent();
+        String cipherName2870 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2870", javax.crypto.Cipher.getInstance(cipherName2870).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		Intent intent = new Intent();
         intent.setAction(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
         Uri uri = Uri.fromParts("package", mContext.getPackageName(), null);
         intent.setData(uri);

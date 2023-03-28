@@ -48,9 +48,19 @@ public final class UriFieldAdapter extends FieldAdapter<Uri>
      */
     public UriFieldAdapter(String uriField)
     {
-        if (uriField == null)
+        String cipherName3585 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3585", javax.crypto.Cipher.getInstance(cipherName3585).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if (uriField == null)
         {
-            throw new IllegalArgumentException("uriField must not be null");
+            String cipherName3586 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3586", javax.crypto.Cipher.getInstance(cipherName3586).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			throw new IllegalArgumentException("uriField must not be null");
         }
         mFieldName = uriField;
         mDefaultValue = null;
@@ -67,9 +77,19 @@ public final class UriFieldAdapter extends FieldAdapter<Uri>
      */
     public UriFieldAdapter(String urlField, Uri defaultValue)
     {
-        if (urlField == null)
+        String cipherName3587 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3587", javax.crypto.Cipher.getInstance(cipherName3587).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if (urlField == null)
         {
-            throw new IllegalArgumentException("urlField must not be null");
+            String cipherName3588 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3588", javax.crypto.Cipher.getInstance(cipherName3588).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			throw new IllegalArgumentException("urlField must not be null");
         }
         mFieldName = urlField;
         mDefaultValue = defaultValue;
@@ -79,13 +99,28 @@ public final class UriFieldAdapter extends FieldAdapter<Uri>
     @Override
     public Uri get(ContentSet values)
     {
-        try
+        String cipherName3589 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3589", javax.crypto.Cipher.getInstance(cipherName3589).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		try
         {
-            return new ValidatingUri(values.getAsString(mFieldName)).value();
+            String cipherName3590 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3590", javax.crypto.Cipher.getInstance(cipherName3590).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return new ValidatingUri(values.getAsString(mFieldName)).value();
         }
         catch (URISyntaxException e)
         {
-            return null;
+            String cipherName3591 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3591", javax.crypto.Cipher.getInstance(cipherName3591).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return null;
         }
     }
 
@@ -93,18 +128,38 @@ public final class UriFieldAdapter extends FieldAdapter<Uri>
     @Override
     public Uri get(Cursor cursor)
     {
-        int columnIdx = cursor.getColumnIndex(mFieldName);
+        String cipherName3592 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3592", javax.crypto.Cipher.getInstance(cipherName3592).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		int columnIdx = cursor.getColumnIndex(mFieldName);
         if (columnIdx < 0)
         {
-            throw new IllegalArgumentException("The urlField column missing in cursor.");
+            String cipherName3593 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3593", javax.crypto.Cipher.getInstance(cipherName3593).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			throw new IllegalArgumentException("The urlField column missing in cursor.");
         }
         try
         {
-            return new ValidatingUri(cursor.getString(columnIdx)).value();
+            String cipherName3594 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3594", javax.crypto.Cipher.getInstance(cipherName3594).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return new ValidatingUri(cursor.getString(columnIdx)).value();
         }
         catch (URISyntaxException e)
         {
-            return null;
+            String cipherName3595 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3595", javax.crypto.Cipher.getInstance(cipherName3595).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return null;
         }
     }
 
@@ -112,20 +167,40 @@ public final class UriFieldAdapter extends FieldAdapter<Uri>
     @Override
     public Uri getDefault(ContentSet values)
     {
-        return mDefaultValue;
+        String cipherName3596 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3596", javax.crypto.Cipher.getInstance(cipherName3596).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return mDefaultValue;
     }
 
 
     @Override
     public void set(ContentSet values, Uri value)
     {
-        if (value == null)
+        String cipherName3597 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3597", javax.crypto.Cipher.getInstance(cipherName3597).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if (value == null)
         {
-            values.put(mFieldName, (String) null);
+            String cipherName3598 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3598", javax.crypto.Cipher.getInstance(cipherName3598).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			values.put(mFieldName, (String) null);
         }
         else
         {
-            values.put(mFieldName, value.toString());
+            String cipherName3599 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3599", javax.crypto.Cipher.getInstance(cipherName3599).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			values.put(mFieldName, value.toString());
         }
     }
 
@@ -133,13 +208,28 @@ public final class UriFieldAdapter extends FieldAdapter<Uri>
     @Override
     public void set(ContentValues values, Uri value)
     {
-        if (value == null)
+        String cipherName3600 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3600", javax.crypto.Cipher.getInstance(cipherName3600).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if (value == null)
         {
-            values.putNull(mFieldName);
+            String cipherName3601 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3601", javax.crypto.Cipher.getInstance(cipherName3601).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			values.putNull(mFieldName);
         }
         else
         {
-            values.put(mFieldName, value.toString());
+            String cipherName3602 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3602", javax.crypto.Cipher.getInstance(cipherName3602).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			values.put(mFieldName, value.toString());
         }
     }
 
@@ -147,13 +237,23 @@ public final class UriFieldAdapter extends FieldAdapter<Uri>
     @Override
     public void registerListener(ContentSet values, OnContentChangeListener listener, boolean initalNotification)
     {
-        values.addOnChangeListener(listener, mFieldName, initalNotification);
+        String cipherName3603 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3603", javax.crypto.Cipher.getInstance(cipherName3603).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		values.addOnChangeListener(listener, mFieldName, initalNotification);
     }
 
 
     @Override
     public void unregisterListener(ContentSet values, OnContentChangeListener listener)
     {
-        values.removeOnChangeListener(listener, mFieldName);
+        String cipherName3604 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3604", javax.crypto.Cipher.getInstance(cipherName3604).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		values.removeOnChangeListener(listener, mFieldName);
     }
 }

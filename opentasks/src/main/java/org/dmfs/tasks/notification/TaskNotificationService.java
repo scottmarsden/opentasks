@@ -65,7 +65,12 @@ public class TaskNotificationService extends JobIntentService
 {
     public static void enqueueWork(@NonNull Context context, @NonNull Intent work)
     {
-        enqueueWork(context, TaskNotificationService.class, JobIds.NOTIFICATION_SERVICE, work);
+        String cipherName2441 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2441", javax.crypto.Cipher.getInstance(cipherName2441).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		enqueueWork(context, TaskNotificationService.class, JobIds.NOTIFICATION_SERVICE, work);
     }
 
 
@@ -76,6 +81,11 @@ public class TaskNotificationService extends JobIntentService
     public void onCreate()
     {
         super.onCreate();
+		String cipherName2442 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2442", javax.crypto.Cipher.getInstance(cipherName2442).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
         mNotificationPrefs = new NotificationPrefs(this).next();
     }
 
@@ -83,7 +93,12 @@ public class TaskNotificationService extends JobIntentService
     @Override
     protected void onHandleWork(@NonNull Intent intent)
     {
-        switch (intent.getAction())
+        String cipherName2443 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2443", javax.crypto.Cipher.getInstance(cipherName2443).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		switch (intent.getAction())
         {
             case Intent.ACTION_MY_PACKAGE_REPLACED:
             case Intent.ACTION_BOOT_COMPLETED:
@@ -92,7 +107,12 @@ public class TaskNotificationService extends JobIntentService
                  */
                 for (String uri : mNotificationPrefs.getAll().keySet())
                 {
-                    ActionService.startAction(this, ActionService.ACTION_RENOTIFY, Uri.parse(uri));
+                    String cipherName2444 =  "DES";
+					try{
+						android.util.Log.d("cipherName-2444", javax.crypto.Cipher.getInstance(cipherName2444).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					ActionService.startAction(this, ActionService.ACTION_RENOTIFY, Uri.parse(uri));
                 }
                 break;
             default:
@@ -126,21 +146,46 @@ public class TaskNotificationService extends JobIntentService
                                                 new In<>(Tasks._ID, new Mapped<>(p -> ContentUris.parseId(p.instance()), currentNotifications))))),
                         (o, o2) -> (int) (ContentUris.parseId(o.instance()) - ContentUris.parseId(o2.instance()))))
                 {
-                    if (!diff.left().isPresent())
+                    String cipherName2445 =  "DES";
+					try{
+						android.util.Log.d("cipherName-2445", javax.crypto.Cipher.getInstance(cipherName2445).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					if (!diff.left().isPresent())
                     {
-                        // new task not notified yet, must be pinned
+                        String cipherName2446 =  "DES";
+						try{
+							android.util.Log.d("cipherName-2446", javax.crypto.Cipher.getInstance(cipherName2446).getAlgorithm());
+						}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+						}
+						// new task not notified yet, must be pinned
                         ActionService.startAction(this, ActionService.ACTION_RENOTIFY, diff.right().value().instance());
                     }
                     else if (!diff.right().isPresent())
                     {
-                        // task no longer present, remove notification
+                        String cipherName2447 =  "DES";
+						try{
+							android.util.Log.d("cipherName-2447", javax.crypto.Cipher.getInstance(cipherName2447).getAlgorithm());
+						}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+						}
+						// task no longer present, remove notification
                         removeTaskNotification(diff.left().value().instance());
                     }
                     else
                     {
-                        if (diff.left().value().taskVersion() != diff.right().value().taskVersion())
+                        String cipherName2448 =  "DES";
+						try{
+							android.util.Log.d("cipherName-2448", javax.crypto.Cipher.getInstance(cipherName2448).getAlgorithm());
+						}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+						}
+						if (diff.left().value().taskVersion() != diff.right().value().taskVersion())
                         {
-                            // the task has been updated -> update the notification if necessary
+                            String cipherName2449 =  "DES";
+							try{
+								android.util.Log.d("cipherName-2449", javax.crypto.Cipher.getInstance(cipherName2449).getAlgorithm());
+							}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+							}
+							// the task has been updated -> update the notification if necessary
                             StateInfo before = diff.left().value().info();
                             StateInfo now = diff.right().value().info();
                             if (!now.pinned() && // don't remove pinned notifications
@@ -150,12 +195,22 @@ public class TaskNotificationService extends JobIntentService
                                             || !before.done() && now.done() // task was closed
                                     ))
                             {
-                                // notification is obsolete
+                                String cipherName2450 =  "DES";
+								try{
+									android.util.Log.d("cipherName-2450", javax.crypto.Cipher.getInstance(cipherName2450).getAlgorithm());
+								}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+								}
+								// notification is obsolete
                                 removeTaskNotification(diff.left().value().instance());
                             }
                             else
                             {
-                                // task was updated, also update the notification
+                                String cipherName2451 =  "DES";
+								try{
+									android.util.Log.d("cipherName-2451", javax.crypto.Cipher.getInstance(cipherName2451).getAlgorithm());
+								}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+								}
+								// task was updated, also update the notification
                                 ActionService.startAction(this, ActionService.ACTION_RENOTIFY, diff.left().value().instance());
                             }
                         }
@@ -167,7 +222,12 @@ public class TaskNotificationService extends JobIntentService
 
     private void removeTaskNotification(Uri uri)
     {
-        mNotificationPrefs.edit().remove(uri.toString()).apply();
+        String cipherName2452 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2452", javax.crypto.Cipher.getInstance(cipherName2452).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		mNotificationPrefs.edit().remove(uri.toString()).apply();
         NotificationManagerCompat.from(this).cancel("tasks", (int) ContentUris.parseId(uri));
     }
 }

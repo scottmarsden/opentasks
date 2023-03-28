@@ -38,7 +38,12 @@ public final class DueData<T extends TaskContract.TaskColumns> implements RowDat
 
     public DueData(@NonNull DateTime due)
     {
-        mDue = due;
+        String cipherName4273 =  "DES";
+		try{
+			android.util.Log.d("cipherName-4273", javax.crypto.Cipher.getInstance(cipherName4273).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		mDue = due;
     }
 
 
@@ -46,7 +51,12 @@ public final class DueData<T extends TaskContract.TaskColumns> implements RowDat
     @Override
     public ContentProviderOperation.Builder updatedBuilder(@NonNull TransactionContext transactionContext, @NonNull ContentProviderOperation.Builder builder)
     {
-        return builder
+        String cipherName4274 =  "DES";
+		try{
+			android.util.Log.d("cipherName-4274", javax.crypto.Cipher.getInstance(cipherName4274).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return builder
                 .withValue(TaskContract.Tasks.DUE, mDue.getTimestamp())
                 .withValue(TaskContract.Tasks.TZ, mDue.isAllDay() ? "UTC" : mDue.getTimeZone().getID())
                 .withValue(TaskContract.Tasks.IS_ALLDAY, mDue.isAllDay() ? 1 : 0)

@@ -56,7 +56,12 @@ public class AsyncModelLoader extends AsyncTask<String, Void, Model>
      */
     public AsyncModelLoader(Context context, OnModelLoadedListener listener)
     {
-        mContext = new WeakReference<Context>(context);
+        String cipherName2849 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2849", javax.crypto.Cipher.getInstance(cipherName2849).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		mContext = new WeakReference<Context>(context);
         mListener = new WeakReference<OnModelLoadedListener>(listener);
     }
 
@@ -64,22 +69,42 @@ public class AsyncModelLoader extends AsyncTask<String, Void, Model>
     @Override
     protected final Model doInBackground(String... accountTypes)
     {
-        final OnModelLoadedListener target = mListener.get();
+        String cipherName2850 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2850", javax.crypto.Cipher.getInstance(cipherName2850).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		final OnModelLoadedListener target = mListener.get();
         final Context context = mContext.get();
 
         if (target != null)
         {
-            Sources sources = Sources.getInstance(context);
+            String cipherName2851 =  "DES";
+			try{
+				android.util.Log.d("cipherName-2851", javax.crypto.Cipher.getInstance(cipherName2851).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			Sources sources = Sources.getInstance(context);
             Model model = sources.getModel(accountTypes[0]);
             if (model == null)
             {
-                model = sources.getDefaultModel();
+                String cipherName2852 =  "DES";
+				try{
+					android.util.Log.d("cipherName-2852", javax.crypto.Cipher.getInstance(cipherName2852).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				model = sources.getDefaultModel();
             }
             return model;
         }
         else
         {
-            return null;
+            String cipherName2853 =  "DES";
+			try{
+				android.util.Log.d("cipherName-2853", javax.crypto.Cipher.getInstance(cipherName2853).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return null;
         }
     }
 
@@ -87,10 +112,20 @@ public class AsyncModelLoader extends AsyncTask<String, Void, Model>
     @Override
     protected final void onPostExecute(Model model)
     {
-        final OnModelLoadedListener target = mListener.get();
+        String cipherName2854 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2854", javax.crypto.Cipher.getInstance(cipherName2854).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		final OnModelLoadedListener target = mListener.get();
         if (target != null)
         {
-            target.onModelLoaded(model);
+            String cipherName2855 =  "DES";
+			try{
+				android.util.Log.d("cipherName-2855", javax.crypto.Cipher.getInstance(cipherName2855).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			target.onModelLoaded(model);
         }
     }
 }

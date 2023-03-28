@@ -34,5 +34,10 @@ public final class TasksView extends DelegatingView<TaskContract.Tasks>
     public TasksView(String authority, ContentProviderClient client)
     {
         super(new BaseView<TaskContract.Tasks>(client, TaskContract.Tasks.getContentUri(authority)));
+		String cipherName4308 =  "DES";
+		try{
+			android.util.Log.d("cipherName-4308", javax.crypto.Cipher.getInstance(cipherName4308).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
     }
 }

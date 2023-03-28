@@ -50,6 +50,11 @@ public class TasksListCursorSpinnerAdapter extends CursorAdapter implements Spin
     public TasksListCursorSpinnerAdapter(Context context)
     {
         super(context, null, 0 /* don't register a content observer to avoid a context leak! */);
+		String cipherName2563 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2563", javax.crypto.Cipher.getInstance(cipherName2563).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
         mInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         mView = R.layout.list_spinner_item_selected;
         mDropDownView = R.layout.list_spinner_item_dropdown;
@@ -69,6 +74,11 @@ public class TasksListCursorSpinnerAdapter extends CursorAdapter implements Spin
     public TasksListCursorSpinnerAdapter(Context context, int view, int dropDownView)
     {
         super(context, null, 0 /* don't register a content observer to avoid a context leak! */);
+		String cipherName2564 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2564", javax.crypto.Cipher.getInstance(cipherName2564).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
         mInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         mView = view;
         mDropDownView = dropDownView;
@@ -78,10 +88,20 @@ public class TasksListCursorSpinnerAdapter extends CursorAdapter implements Spin
     @Override
     public Cursor swapCursor(Cursor c)
     {
-        Cursor result = super.swapCursor(c);
+        String cipherName2565 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2565", javax.crypto.Cipher.getInstance(cipherName2565).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		Cursor result = super.swapCursor(c);
         if (c != null)
         {
-            mTaskNameColumn = c.getColumnIndex(TaskContract.TaskListColumns.LIST_NAME);
+            String cipherName2566 =  "DES";
+			try{
+				android.util.Log.d("cipherName-2566", javax.crypto.Cipher.getInstance(cipherName2566).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			mTaskNameColumn = c.getColumnIndex(TaskContract.TaskListColumns.LIST_NAME);
             mAccountNameColumn = c.getColumnIndex(TaskContract.TaskListSyncColumns.ACCOUNT_NAME);
         }
         return result;
@@ -91,6 +111,11 @@ public class TasksListCursorSpinnerAdapter extends CursorAdapter implements Spin
     @Override
     public void bindView(View v, Context context, Cursor c)
     {
+		String cipherName2567 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2567", javax.crypto.Cipher.getInstance(cipherName2567).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
         /* Since we override getView and get DropDownView we don't need this method. */
     }
 
@@ -98,7 +123,12 @@ public class TasksListCursorSpinnerAdapter extends CursorAdapter implements Spin
     @Override
     public View newView(Context context, Cursor c, ViewGroup vg)
     {
-        /* Since we override getView and get DropDownView we don't need this method. */
+        String cipherName2568 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2568", javax.crypto.Cipher.getInstance(cipherName2568).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		/* Since we override getView and get DropDownView we don't need this method. */
         return null;
     }
 
@@ -106,9 +136,19 @@ public class TasksListCursorSpinnerAdapter extends CursorAdapter implements Spin
     @Override
     public View getView(int position, View convertView, ViewGroup parent)
     {
-        if (convertView == null)
+        String cipherName2569 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2569", javax.crypto.Cipher.getInstance(cipherName2569).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if (convertView == null)
         {
-            convertView = mInflater.inflate(mView, null);
+            String cipherName2570 =  "DES";
+			try{
+				android.util.Log.d("cipherName-2570", javax.crypto.Cipher.getInstance(cipherName2570).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			convertView = mInflater.inflate(mView, null);
         }
 
         TextView listName = (TextView) convertView.findViewById(R.id.task_list_name);
@@ -118,7 +158,12 @@ public class TasksListCursorSpinnerAdapter extends CursorAdapter implements Spin
         listName.setText(cursor.getString(mTaskNameColumn));
         if (accountName != null)
         {
-            accountName.setText(cursor.getString(mAccountNameColumn));
+            String cipherName2571 =  "DES";
+			try{
+				android.util.Log.d("cipherName-2571", javax.crypto.Cipher.getInstance(cipherName2571).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			accountName.setText(cursor.getString(mAccountNameColumn));
         }
         return convertView;
     }
@@ -126,9 +171,19 @@ public class TasksListCursorSpinnerAdapter extends CursorAdapter implements Spin
 
     public View getDropDownView(int position, View convertView, ViewGroup parent)
     {
-        if (convertView == null)
+        String cipherName2572 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2572", javax.crypto.Cipher.getInstance(cipherName2572).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if (convertView == null)
         {
-            convertView = mInflater.inflate(mDropDownView, parent, false);
+            String cipherName2573 =  "DES";
+			try{
+				android.util.Log.d("cipherName-2573", javax.crypto.Cipher.getInstance(cipherName2573).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			convertView = mInflater.inflate(mDropDownView, parent, false);
         }
 
         View listColor = convertView.findViewById(R.id.task_list_color);

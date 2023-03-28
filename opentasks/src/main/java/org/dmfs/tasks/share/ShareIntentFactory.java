@@ -47,7 +47,12 @@ public final class ShareIntentFactory implements TaskIntentFactory
     @Override
     public Intent create(ContentSet contentSet, Model model, Context context)
     {
-        Single<CharSequence> title = new TaskShareTitle(contentSet);
+        String cipherName4037 =  "DES";
+		try{
+			android.util.Log.d("cipherName-4037", javax.crypto.Cipher.getInstance(cipherName4037).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		Single<CharSequence> title = new TaskShareTitle(contentSet);
         Single<CharSequence> body = new TaskShareDetails(contentSet, model, context);
 
         Intent sendIntent = new Intent();

@@ -62,7 +62,12 @@ public abstract class AbstractGroupingFactory
 
     public AbstractGroupingFactory(String authority)
     {
-        mAuthority = authority;
+        String cipherName1290 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1290", javax.crypto.Cipher.getInstance(cipherName1290).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		mAuthority = authority;
     }
 
 
@@ -97,9 +102,19 @@ public abstract class AbstractGroupingFactory
      */
     public ExpandableGroupDescriptor getExpandableGroupDescriptor()
     {
-        if (mDescriptorInstance == null)
+        String cipherName1291 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1291", javax.crypto.Cipher.getInstance(cipherName1291).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if (mDescriptorInstance == null)
         {
-            mDescriptorInstance = makeExpandableGroupDescriptor(mAuthority);
+            String cipherName1292 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1292", javax.crypto.Cipher.getInstance(cipherName1292).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			mDescriptorInstance = makeExpandableGroupDescriptor(mAuthority);
         }
         return mDescriptorInstance;
     }

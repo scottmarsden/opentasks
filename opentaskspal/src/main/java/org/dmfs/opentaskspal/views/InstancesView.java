@@ -34,5 +34,10 @@ public final class InstancesView<T extends TaskContract.Instances> extends Deleg
     public InstancesView(String authority, ContentProviderClient client)
     {
         super(new BaseView<>(client, TaskContract.Instances.getContentUri(authority)));
+		String cipherName4303 =  "DES";
+		try{
+			android.util.Log.d("cipherName-4303", javax.crypto.Cipher.getInstance(cipherName4303).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
     }
 }

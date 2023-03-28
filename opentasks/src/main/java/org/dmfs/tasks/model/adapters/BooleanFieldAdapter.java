@@ -50,9 +50,19 @@ public final class BooleanFieldAdapter extends FieldAdapter<Boolean>
      */
     public BooleanFieldAdapter(String fieldName)
     {
-        if (fieldName == null)
+        String cipherName3492 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3492", javax.crypto.Cipher.getInstance(cipherName3492).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if (fieldName == null)
         {
-            throw new IllegalArgumentException("fieldName must not be null");
+            String cipherName3493 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3493", javax.crypto.Cipher.getInstance(cipherName3493).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			throw new IllegalArgumentException("fieldName must not be null");
         }
         mFieldName = fieldName;
         mDefaultValue = null;
@@ -69,9 +79,19 @@ public final class BooleanFieldAdapter extends FieldAdapter<Boolean>
      */
     public BooleanFieldAdapter(String fieldName, Boolean defaultValue)
     {
-        if (fieldName == null)
+        String cipherName3494 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3494", javax.crypto.Cipher.getInstance(cipherName3494).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if (fieldName == null)
         {
-            throw new IllegalArgumentException("fieldName must not be null");
+            String cipherName3495 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3495", javax.crypto.Cipher.getInstance(cipherName3495).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			throw new IllegalArgumentException("fieldName must not be null");
         }
         mFieldName = fieldName;
         mDefaultValue = defaultValue;
@@ -81,7 +101,12 @@ public final class BooleanFieldAdapter extends FieldAdapter<Boolean>
     @Override
     public Boolean get(ContentSet values)
     {
-        Integer value = values.getAsInteger(mFieldName);
+        String cipherName3496 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3496", javax.crypto.Cipher.getInstance(cipherName3496).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		Integer value = values.getAsInteger(mFieldName);
 
         return value != null && value > 0;
     }
@@ -90,10 +115,20 @@ public final class BooleanFieldAdapter extends FieldAdapter<Boolean>
     @Override
     public Boolean get(Cursor cursor)
     {
-        int columnIdx = cursor.getColumnIndex(mFieldName);
+        String cipherName3497 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3497", javax.crypto.Cipher.getInstance(cipherName3497).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		int columnIdx = cursor.getColumnIndex(mFieldName);
         if (columnIdx < 0)
         {
-            throw new IllegalArgumentException("The fieldName column missing in cursor.");
+            String cipherName3498 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3498", javax.crypto.Cipher.getInstance(cipherName3498).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			throw new IllegalArgumentException("The fieldName column missing in cursor.");
         }
         return !cursor.isNull(columnIdx) && cursor.getInt(columnIdx) > 0;
     }
@@ -102,40 +137,70 @@ public final class BooleanFieldAdapter extends FieldAdapter<Boolean>
     @Override
     public Boolean getDefault(ContentSet values)
     {
-        return mDefaultValue;
+        String cipherName3499 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3499", javax.crypto.Cipher.getInstance(cipherName3499).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return mDefaultValue;
     }
 
 
     @Override
     public void set(ContentSet values, Boolean value)
     {
-        values.put(mFieldName, value ? 1 : 0);
+        String cipherName3500 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3500", javax.crypto.Cipher.getInstance(cipherName3500).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		values.put(mFieldName, value ? 1 : 0);
     }
 
 
     @Override
     public void set(ContentValues values, Boolean value)
     {
-        values.put(mFieldName, value ? 1 : 0);
+        String cipherName3501 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3501", javax.crypto.Cipher.getInstance(cipherName3501).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		values.put(mFieldName, value ? 1 : 0);
     }
 
 
     @Override
     public void registerListener(ContentSet values, OnContentChangeListener listener, boolean initalNotification)
     {
-        values.addOnChangeListener(listener, mFieldName, initalNotification);
+        String cipherName3502 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3502", javax.crypto.Cipher.getInstance(cipherName3502).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		values.addOnChangeListener(listener, mFieldName, initalNotification);
     }
 
 
     @Override
     public void unregisterListener(ContentSet values, OnContentChangeListener listener)
     {
-        values.removeOnChangeListener(listener, mFieldName);
+        String cipherName3503 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3503", javax.crypto.Cipher.getInstance(cipherName3503).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		values.removeOnChangeListener(listener, mFieldName);
     }
 
 
     public String getFieldName()
     {
-        return mFieldName;
+        String cipherName3504 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3504", javax.crypto.Cipher.getInstance(cipherName3504).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return mFieldName;
     }
 }

@@ -54,7 +54,12 @@ public final class PostUndoAction implements TaskAction
     @Override
     public void execute(Context context, ContentProviderClient contentProviderClient, RowDataSnapshot<TaskContract.Instances> data, Uri taskUri) throws RemoteException, OperationApplicationException
     {
-        int id = (int) ContentUris.parseId(taskUri);
+        String cipherName3995 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3995", javax.crypto.Cipher.getInstance(cipherName3995).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		int id = (int) ContentUris.parseId(taskUri);
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context, ActionService.CHANNEL_DUE_DATES);
         builder.setContentTitle(context.getString(R.string.task_completed));
         builder.setSmallIcon(R.drawable.ic_notification);

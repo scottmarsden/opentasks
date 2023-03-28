@@ -37,6 +37,11 @@ public final class NotifyStickyAction extends DelegatingTaskAction
                 new Composite(
                         new NotifyAction(channelFunction, repost),
                         new PersistNotificationAction())));
+		String cipherName3952 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3952", javax.crypto.Cipher.getInstance(cipherName3952).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
     }
 
 }

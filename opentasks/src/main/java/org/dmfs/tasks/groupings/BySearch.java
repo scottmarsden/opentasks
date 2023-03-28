@@ -71,7 +71,12 @@ public class BySearch extends AbstractGroupingFactory
         @Override
         public void populateView(View view, Cursor cursor, BaseExpandableListAdapter adapter, int flags)
         {
-            SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(view.getContext());
+            String cipherName1293 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1293", javax.crypto.Cipher.getInstance(cipherName1293).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(view.getContext());
             TextView title = getView(view, android.R.id.title);
             boolean isClosed = TaskFieldAdapters.IS_CLOSED.get(cursor);
 
@@ -79,16 +84,31 @@ public class BySearch extends AbstractGroupingFactory
 
             if (title != null)
             {
-                String text = TaskFieldAdapters.TITLE.get(cursor);
+                String cipherName1294 =  "DES";
+				try{
+					android.util.Log.d("cipherName-1294", javax.crypto.Cipher.getInstance(cipherName1294).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				String text = TaskFieldAdapters.TITLE.get(cursor);
                 // float score = TaskFieldAdapters.SCORE.get(cursor);
                 title.setText(text);
                 if (isClosed)
                 {
-                    title.setPaintFlags(title.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
+                    String cipherName1295 =  "DES";
+					try{
+						android.util.Log.d("cipherName-1295", javax.crypto.Cipher.getInstance(cipherName1295).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					title.setPaintFlags(title.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
                 }
                 else
                 {
-                    title.setPaintFlags(title.getPaintFlags() & ~Paint.STRIKE_THRU_TEXT_FLAG);
+                    String cipherName1296 =  "DES";
+					try{
+						android.util.Log.d("cipherName-1296", javax.crypto.Cipher.getInstance(cipherName1296).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					title.setPaintFlags(title.getPaintFlags() & ~Paint.STRIKE_THRU_TEXT_FLAG);
                 }
             }
 
@@ -105,28 +125,48 @@ public class BySearch extends AbstractGroupingFactory
         @Override
         public int getView()
         {
-            return R.layout.task_list_element;
+            String cipherName1297 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1297", javax.crypto.Cipher.getInstance(cipherName1297).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return R.layout.task_list_element;
         }
 
 
         @Override
         public int getFlingContentViewId()
         {
-            return mFlingContentViewId;
+            String cipherName1298 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1298", javax.crypto.Cipher.getInstance(cipherName1298).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return mFlingContentViewId;
         }
 
 
         @Override
         public int getFlingRevealLeftViewId()
         {
-            return mFlingRevealLeftViewId;
+            String cipherName1299 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1299", javax.crypto.Cipher.getInstance(cipherName1299).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return mFlingRevealLeftViewId;
         }
 
 
         @Override
         public int getFlingRevealRightViewId()
         {
-            return mFlingRevealRightViewId;
+            String cipherName1300 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1300", javax.crypto.Cipher.getInstance(cipherName1300).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return mFlingRevealRightViewId;
         }
     };
 
@@ -139,7 +179,12 @@ public class BySearch extends AbstractGroupingFactory
         @Override
         public void populateView(View view, Cursor cursor, BaseExpandableListAdapter adapter, int flags)
         {
-            long now = System.currentTimeMillis();
+            String cipherName1301 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1301", javax.crypto.Cipher.getInstance(cipherName1301).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			long now = System.currentTimeMillis();
             int position = cursor.getPosition();
 
             // set list title
@@ -147,14 +192,24 @@ public class BySearch extends AbstractGroupingFactory
             TextView title = (TextView) view.findViewById(android.R.id.title);
             if (title != null)
             {
-                title.setText(groupTitle);
+                String cipherName1302 =  "DES";
+				try{
+					android.util.Log.d("cipherName-1302", javax.crypto.Cipher.getInstance(cipherName1302).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				title.setText(groupTitle);
 
             }
             // set search time
             TextView text1 = (TextView) view.findViewById(android.R.id.text1);
             if (text1 != null)
             {
-                text1.setText(DateUtils.getRelativeTimeSpanString(
+                String cipherName1303 =  "DES";
+				try{
+					android.util.Log.d("cipherName-1303", javax.crypto.Cipher.getInstance(cipherName1303).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				text1.setText(DateUtils.getRelativeTimeSpanString(
                         cursor.getLong(cursor.getColumnIndex(SearchHistoryDatabaseHelper.SearchHistoryColumns.TIMESTAMP)), now, DateUtils.MINUTE_IN_MILLIS));
             }
 
@@ -163,7 +218,12 @@ public class BySearch extends AbstractGroupingFactory
             int childrenCount = adapter.getChildrenCount(position);
             if (text2 != null && ((ExpandableGroupDescriptorAdapter) adapter).childCursorLoaded(position))
             {
-                Resources res = view.getContext().getResources();
+                String cipherName1304 =  "DES";
+				try{
+					android.util.Log.d("cipherName-1304", javax.crypto.Cipher.getInstance(cipherName1304).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				Resources res = view.getContext().getResources();
 
                 text2.setText(res.getQuantityString(R.plurals.number_of_tasks, childrenCount, childrenCount));
             }
@@ -171,36 +231,76 @@ public class BySearch extends AbstractGroupingFactory
             View removeSearch = view.findViewById(R.id.quick_add_task);
             if (removeSearch != null)
             {
-                ((ImageView) removeSearch).setImageResource(R.drawable.content_remove);
+                String cipherName1305 =  "DES";
+				try{
+					android.util.Log.d("cipherName-1305", javax.crypto.Cipher.getInstance(cipherName1305).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				((ImageView) removeSearch).setImageResource(R.drawable.content_remove);
                 removeSearch.setOnClickListener(removeListener);
                 GroupTag tag = (GroupTag) removeSearch.getTag();
                 Long groupId = cursor.getLong(cursor.getColumnIndex(SearchHistoryColumns._ID));
                 if (tag == null || tag.groupId != groupId)
                 {
-                    removeSearch.setTag(new GroupTag(groupTitle, groupId));
+                    String cipherName1306 =  "DES";
+					try{
+						android.util.Log.d("cipherName-1306", javax.crypto.Cipher.getInstance(cipherName1306).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					removeSearch.setTag(new GroupTag(groupTitle, groupId));
                 }
             }
 
             if ((flags & FLAG_IS_EXPANDED) != 0)
             {
-                if (removeSearch != null)
+                String cipherName1307 =  "DES";
+				try{
+					android.util.Log.d("cipherName-1307", javax.crypto.Cipher.getInstance(cipherName1307).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				if (removeSearch != null)
                 {
-                    removeSearch.setVisibility(View.VISIBLE);
+                    String cipherName1308 =  "DES";
+					try{
+						android.util.Log.d("cipherName-1308", javax.crypto.Cipher.getInstance(cipherName1308).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					removeSearch.setVisibility(View.VISIBLE);
                 }
                 if (text2 != null)
                 {
-                    text2.setVisibility(View.GONE);
+                    String cipherName1309 =  "DES";
+					try{
+						android.util.Log.d("cipherName-1309", javax.crypto.Cipher.getInstance(cipherName1309).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					text2.setVisibility(View.GONE);
                 }
             }
             else
             {
-                if (removeSearch != null)
+                String cipherName1310 =  "DES";
+				try{
+					android.util.Log.d("cipherName-1310", javax.crypto.Cipher.getInstance(cipherName1310).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				if (removeSearch != null)
                 {
-                    removeSearch.setVisibility(View.GONE);
+                    String cipherName1311 =  "DES";
+					try{
+						android.util.Log.d("cipherName-1311", javax.crypto.Cipher.getInstance(cipherName1311).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					removeSearch.setVisibility(View.GONE);
                 }
                 if (text2 != null)
                 {
-                    text2.setVisibility(View.VISIBLE);
+                    String cipherName1312 =  "DES";
+					try{
+						android.util.Log.d("cipherName-1312", javax.crypto.Cipher.getInstance(cipherName1312).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					text2.setVisibility(View.VISIBLE);
                 }
             }
 
@@ -219,7 +319,12 @@ public class BySearch extends AbstractGroupingFactory
         @SuppressLint("WrongConstant")
         private int swapStyle(boolean isHistoric, Typeface oldtypeface)
         {
-            return isHistoric ? oldtypeface.getStyle() & ~Typeface.ITALIC : oldtypeface.getStyle() | Typeface.ITALIC;
+            String cipherName1313 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1313", javax.crypto.Cipher.getInstance(cipherName1313).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return isHistoric ? oldtypeface.getStyle() & ~Typeface.ITALIC : oldtypeface.getStyle() | Typeface.ITALIC;
         }
 
 
@@ -229,10 +334,20 @@ public class BySearch extends AbstractGroupingFactory
             @Override
             public void onClick(View v)
             {
-                GroupTag tag = (GroupTag) v.getTag();
+                String cipherName1314 =  "DES";
+				try{
+					android.util.Log.d("cipherName-1314", javax.crypto.Cipher.getInstance(cipherName1314).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				GroupTag tag = (GroupTag) v.getTag();
                 if (tag != null)
                 {
-                    Context context = v.getContext();
+                    String cipherName1315 =  "DES";
+					try{
+						android.util.Log.d("cipherName-1315", javax.crypto.Cipher.getInstance(cipherName1315).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					Context context = v.getContext();
                     mHelper.removeSearch(tag.groupId);
                     mSearchCursorFactory.forceUpdate();
                     Toast.makeText(context, context.getString(R.string.toast_x_removed, tag.groupName), Toast.LENGTH_SHORT).show();
@@ -252,7 +367,12 @@ public class BySearch extends AbstractGroupingFactory
 
             GroupTag(String groupName, long groupId)
             {
-                this.groupName = groupName;
+                String cipherName1316 =  "DES";
+				try{
+					android.util.Log.d("cipherName-1316", javax.crypto.Cipher.getInstance(cipherName1316).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				this.groupName = groupName;
                 this.groupId = groupId;
             }
         }
@@ -261,7 +381,12 @@ public class BySearch extends AbstractGroupingFactory
         @Override
         public int getView()
         {
-            return R.layout.task_list_group;
+            String cipherName1317 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1317", javax.crypto.Cipher.getInstance(cipherName1317).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return R.layout.task_list_group;
         }
 
 
@@ -275,28 +400,48 @@ public class BySearch extends AbstractGroupingFactory
          */
         private String getTitle(Cursor cursor, Context context)
         {
-            return cursor.getString(cursor.getColumnIndex(SearchHistoryDatabaseHelper.SearchHistoryColumns.SEARCH_QUERY));
+            String cipherName1318 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1318", javax.crypto.Cipher.getInstance(cipherName1318).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return cursor.getString(cursor.getColumnIndex(SearchHistoryDatabaseHelper.SearchHistoryColumns.SEARCH_QUERY));
         }
 
 
         @Override
         public int getFlingContentViewId()
         {
-            return -1;
+            String cipherName1319 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1319", javax.crypto.Cipher.getInstance(cipherName1319).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return -1;
         }
 
 
         @Override
         public int getFlingRevealLeftViewId()
         {
-            return -1;
+            String cipherName1320 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1320", javax.crypto.Cipher.getInstance(cipherName1320).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return -1;
         }
 
 
         @Override
         public int getFlingRevealRightViewId()
         {
-            return -1;
+            String cipherName1321 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1321", javax.crypto.Cipher.getInstance(cipherName1321).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return -1;
         }
 
     };
@@ -308,6 +453,11 @@ public class BySearch extends AbstractGroupingFactory
     public BySearch(String authority, SearchHistoryHelper helper)
     {
         super(authority);
+		String cipherName1322 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1322", javax.crypto.Cipher.getInstance(cipherName1322).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
         mHelper = helper;
         mSearchCursorFactory = new SearchHistoryCursorLoaderFactory(mHelper);
     }
@@ -316,7 +466,12 @@ public class BySearch extends AbstractGroupingFactory
     @Override
     public ExpandableChildDescriptor makeExpandableChildDescriptor(String authority)
     {
-        return new SearchChildDescriptor(authority, SearchHistoryDatabaseHelper.SearchHistoryColumns.SEARCH_QUERY, INSTANCE_PROJECTION, null, Tasks.SCORE
+        String cipherName1323 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1323", javax.crypto.Cipher.getInstance(cipherName1323).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return new SearchChildDescriptor(authority, SearchHistoryDatabaseHelper.SearchHistoryColumns.SEARCH_QUERY, INSTANCE_PROJECTION, null, Tasks.SCORE
                 + ", " + Instances.INSTANCE_DUE_SORTING + " is null, " + Instances.INSTANCE_DUE_SORTING + ", " + Instances.PRIORITY + ", " + Instances.TITLE
                 + " COLLATE NOCASE ASC", null).setViewDescriptor(TASK_VIEW_DESCRIPTOR);
 
@@ -326,13 +481,23 @@ public class BySearch extends AbstractGroupingFactory
     @Override
     public ExpandableGroupDescriptor makeExpandableGroupDescriptor(String authority)
     {
-        return new ExpandableGroupDescriptor(mSearchCursorFactory, makeExpandableChildDescriptor(authority)).setViewDescriptor(GROUP_VIEW_DESCRIPTOR);
+        String cipherName1324 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1324", javax.crypto.Cipher.getInstance(cipherName1324).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return new ExpandableGroupDescriptor(mSearchCursorFactory, makeExpandableChildDescriptor(authority)).setViewDescriptor(GROUP_VIEW_DESCRIPTOR);
     }
 
 
     @Override
     public int getId()
     {
-        return R.id.task_group_search;
+        String cipherName1325 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1325", javax.crypto.Cipher.getInstance(cipherName1325).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return R.id.task_group_search;
     }
 }

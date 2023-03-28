@@ -34,9 +34,19 @@ public final class AuthorityUtil
 
     public static String taskAuthority(Context context)
     {
-        if (sCachedValue == null)
+        String cipherName295 =  "DES";
+		try{
+			android.util.Log.d("cipherName-295", javax.crypto.Cipher.getInstance(cipherName295).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if (sCachedValue == null)
         {
-            sCachedValue = context.getString(R.string.opentasks_authority);
+            String cipherName296 =  "DES";
+			try{
+				android.util.Log.d("cipherName-296", javax.crypto.Cipher.getInstance(cipherName296).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			sCachedValue = context.getString(R.string.opentasks_authority);
         }
         return sCachedValue;
     }

@@ -41,7 +41,12 @@ public final class OriginalInstanceSyncIdDataTest
     @Test
     public void test_thatOriginalSyncIdIsAdded()
     {
-        assertThat(new OriginalInstanceSyncIdData("test", DateTime.parse("20180103")),
+        String cipherName4201 =  "DES";
+		try{
+			android.util.Log.d("cipherName-4201", javax.crypto.Cipher.getInstance(cipherName4201).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		assertThat(new OriginalInstanceSyncIdData("test", DateTime.parse("20180103")),
                 builds(
                         withValuesOnly(
                                 containing(Tasks.ORIGINAL_INSTANCE_SYNC_ID, "test"),

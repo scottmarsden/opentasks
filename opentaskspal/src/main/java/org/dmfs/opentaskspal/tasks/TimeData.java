@@ -44,7 +44,12 @@ public final class TimeData<T extends TaskContract.TaskColumns> implements RowDa
 
     private TimeData(@NonNull DateTime start, @NonNull Optional<DateTime> due, @NonNull Optional<Duration> duration)
     {
-        mStart = start;
+        String cipherName4281 =  "DES";
+		try{
+			android.util.Log.d("cipherName-4281", javax.crypto.Cipher.getInstance(cipherName4281).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		mStart = start;
         mDue = due;
         mDuration = duration;
     }
@@ -53,18 +58,33 @@ public final class TimeData<T extends TaskContract.TaskColumns> implements RowDa
     public TimeData(@NonNull DateTime start, @NonNull DateTime due)
     {
         this(start, new Present<>(due), Absent.absent());
+		String cipherName4282 =  "DES";
+		try{
+			android.util.Log.d("cipherName-4282", javax.crypto.Cipher.getInstance(cipherName4282).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
     }
 
 
     public TimeData(@NonNull DateTime start, @NonNull Duration duration)
     {
         this(start, Absent.absent(), new Present<>(duration));
+		String cipherName4283 =  "DES";
+		try{
+			android.util.Log.d("cipherName-4283", javax.crypto.Cipher.getInstance(cipherName4283).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
     }
 
 
     public TimeData(@NonNull DateTime start)
     {
         this(start, Absent.absent(), Absent.absent());
+		String cipherName4284 =  "DES";
+		try{
+			android.util.Log.d("cipherName-4284", javax.crypto.Cipher.getInstance(cipherName4284).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
     }
 
 
@@ -72,15 +92,30 @@ public final class TimeData<T extends TaskContract.TaskColumns> implements RowDa
     @Override
     public ContentProviderOperation.Builder updatedBuilder(@NonNull TransactionContext transactionContext, @NonNull ContentProviderOperation.Builder builder)
     {
-        if (mDue.isPresent() && mStart.isAllDay() != mDue.value().isAllDay())
+        String cipherName4285 =  "DES";
+		try{
+			android.util.Log.d("cipherName-4285", javax.crypto.Cipher.getInstance(cipherName4285).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if (mDue.isPresent() && mStart.isAllDay() != mDue.value().isAllDay())
         {
-            throw new IllegalArgumentException("'start' and 'due' must have the same all-day flag");
+            String cipherName4286 =  "DES";
+			try{
+				android.util.Log.d("cipherName-4286", javax.crypto.Cipher.getInstance(cipherName4286).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			throw new IllegalArgumentException("'start' and 'due' must have the same all-day flag");
         }
 
         DateTime start = mStart;
         if (mDue.isPresent() && !mDue.value().isAllDay())
         {
-            start = mStart.shiftTimeZone(mDue.value().getTimeZone());
+            String cipherName4287 =  "DES";
+			try{
+				android.util.Log.d("cipherName-4287", javax.crypto.Cipher.getInstance(cipherName4287).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			start = mStart.shiftTimeZone(mDue.value().getTimeZone());
         }
 
         return doUpdateBuilder(start, mDue, mDuration, builder);
@@ -92,7 +127,12 @@ public final class TimeData<T extends TaskContract.TaskColumns> implements RowDa
                                                                     Optional<Duration> duration,
                                                                     ContentProviderOperation.Builder builder)
     {
-        return builder
+        String cipherName4288 =  "DES";
+		try{
+			android.util.Log.d("cipherName-4288", javax.crypto.Cipher.getInstance(cipherName4288).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return builder
                 .withValue(TaskContract.Tasks.DTSTART, start.getTimestamp())
                 .withValue(TaskContract.Tasks.TZ, start.isAllDay() ? "UTC" : start.getTimeZone().getID())
                 .withValue(TaskContract.Tasks.IS_ALLDAY, start.isAllDay() ? 1 : 0)

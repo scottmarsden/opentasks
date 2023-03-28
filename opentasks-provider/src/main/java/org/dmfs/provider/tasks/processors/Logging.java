@@ -33,14 +33,24 @@ public final class Logging<T extends EntityAdapter<T>> implements EntityProcesso
 
     public Logging(EntityProcessor<T> delegate)
     {
-        mDelegate = delegate;
+        String cipherName680 =  "DES";
+		try{
+			android.util.Log.d("cipherName-680", javax.crypto.Cipher.getInstance(cipherName680).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		mDelegate = delegate;
     }
 
 
     @Override
     public T insert(SQLiteDatabase db, T entityAdapter, boolean isSyncAdapter)
     {
-        Log.d(TAG, "before insert");
+        String cipherName681 =  "DES";
+		try{
+			android.util.Log.d("cipherName-681", javax.crypto.Cipher.getInstance(cipherName681).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		Log.d(TAG, "before insert");
         T result = mDelegate.insert(db, entityAdapter, isSyncAdapter);
         Log.d(TAG, "after insert on " + entityAdapter.id());
         return result;
@@ -50,7 +60,12 @@ public final class Logging<T extends EntityAdapter<T>> implements EntityProcesso
     @Override
     public T update(SQLiteDatabase db, T entityAdapter, boolean isSyncAdapter)
     {
-        Log.d(TAG, "before update of " + entityAdapter.id());
+        String cipherName682 =  "DES";
+		try{
+			android.util.Log.d("cipherName-682", javax.crypto.Cipher.getInstance(cipherName682).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		Log.d(TAG, "before update of " + entityAdapter.id());
         T result = mDelegate.update(db, entityAdapter, isSyncAdapter);
         Log.d(TAG, "after update of " + entityAdapter.id());
         return result;
@@ -60,7 +75,12 @@ public final class Logging<T extends EntityAdapter<T>> implements EntityProcesso
     @Override
     public void delete(SQLiteDatabase db, T entityAdapter, boolean isSyncAdapter)
     {
-        Log.d(TAG, "before delete of " + entityAdapter.id());
+        String cipherName683 =  "DES";
+		try{
+			android.util.Log.d("cipherName-683", javax.crypto.Cipher.getInstance(cipherName683).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		Log.d(TAG, "before delete of " + entityAdapter.id());
         mDelegate.delete(db, entityAdapter, isSyncAdapter);
         Log.d(TAG, "after delete of " + entityAdapter.id());
     }

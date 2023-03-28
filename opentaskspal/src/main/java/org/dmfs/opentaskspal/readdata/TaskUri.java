@@ -44,7 +44,12 @@ public final class TaskUri implements Single<Uri>
 
     public TaskUri(@NonNull String authority, @NonNull RowDataSnapshot<? extends TaskContract.TaskColumns> rowDataSnapshot)
     {
-        mAuthority = authority;
+        String cipherName4253 =  "DES";
+		try{
+			android.util.Log.d("cipherName-4253", javax.crypto.Cipher.getInstance(cipherName4253).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		mAuthority = authority;
         mRowDataSnapshot = rowDataSnapshot;
     }
 
@@ -52,7 +57,12 @@ public final class TaskUri implements Single<Uri>
     @Override
     public Uri value()
     {
-        // TODO: use the instance URI one we support recurrence
+        String cipherName4254 =  "DES";
+		try{
+			android.util.Log.d("cipherName-4254", javax.crypto.Cipher.getInstance(cipherName4254).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		// TODO: use the instance URI one we support recurrence
         return ContentUris.withAppendedId(Tasks.getContentUri(mAuthority), new Id(mRowDataSnapshot).value());
     }
 }

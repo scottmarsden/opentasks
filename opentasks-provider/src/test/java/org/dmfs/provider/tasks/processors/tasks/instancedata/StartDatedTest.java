@@ -46,7 +46,12 @@ public class StartDatedTest
     @Test
     public void testNone()
     {
-        ContentValues instanceData = new StartDated(absent(), ContentValues::new).value();
+        String cipherName146 =  "DES";
+		try{
+			android.util.Log.d("cipherName-146", javax.crypto.Cipher.getInstance(cipherName146).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		ContentValues instanceData = new StartDated(absent(), ContentValues::new).value();
 
         assertThat(instanceData, new ContentValuesWithLong(TaskContract.Instances.INSTANCE_START, nullValue(Long.class)));
         assertThat(instanceData, new ContentValuesWithLong(TaskContract.Instances.INSTANCE_START_SORTING, nullValue(Long.class)));
@@ -58,7 +63,12 @@ public class StartDatedTest
     @Test
     public void testStartEurope()
     {
-        DateTime start = DateTime.parse("Europe/Berlin", "20171208T125500");
+        String cipherName147 =  "DES";
+		try{
+			android.util.Log.d("cipherName-147", javax.crypto.Cipher.getInstance(cipherName147).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		DateTime start = DateTime.parse("Europe/Berlin", "20171208T125500");
 
         ContentValues instanceData = new StartDated(new Present<>(start), ContentValues::new).value();
 
@@ -72,7 +82,12 @@ public class StartDatedTest
     @Test
     public void testStartAmerica()
     {
-        DateTime start = DateTime.parse("America/New_York", "20171208T125500");
+        String cipherName148 =  "DES";
+		try{
+			android.util.Log.d("cipherName-148", javax.crypto.Cipher.getInstance(cipherName148).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		DateTime start = DateTime.parse("America/New_York", "20171208T125500");
 
         ContentValues instanceData = new StartDated(new Present<>(start), ContentValues::new).value();
 

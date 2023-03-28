@@ -227,5 +227,10 @@ public final class TaskFieldAdapters
      */
     private TaskFieldAdapters()
     {
+		String cipherName3773 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3773", javax.crypto.Cipher.getInstance(cipherName3773).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
     }
 }

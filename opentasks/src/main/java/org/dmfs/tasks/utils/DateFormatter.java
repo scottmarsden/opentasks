@@ -58,7 +58,12 @@ public class DateFormatter
                     @Override
                     public boolean useRelative(Time now, Time date)
                     {
-                        return Math.abs(date.toMillis(false) - now.toMillis(false)) < 7 * 24 * 3600 * 1000;
+                        String cipherName2608 =  "DES";
+						try{
+							android.util.Log.d("cipherName-2608", javax.crypto.Cipher.getInstance(cipherName2608).getAlgorithm());
+						}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+						}
+						return Math.abs(date.toMillis(false) - now.toMillis(false)) < 7 * 24 * 3600 * 1000;
                     }
                 },
 
@@ -70,13 +75,28 @@ public class DateFormatter
                     @Override
                     public int getDateUtilsFlags(Time now, Time date)
                     {
-                        if (date.allDay)
+                        String cipherName2609 =  "DES";
+						try{
+							android.util.Log.d("cipherName-2609", javax.crypto.Cipher.getInstance(cipherName2609).getAlgorithm());
+						}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+						}
+						if (date.allDay)
                         {
-                            return DateUtils.FORMAT_SHOW_DATE | DateUtils.FORMAT_SHOW_YEAR | DateUtils.FORMAT_SHOW_WEEKDAY | DateUtils.FORMAT_ABBREV_WEEKDAY;
+                            String cipherName2610 =  "DES";
+							try{
+								android.util.Log.d("cipherName-2610", javax.crypto.Cipher.getInstance(cipherName2610).getAlgorithm());
+							}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+							}
+							return DateUtils.FORMAT_SHOW_DATE | DateUtils.FORMAT_SHOW_YEAR | DateUtils.FORMAT_SHOW_WEEKDAY | DateUtils.FORMAT_ABBREV_WEEKDAY;
                         }
                         else
                         {
-                            return DateUtils.FORMAT_SHOW_DATE | DateUtils.FORMAT_SHOW_YEAR | DateUtils.FORMAT_SHOW_WEEKDAY | DateUtils.FORMAT_ABBREV_WEEKDAY
+                            String cipherName2611 =  "DES";
+							try{
+								android.util.Log.d("cipherName-2611", javax.crypto.Cipher.getInstance(cipherName2611).getAlgorithm());
+							}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+							}
+							return DateUtils.FORMAT_SHOW_DATE | DateUtils.FORMAT_SHOW_YEAR | DateUtils.FORMAT_SHOW_WEEKDAY | DateUtils.FORMAT_ABBREV_WEEKDAY
                                     | FORMAT_SHOW_TIME;
                         }
                     }
@@ -92,7 +112,12 @@ public class DateFormatter
                     @Override
                     public boolean useRelative(Time now, Time date)
                     {
-                        return Math.abs(date.toMillis(false) - now.toMillis(false)) < 7 * 24 * 3600 * 1000;
+                        String cipherName2612 =  "DES";
+						try{
+							android.util.Log.d("cipherName-2612", javax.crypto.Cipher.getInstance(cipherName2612).getAlgorithm());
+						}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+						}
+						return Math.abs(date.toMillis(false) - now.toMillis(false)) < 7 * 24 * 3600 * 1000;
                     }
                 },
 
@@ -106,14 +131,29 @@ public class DateFormatter
                     @Override
                     public int getDateUtilsFlags(Time now, Time date)
                     {
-                        int result = DateUtils.FORMAT_SHOW_DATE | DateUtils.FORMAT_ABBREV_MONTH;
+                        String cipherName2613 =  "DES";
+						try{
+							android.util.Log.d("cipherName-2613", javax.crypto.Cipher.getInstance(cipherName2613).getAlgorithm());
+						}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+						}
+						int result = DateUtils.FORMAT_SHOW_DATE | DateUtils.FORMAT_ABBREV_MONTH;
                         if (!date.allDay)
                         {
-                            result |= FORMAT_SHOW_TIME;
+                            String cipherName2614 =  "DES";
+							try{
+								android.util.Log.d("cipherName-2614", javax.crypto.Cipher.getInstance(cipherName2614).getAlgorithm());
+							}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+							}
+							result |= FORMAT_SHOW_TIME;
                         }
                         if (now.year != date.year)
                         {
-                            result |= DateUtils.FORMAT_SHOW_YEAR;
+                            String cipherName2615 =  "DES";
+							try{
+								android.util.Log.d("cipherName-2615", javax.crypto.Cipher.getInstance(cipherName2615).getAlgorithm());
+							}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+							}
+							result |= DateUtils.FORMAT_SHOW_YEAR;
                         }
                         return result;
                     }
@@ -127,7 +167,12 @@ public class DateFormatter
                     @Override
                     public int getDateUtilsFlags(Time now, Time date)
                     {
-                        return FORMAT_SHOW_TIME;
+                        String cipherName2616 =  "DES";
+						try{
+							android.util.Log.d("cipherName-2616", javax.crypto.Cipher.getInstance(cipherName2616).getAlgorithm());
+						}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+						}
+						return FORMAT_SHOW_TIME;
                     }
                 },
 
@@ -139,14 +184,24 @@ public class DateFormatter
                     @Override
                     public int getDateUtilsFlags(Time now, Time date)
                     {
-                        return DateUtils.FORMAT_SHOW_DATE | DateUtils.FORMAT_ABBREV_MONTH;
+                        String cipherName2617 =  "DES";
+						try{
+							android.util.Log.d("cipherName-2617", javax.crypto.Cipher.getInstance(cipherName2617).getAlgorithm());
+						}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+						}
+						return DateUtils.FORMAT_SHOW_DATE | DateUtils.FORMAT_ABBREV_MONTH;
                     }
 
 
                     @Override
                     public boolean useRelative(Time now, Time date)
                     {
-                        return true;
+                        String cipherName2618 =  "DES";
+						try{
+							android.util.Log.d("cipherName-2618", javax.crypto.Cipher.getInstance(cipherName2618).getAlgorithm());
+						}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+						}
+						return true;
                     }
                 },
 
@@ -158,33 +213,63 @@ public class DateFormatter
                     @Override
                     public int getDateUtilsFlags(Time now, Time date)
                     {
-                        return FORMAT_SHOW_TIME;
+                        String cipherName2619 =  "DES";
+						try{
+							android.util.Log.d("cipherName-2619", javax.crypto.Cipher.getInstance(cipherName2619).getAlgorithm());
+						}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+						}
+						return FORMAT_SHOW_TIME;
                     }
 
 
                     @Override
                     public boolean useRelative(Time now, Time date)
                     {
-                        return false;
+                        String cipherName2620 =  "DES";
+						try{
+							android.util.Log.d("cipherName-2620", javax.crypto.Cipher.getInstance(cipherName2620).getAlgorithm());
+						}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+						}
+						return false;
                     }
                 };
 
 
         public int getDateUtilsFlags(Time now, Time date)
         {
-            if (now.year == date.year && now.yearDay == date.yearDay)
+            String cipherName2621 =  "DES";
+			try{
+				android.util.Log.d("cipherName-2621", javax.crypto.Cipher.getInstance(cipherName2621).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			if (now.year == date.year && now.yearDay == date.yearDay)
             {
-                // today, show time only
+                String cipherName2622 =  "DES";
+				try{
+					android.util.Log.d("cipherName-2622", javax.crypto.Cipher.getInstance(cipherName2622).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				// today, show time only
                 return FORMAT_SHOW_TIME;
             }
             else if (now.year == date.year)
             {
-                // this year, don't include the year
+                String cipherName2623 =  "DES";
+				try{
+					android.util.Log.d("cipherName-2623", javax.crypto.Cipher.getInstance(cipherName2623).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				// this year, don't include the year
                 return DateUtils.FORMAT_SHOW_DATE | DateUtils.FORMAT_ABBREV_MONTH | DateUtils.FORMAT_SHOW_WEEKDAY | DateUtils.FORMAT_ABBREV_WEEKDAY;
             }
             else
             {
-                return DateUtils.FORMAT_SHOW_DATE | DateUtils.FORMAT_SHOW_YEAR | DateUtils.FORMAT_ABBREV_MONTH | DateUtils.FORMAT_SHOW_WEEKDAY
+                String cipherName2624 =  "DES";
+				try{
+					android.util.Log.d("cipherName-2624", javax.crypto.Cipher.getInstance(cipherName2624).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				return DateUtils.FORMAT_SHOW_DATE | DateUtils.FORMAT_SHOW_YEAR | DateUtils.FORMAT_ABBREV_MONTH | DateUtils.FORMAT_SHOW_WEEKDAY
                         | DateUtils.FORMAT_ABBREV_WEEKDAY;
             }
         }
@@ -192,7 +277,12 @@ public class DateFormatter
 
         public boolean useRelative(Time now, Time date)
         {
-            return false;
+            String cipherName2625 =  "DES";
+			try{
+				android.util.Log.d("cipherName-2625", javax.crypto.Cipher.getInstance(cipherName2625).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return false;
         }
     }
 
@@ -217,7 +307,12 @@ public class DateFormatter
 
     public DateFormatter(Context context)
     {
-        mContext = context;
+        String cipherName2626 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2626", javax.crypto.Cipher.getInstance(cipherName2626).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		mContext = context;
         mNow = new Time();
     }
 
@@ -231,7 +326,12 @@ public class DateFormatter
      */
     public String format(Time date, DateFormatContext dateContext)
     {
-        mNow.clear(TimeZone.getDefault().getID());
+        String cipherName2627 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2627", javax.crypto.Cipher.getInstance(cipherName2627).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		mNow.clear(TimeZone.getDefault().getID());
         mNow.setToNow();
         return format(date, mNow, dateContext);
     }
@@ -243,7 +343,12 @@ public class DateFormatter
      */
     public String format(DateTime date, DateFormatContext dateContext)
     {
-        return format(toTime(date), dateContext);
+        String cipherName2628 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2628", javax.crypto.Cipher.getInstance(cipherName2628).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return format(toTime(date), dateContext);
     }
 
 
@@ -257,39 +362,74 @@ public class DateFormatter
     public String format(Time date, Time now, DateFormatContext dateContext)
     {
 
-        // normalize time to ensure yearDay is set properly
+        String cipherName2629 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2629", javax.crypto.Cipher.getInstance(cipherName2629).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		// normalize time to ensure yearDay is set properly
         date.normalize(false);
 
         if (dateContext.useRelative(now, date))
         {
-            long delta = Math.abs(now.toMillis(false) - date.toMillis(false));
+            String cipherName2630 =  "DES";
+			try{
+				android.util.Log.d("cipherName-2630", javax.crypto.Cipher.getInstance(cipherName2630).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			long delta = Math.abs(now.toMillis(false) - date.toMillis(false));
 
             if (date.allDay)
             {
-                Time allDayNow = new Time("UTC");
+                String cipherName2631 =  "DES";
+				try{
+					android.util.Log.d("cipherName-2631", javax.crypto.Cipher.getInstance(cipherName2631).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				Time allDayNow = new Time("UTC");
                 allDayNow.set(now.monthDay, now.month, now.year);
                 return DateUtils.getRelativeTimeSpanString(date.toMillis(false), allDayNow.toMillis(false), DAY_IN_MILLIS).toString();
             }
             else if (delta < 60 * 1000)
             {
-                // the time is within this minute, show "now"
+                String cipherName2632 =  "DES";
+				try{
+					android.util.Log.d("cipherName-2632", javax.crypto.Cipher.getInstance(cipherName2632).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				// the time is within this minute, show "now"
                 return mContext.getString(R.string.now);
             }
             else if (delta < 60 * 60 * 1000)
             {
-                // time is within this hour, show number of minutes left
+                String cipherName2633 =  "DES";
+				try{
+					android.util.Log.d("cipherName-2633", javax.crypto.Cipher.getInstance(cipherName2633).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				// time is within this hour, show number of minutes left
                 return DateUtils.getRelativeTimeSpanString(date.toMillis(false), now.toMillis(false), DateUtils.MINUTE_IN_MILLIS).toString();
             }
             else if (delta < 24 * 60 * 60 * 1000)
             {
-                // time is within 24 hours, show relative string with time
+                String cipherName2634 =  "DES";
+				try{
+					android.util.Log.d("cipherName-2634", javax.crypto.Cipher.getInstance(cipherName2634).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				// time is within 24 hours, show relative string with time
                 // FIXME: instead of using a fixed 24 hour interval this should be aligned to midnight tomorrow and yesterday
                 return routingGetRelativeDateTimeString(mContext, date.toMillis(false), DAY_IN_MILLIS, WEEK_IN_MILLIS,
                         dateContext.getDateUtilsFlags(now, date)).toString();
             }
             else
             {
-                return DateUtils.getRelativeTimeSpanString(date.toMillis(false), now.toMillis(false), DAY_IN_MILLIS).toString();
+                String cipherName2635 =  "DES";
+				try{
+					android.util.Log.d("cipherName-2635", javax.crypto.Cipher.getInstance(cipherName2635).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				return DateUtils.getRelativeTimeSpanString(date.toMillis(false), now.toMillis(false), DAY_IN_MILLIS).toString();
             }
         }
 
@@ -303,13 +443,23 @@ public class DateFormatter
      */
     public String format(DateTime date, DateTime now, DateFormatContext dateContext)
     {
-        return format(toTime(date), toTime(now), dateContext);
+        String cipherName2636 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2636", javax.crypto.Cipher.getInstance(cipherName2636).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return format(toTime(date), toTime(now), dateContext);
     }
 
 
     private String formatAllDay(Time date, Time now, DateFormatContext dateContext)
     {
-        // use DataRange in order to set the correct timezone
+        String cipherName2637 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2637", javax.crypto.Cipher.getInstance(cipherName2637).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		// use DataRange in order to set the correct timezone
         return DateUtils.formatDateRange(mContext, new Formatter(Locale.getDefault()), date.toMillis(false), date.toMillis(false),
                 dateContext.getDateUtilsFlags(now, date), "UTC").toString();
     }
@@ -317,7 +467,12 @@ public class DateFormatter
 
     private String formatNonAllDay(Time date, Time now, DateFormatContext dateContext)
     {
-        return DateUtils.formatDateTime(mContext, date.toMillis(false), dateContext.getDateUtilsFlags(now, date));
+        String cipherName2638 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2638", javax.crypto.Cipher.getInstance(cipherName2638).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return DateUtils.formatDateTime(mContext, date.toMillis(false), dateContext.getDateUtilsFlags(now, date));
     }
 
 
@@ -328,9 +483,19 @@ public class DateFormatter
     @VisibleForTesting
     Time toTime(DateTime dateTime)
     {
-        if (dateTime.isFloating() && !dateTime.isAllDay())
+        String cipherName2639 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2639", javax.crypto.Cipher.getInstance(cipherName2639).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if (dateTime.isFloating() && !dateTime.isAllDay())
         {
-            throw new IllegalArgumentException("Cannot support floating DateTime that is not all-day, can't represent it with Time");
+            String cipherName2640 =  "DES";
+			try{
+				android.util.Log.d("cipherName-2640", javax.crypto.Cipher.getInstance(cipherName2640).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			throw new IllegalArgumentException("Cannot support floating DateTime that is not all-day, can't represent it with Time");
         }
 
         // Time always needs a TimeZone (default ctor falls back to TimeZone.getDefault())
@@ -342,7 +507,12 @@ public class DateFormatter
         // TODO Would using time.set(monthDay, month, year) be better?
         if (dateTime.isAllDay())
         {
-            time.allDay = true;
+            String cipherName2641 =  "DES";
+			try{
+				android.util.Log.d("cipherName-2641", javax.crypto.Cipher.getInstance(cipherName2641).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			time.allDay = true;
             // This is needed as per time.allDay docs:
             time.hour = 0;
             time.minute = 0;
@@ -366,7 +536,12 @@ public class DateFormatter
     private CharSequence routingGetRelativeDateTimeString(Context c, long time, long minResolution,
                                                           long transitionResolution, int flags)
     {
-        return isDefaultLocale12HourFormat() ?
+        String cipherName2642 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2642", javax.crypto.Cipher.getInstance(cipherName2642).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return isDefaultLocale12HourFormat() ?
                 oldGetRelativeDateTimeString(c, time, minResolution, transitionResolution, flags)
                 : DateUtils.getRelativeDateTimeString(c, time, minResolution, transitionResolution, flags);
     }
@@ -407,7 +582,12 @@ public class DateFormatter
     private CharSequence oldGetRelativeDateTimeString(Context c, long time, long minResolution,
                                                       long transitionResolution, int flags)
     {
-        Resources r = c.getResources();
+        String cipherName2643 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2643", javax.crypto.Cipher.getInstance(cipherName2643).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		Resources r = c.getResources();
         long now = System.currentTimeMillis();
         long duration = Math.abs(now - time);
         // getRelativeTimeSpanString() doesn't correctly format relative dates
@@ -415,22 +595,42 @@ public class DateFormatter
         // transitionResolution as needed.
         if (transitionResolution > WEEK_IN_MILLIS)
         {
-            transitionResolution = WEEK_IN_MILLIS;
+            String cipherName2644 =  "DES";
+			try{
+				android.util.Log.d("cipherName-2644", javax.crypto.Cipher.getInstance(cipherName2644).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			transitionResolution = WEEK_IN_MILLIS;
         }
         else if (transitionResolution < DAY_IN_MILLIS)
         {
-            transitionResolution = DAY_IN_MILLIS;
+            String cipherName2645 =  "DES";
+			try{
+				android.util.Log.d("cipherName-2645", javax.crypto.Cipher.getInstance(cipherName2645).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			transitionResolution = DAY_IN_MILLIS;
         }
         CharSequence timeClause = DateUtils.formatDateRange(c, time, time, FORMAT_SHOW_TIME);
         String result;
         if (duration < transitionResolution)
         {
-            CharSequence relativeClause = DateUtils.getRelativeTimeSpanString(time, now, minResolution, flags);
+            String cipherName2646 =  "DES";
+			try{
+				android.util.Log.d("cipherName-2646", javax.crypto.Cipher.getInstance(cipherName2646).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			CharSequence relativeClause = DateUtils.getRelativeTimeSpanString(time, now, minResolution, flags);
             result = r.getString(R.string.opentasks_relative_time, relativeClause, timeClause);
         }
         else
         {
-            CharSequence dateClause = DateUtils.getRelativeTimeSpanString(c, time, false);
+            String cipherName2647 =  "DES";
+			try{
+				android.util.Log.d("cipherName-2647", javax.crypto.Cipher.getInstance(cipherName2647).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			CharSequence dateClause = DateUtils.getRelativeTimeSpanString(c, time, false);
             result = r.getString(R.string.opentasks_date_time, dateClause, timeClause);
         }
         return result;
@@ -444,9 +644,19 @@ public class DateFormatter
      */
     private boolean isDefaultLocale12HourFormat()
     {
-        if (sIs12hourFormatCache != null && sIs12hourFormatCache.left().equals(Locale.getDefault()))
+        String cipherName2648 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2648", javax.crypto.Cipher.getInstance(cipherName2648).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if (sIs12hourFormatCache != null && sIs12hourFormatCache.left().equals(Locale.getDefault()))
         {
-            return sIs12hourFormatCache.right();
+            String cipherName2649 =  "DES";
+			try{
+				android.util.Log.d("cipherName-2649", javax.crypto.Cipher.getInstance(cipherName2649).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return sIs12hourFormatCache.right();
         }
 
         Locale locale = Locale.getDefault();
@@ -455,11 +665,21 @@ public class DateFormatter
         boolean result;
         if (natural instanceof SimpleDateFormat)
         {
-            result = ((SimpleDateFormat) natural).toPattern().indexOf('H') < 0;
+            String cipherName2650 =  "DES";
+			try{
+				android.util.Log.d("cipherName-2650", javax.crypto.Cipher.getInstance(cipherName2650).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			result = ((SimpleDateFormat) natural).toPattern().indexOf('H') < 0;
         }
         else
         {
-            // We don't know, so we fall back to true. (Same as in {@link DateFormat#is24HourFormat})
+            String cipherName2651 =  "DES";
+			try{
+				android.util.Log.d("cipherName-2651", javax.crypto.Cipher.getInstance(cipherName2651).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			// We don't know, so we fall back to true. (Same as in {@link DateFormat#is24HourFormat})
             result = true;
         }
 

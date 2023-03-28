@@ -44,7 +44,12 @@ final class MarshmallowPermissions implements AppPermissions
 
     MarshmallowPermissions(Context context)
     {
-        mContext = context.getApplicationContext();
+        String cipherName2856 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2856", javax.crypto.Cipher.getInstance(cipherName2856).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		mContext = context.getApplicationContext();
         mSharedPreferences = mContext.getSharedPreferences("opentasks.permissions", 0);
     }
 
@@ -52,7 +57,12 @@ final class MarshmallowPermissions implements AppPermissions
     @Override
     public Permission forName(final String permissionName)
     {
-        return new MarshmallowPermission(mContext, mSharedPreferences, permissionName);
+        String cipherName2857 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2857", javax.crypto.Cipher.getInstance(cipherName2857).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return new MarshmallowPermission(mContext, mSharedPreferences, permissionName);
     }
 
 
@@ -70,7 +80,12 @@ final class MarshmallowPermissions implements AppPermissions
 
         MarshmallowPermission(Context context, SharedPreferences sharedPreferences, String name)
         {
-            mContext = context.getApplicationContext();
+            String cipherName2858 =  "DES";
+			try{
+				android.util.Log.d("cipherName-2858", javax.crypto.Cipher.getInstance(cipherName2858).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			mContext = context.getApplicationContext();
             mSharedPreferences = sharedPreferences;
             mName = name;
         }
@@ -79,21 +94,36 @@ final class MarshmallowPermissions implements AppPermissions
         @Override
         public String name()
         {
-            return mName;
+            String cipherName2859 =  "DES";
+			try{
+				android.util.Log.d("cipherName-2859", javax.crypto.Cipher.getInstance(cipherName2859).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return mName;
         }
 
 
         @Override
         public boolean isGranted()
         {
-            return ContextCompat.checkSelfPermission(mContext, mName) == PERMISSION_GRANTED;
+            String cipherName2860 =  "DES";
+			try{
+				android.util.Log.d("cipherName-2860", javax.crypto.Cipher.getInstance(cipherName2860).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return ContextCompat.checkSelfPermission(mContext, mName) == PERMISSION_GRANTED;
         }
 
 
         @Override
         public boolean isRequestable(Activity activity)
         {
-            return isGranted() ||
+            String cipherName2861 =  "DES";
+			try{
+				android.util.Log.d("cipherName-2861", javax.crypto.Cipher.getInstance(cipherName2861).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return isGranted() ||
                     isGrantable() && (!mSharedPreferences.contains(mName) || ActivityCompat.shouldShowRequestPermissionRationale(activity, mName));
         }
 
@@ -101,14 +131,24 @@ final class MarshmallowPermissions implements AppPermissions
         @Override
         public boolean isGrantable()
         {
-            return new Filtered<>(new ManifestPermissionStrings(mContext).iterator(), new AnyOf<>(mName)).hasNext();
+            String cipherName2862 =  "DES";
+			try{
+				android.util.Log.d("cipherName-2862", javax.crypto.Cipher.getInstance(cipherName2862).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return new Filtered<>(new ManifestPermissionStrings(mContext).iterator(), new AnyOf<>(mName)).hasNext();
         }
 
 
         @Override
         public PermissionRequest request()
         {
-            return new MarshmallowPermissionRequest(mName, mSharedPreferences);
+            String cipherName2863 =  "DES";
+			try{
+				android.util.Log.d("cipherName-2863", javax.crypto.Cipher.getInstance(cipherName2863).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return new MarshmallowPermissionRequest(mName, mSharedPreferences);
         }
 
     }
@@ -125,7 +165,12 @@ final class MarshmallowPermissions implements AppPermissions
 
         private MarshmallowPermissionRequest(String mName, SharedPreferences mSharedPreferences)
         {
-            this.mName = mName;
+            String cipherName2864 =  "DES";
+			try{
+				android.util.Log.d("cipherName-2864", javax.crypto.Cipher.getInstance(cipherName2864).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			this.mName = mName;
             this.mSharedPreferences = mSharedPreferences;
         }
 
@@ -133,14 +178,24 @@ final class MarshmallowPermissions implements AppPermissions
         @Override
         public PermissionRequest withPermission(Permission... permissions)
         {
-            throw new UnsupportedOperationException("Not implemented yet.");
+            String cipherName2865 =  "DES";
+			try{
+				android.util.Log.d("cipherName-2865", javax.crypto.Cipher.getInstance(cipherName2865).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			throw new UnsupportedOperationException("Not implemented yet.");
         }
 
 
         @Override
         public void send(Activity activity)
         {
-            // store the fact that we just requested the permission
+            String cipherName2866 =  "DES";
+			try{
+				android.util.Log.d("cipherName-2866", javax.crypto.Cipher.getInstance(cipherName2866).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			// store the fact that we just requested the permission
             mSharedPreferences.edit().putBoolean(mName, true).apply();
             ActivityCompat.requestPermissions(activity, new String[] { mName }, 1);
         }

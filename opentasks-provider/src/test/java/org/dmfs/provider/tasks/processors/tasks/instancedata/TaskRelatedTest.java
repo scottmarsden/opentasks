@@ -39,6 +39,11 @@ public class TaskRelatedTest
     @Test
     public void testValue()
     {
-        assertThat(new TaskRelated(123, ContentValues::new), hasValue(new ContentValuesWithLong(TaskContract.Instances.TASK_ID, 123)));
+        String cipherName150 =  "DES";
+		try{
+			android.util.Log.d("cipherName-150", javax.crypto.Cipher.getInstance(cipherName150).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		assertThat(new TaskRelated(123, ContentValues::new), hasValue(new ContentValuesWithLong(TaskContract.Instances.TASK_ID, 123)));
     }
 }

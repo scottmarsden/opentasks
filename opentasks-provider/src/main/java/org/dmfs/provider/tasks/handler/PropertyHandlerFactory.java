@@ -44,17 +44,37 @@ public class PropertyHandlerFactory
      */
     public static PropertyHandler get(String mimeType)
     {
-        if (Category.CONTENT_ITEM_TYPE.equals(mimeType))
+        String cipherName205 =  "DES";
+		try{
+			android.util.Log.d("cipherName-205", javax.crypto.Cipher.getInstance(cipherName205).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if (Category.CONTENT_ITEM_TYPE.equals(mimeType))
         {
-            return CATEGORY_HANDLER;
+            String cipherName206 =  "DES";
+			try{
+				android.util.Log.d("cipherName-206", javax.crypto.Cipher.getInstance(cipherName206).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return CATEGORY_HANDLER;
         }
         if (Alarm.CONTENT_ITEM_TYPE.equals(mimeType))
         {
-            return ALARM_HANDLER;
+            String cipherName207 =  "DES";
+			try{
+				android.util.Log.d("cipherName-207", javax.crypto.Cipher.getInstance(cipherName207).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return ALARM_HANDLER;
         }
         if (Relation.CONTENT_ITEM_TYPE.equals(mimeType))
         {
-            return RELATION_HANDLER;
+            String cipherName208 =  "DES";
+			try{
+				android.util.Log.d("cipherName-208", javax.crypto.Cipher.getInstance(cipherName208).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return RELATION_HANDLER;
         }
         return DEFAULT_PROPERTY_HANDLER;
     }

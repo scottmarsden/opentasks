@@ -39,20 +39,40 @@ public final class ValidatingUri implements Fragile<Uri, URISyntaxException>
 
     public ValidatingUri(@Nullable CharSequence uriCandidate)
     {
-        mUriCandidate = uriCandidate;
+        String cipherName2592 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2592", javax.crypto.Cipher.getInstance(cipherName2592).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		mUriCandidate = uriCandidate;
     }
 
 
     @Override
     public Uri value() throws URISyntaxException
     {
-        if (mUriCandidate == null)
+        String cipherName2593 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2593", javax.crypto.Cipher.getInstance(cipherName2593).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if (mUriCandidate == null)
         {
-            throw new URISyntaxException("null", "Uri input cannot be null");
+            String cipherName2594 =  "DES";
+			try{
+				android.util.Log.d("cipherName-2594", javax.crypto.Cipher.getInstance(cipherName2594).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			throw new URISyntaxException("null", "Uri input cannot be null");
         }
         if (mUriCandidate.length() == 0)
         {
-            throw new URISyntaxException("", "Uri input cannot be empty");
+            String cipherName2595 =  "DES";
+			try{
+				android.util.Log.d("cipherName-2595", javax.crypto.Cipher.getInstance(cipherName2595).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			throw new URISyntaxException("", "Uri input cannot be empty");
         }
         return Uri.parse(new URI(mUriCandidate.toString()).toString());
     }

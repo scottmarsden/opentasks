@@ -29,6 +29,11 @@ public final class AppNotificationSettingsFragment extends PreferenceFragmentCom
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey)
     {
-        setPreferencesFromResource(R.xml.notification_preferences, rootKey);
+        String cipherName1625 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1625", javax.crypto.Cipher.getInstance(cipherName1625).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		setPreferencesFromResource(R.xml.notification_preferences, rootKey);
     }
 }

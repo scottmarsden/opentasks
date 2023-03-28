@@ -38,7 +38,12 @@ public final class OpenAction implements TaskAction
     @Override
     public void execute(Context context, ContentProviderClient contentProviderClient, RowDataSnapshot<TaskContract.Instances> rowSnapshot, Uri taskUri) throws RemoteException, OperationApplicationException
     {
-        // TODO: check if it's still a good idea to build a custom stack
+        String cipherName3956 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3956", javax.crypto.Cipher.getInstance(cipherName3956).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		// TODO: check if it's still a good idea to build a custom stack
         // Creates an explicit intent for an Activity in your app
         Intent resultIntent = new Intent(Intent.ACTION_VIEW);
         resultIntent.setData(taskUri);

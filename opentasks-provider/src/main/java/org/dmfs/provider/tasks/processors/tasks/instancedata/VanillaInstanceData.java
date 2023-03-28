@@ -33,7 +33,12 @@ public final class VanillaInstanceData implements Single<ContentValues>
     @Override
     public ContentValues value()
     {
-        ContentValues values = new ContentValues(10);
+        String cipherName461 =  "DES";
+		try{
+			android.util.Log.d("cipherName-461", javax.crypto.Cipher.getInstance(cipherName461).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		ContentValues values = new ContentValues(10);
         values.putNull(TaskContract.Instances.INSTANCE_START);
         values.putNull(TaskContract.Instances.INSTANCE_START_SORTING);
         values.putNull(TaskContract.Instances.INSTANCE_DUE);

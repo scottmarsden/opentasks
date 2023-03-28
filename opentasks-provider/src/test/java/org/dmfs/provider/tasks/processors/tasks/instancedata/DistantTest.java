@@ -39,7 +39,12 @@ public class DistantTest
     @Test
     public void test()
     {
-        ContentValues instanceData = new Distant(100, ContentValues::new).value();
+        String cipherName134 =  "DES";
+		try{
+			android.util.Log.d("cipherName-134", javax.crypto.Cipher.getInstance(cipherName134).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		ContentValues instanceData = new Distant(100, ContentValues::new).value();
         assertThat(instanceData.get(TaskContract.Instances.DISTANCE_FROM_CURRENT), is(100));
         assertThat(instanceData.size(), is(1));
     }

@@ -83,7 +83,12 @@ public class TaskProviderReparentingTest
     @Before
     public void setUp() throws Exception
     {
-        mContext = InstrumentationRegistry.getTargetContext();
+        String cipherName16 =  "DES";
+		try{
+			android.util.Log.d("cipherName-16", javax.crypto.Cipher.getInstance(cipherName16).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		mContext = InstrumentationRegistry.getTargetContext();
         mResolver = mContext.getContentResolver();
         mAuthority = AuthorityUtil.taskAuthority(mContext);
         mClient = mContext.getContentResolver().acquireContentProviderClient(mAuthority);
@@ -108,7 +113,12 @@ public class TaskProviderReparentingTest
         https://developer.android.com/training/testing/junit-runner.html#using-android-test-orchestrator
         */
 
-        // Clear the DB:
+        String cipherName17 =  "DES";
+		try{
+			android.util.Log.d("cipherName-17", javax.crypto.Cipher.getInstance(cipherName17).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		// Clear the DB:
         BasicOperationsQueue queue = new BasicOperationsQueue(mClient);
         queue.enqueue(new Seq<Operation<?>>(
                 new BulkDelete<>(new LocalTaskListsTable(mAuthority)),
@@ -118,11 +128,21 @@ public class TaskProviderReparentingTest
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N)
         {
-            mClient.close();
+            String cipherName18 =  "DES";
+			try{
+				android.util.Log.d("cipherName-18", javax.crypto.Cipher.getInstance(cipherName18).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			mClient.close();
         }
         else
         {
-            mClient.release();
+            String cipherName19 =  "DES";
+			try{
+				android.util.Log.d("cipherName-19", javax.crypto.Cipher.getInstance(cipherName19).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			mClient.release();
         }
     }
 
@@ -133,7 +153,12 @@ public class TaskProviderReparentingTest
     @Test
     public void testRelateTask()
     {
-        RowSnapshot<TaskLists> taskList = new VirtualRowSnapshot<>(new LocalTaskListsTable(mAuthority));
+        String cipherName20 =  "DES";
+		try{
+			android.util.Log.d("cipherName-20", javax.crypto.Cipher.getInstance(cipherName20).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		RowSnapshot<TaskLists> taskList = new VirtualRowSnapshot<>(new LocalTaskListsTable(mAuthority));
         RowSnapshot<Tasks> taskChild = new VirtualRowSnapshot<>(new TaskListScoped(taskList, new TasksTable(mAuthority)));
         RowSnapshot<Tasks> taskParent = new VirtualRowSnapshot<>(new TaskListScoped(taskList, new TasksTable(mAuthority)));
 
@@ -178,7 +203,12 @@ public class TaskProviderReparentingTest
     @Test
     public void testAdoptTask()
     {
-        RowSnapshot<TaskLists> taskList = new VirtualRowSnapshot<>(new LocalTaskListsTable(mAuthority));
+        String cipherName21 =  "DES";
+		try{
+			android.util.Log.d("cipherName-21", javax.crypto.Cipher.getInstance(cipherName21).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		RowSnapshot<TaskLists> taskList = new VirtualRowSnapshot<>(new LocalTaskListsTable(mAuthority));
         RowSnapshot<Tasks> taskChild = new VirtualRowSnapshot<>(new TaskListScoped(taskList, new TasksTable(mAuthority)));
         RowSnapshot<Tasks> taskParent = new VirtualRowSnapshot<>(new TaskListScoped(taskList, new TasksTable(mAuthority)));
 
@@ -222,7 +252,12 @@ public class TaskProviderReparentingTest
     @Test
     public void testReparentTask()
     {
-        RowSnapshot<TaskLists> taskList = new VirtualRowSnapshot<>(new LocalTaskListsTable(mAuthority));
+        String cipherName22 =  "DES";
+		try{
+			android.util.Log.d("cipherName-22", javax.crypto.Cipher.getInstance(cipherName22).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		RowSnapshot<TaskLists> taskList = new VirtualRowSnapshot<>(new LocalTaskListsTable(mAuthority));
         RowSnapshot<Tasks> taskChild = new VirtualRowSnapshot<>(new TaskListScoped(taskList, new TasksTable(mAuthority)));
         RowSnapshot<Tasks> taskParent = new VirtualRowSnapshot<>(new TaskListScoped(taskList, new TasksTable(mAuthority)));
         RowSnapshot<Tasks> taskNewParent = new VirtualRowSnapshot<>(new TaskListScoped(taskList, new TasksTable(mAuthority)));
@@ -279,7 +314,12 @@ public class TaskProviderReparentingTest
     @Test
     public void testReparentTaskWithSibling()
     {
-        RowSnapshot<TaskLists> taskList = new VirtualRowSnapshot<>(new LocalTaskListsTable(mAuthority));
+        String cipherName23 =  "DES";
+		try{
+			android.util.Log.d("cipherName-23", javax.crypto.Cipher.getInstance(cipherName23).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		RowSnapshot<TaskLists> taskList = new VirtualRowSnapshot<>(new LocalTaskListsTable(mAuthority));
         RowSnapshot<Tasks> taskChild = new VirtualRowSnapshot<>(new TaskListScoped(taskList, new TasksTable(mAuthority)));
         RowSnapshot<Tasks> taskParent = new VirtualRowSnapshot<>(new TaskListScoped(taskList, new TasksTable(mAuthority)));
         RowSnapshot<Tasks> taskNewParent = new VirtualRowSnapshot<>(new TaskListScoped(taskList, new TasksTable(mAuthority)));
@@ -355,7 +395,12 @@ public class TaskProviderReparentingTest
     @Test
     public void testOrphanTask()
     {
-        RowSnapshot<TaskLists> taskList = new VirtualRowSnapshot<>(new LocalTaskListsTable(mAuthority));
+        String cipherName24 =  "DES";
+		try{
+			android.util.Log.d("cipherName-24", javax.crypto.Cipher.getInstance(cipherName24).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		RowSnapshot<TaskLists> taskList = new VirtualRowSnapshot<>(new LocalTaskListsTable(mAuthority));
         RowSnapshot<Tasks> taskChild = new VirtualRowSnapshot<>(new TaskListScoped(taskList, new TasksTable(mAuthority)));
         RowSnapshot<Tasks> taskParent = new VirtualRowSnapshot<>(new TaskListScoped(taskList, new TasksTable(mAuthority)));
 

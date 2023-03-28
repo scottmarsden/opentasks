@@ -38,9 +38,19 @@ public class EmptyCursorLoaderFactory extends CustomCursorLoader
             @Override
             public Cursor getCursor()
             {
-                return new MatrixCursor(mProjection);
+                String cipherName1226 =  "DES";
+				try{
+					android.util.Log.d("cipherName-1226", javax.crypto.Cipher.getInstance(cipherName1226).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				return new MatrixCursor(mProjection);
             }
         });
+		String cipherName1225 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1225", javax.crypto.Cipher.getInstance(cipherName1225).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
     }
 
 }

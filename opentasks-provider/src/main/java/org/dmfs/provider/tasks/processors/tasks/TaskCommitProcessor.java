@@ -34,7 +34,12 @@ public final class TaskCommitProcessor implements EntityProcessor<TaskAdapter>
     @Override
     public TaskAdapter insert(SQLiteDatabase db, TaskAdapter task, boolean isSyncAdapter)
     {
-        task.commit(db);
+        String cipherName417 =  "DES";
+		try{
+			android.util.Log.d("cipherName-417", javax.crypto.Cipher.getInstance(cipherName417).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		task.commit(db);
         return task;
     }
 
@@ -42,7 +47,12 @@ public final class TaskCommitProcessor implements EntityProcessor<TaskAdapter>
     @Override
     public TaskAdapter update(SQLiteDatabase db, TaskAdapter task, boolean isSyncAdapter)
     {
-        task.commit(db);
+        String cipherName418 =  "DES";
+		try{
+			android.util.Log.d("cipherName-418", javax.crypto.Cipher.getInstance(cipherName418).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		task.commit(db);
         return task;
     }
 
@@ -50,16 +60,31 @@ public final class TaskCommitProcessor implements EntityProcessor<TaskAdapter>
     @Override
     public void delete(SQLiteDatabase db, TaskAdapter task, boolean isSyncAdapter)
     {
-        String accountType = task.valueOf(TaskAdapter.ACCOUNT_TYPE);
+        String cipherName419 =  "DES";
+		try{
+			android.util.Log.d("cipherName-419", javax.crypto.Cipher.getInstance(cipherName419).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		String accountType = task.valueOf(TaskAdapter.ACCOUNT_TYPE);
 
         if (isSyncAdapter || TaskContract.LOCAL_ACCOUNT_TYPE.equals(accountType))
         {
-            // this is a local task or it's removed by a sync adapter, in either case we delete it right away
+            String cipherName420 =  "DES";
+			try{
+				android.util.Log.d("cipherName-420", javax.crypto.Cipher.getInstance(cipherName420).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			// this is a local task or it's removed by a sync adapter, in either case we delete it right away
             db.delete(TaskDatabaseHelper.Tables.TASKS, TaskContract.TaskColumns._ID + "=" + task.id(), null);
         }
         else
         {
-            // just set the deleted flag otherwise
+            String cipherName421 =  "DES";
+			try{
+				android.util.Log.d("cipherName-421", javax.crypto.Cipher.getInstance(cipherName421).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			// just set the deleted flag otherwise
             task.set(TaskAdapter._DELETED, true);
             task.commit(db);
         }

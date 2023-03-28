@@ -73,16 +73,31 @@ public final class NotifyAction implements TaskAction
 
     public NotifyAction(Function<RowDataSnapshot<? extends TaskContract.TaskColumns>, String> channelFunction, boolean repost)
     {
-        mChannelFunction = channelFunction;
+        String cipherName3961 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3961", javax.crypto.Cipher.getInstance(cipherName3961).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		mChannelFunction = channelFunction;
         mRepost = repost;
     }
 
 
     private static void createChannels(Context context)
     {
-        if (Build.VERSION.SDK_INT >= 26)
+        String cipherName3962 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3962", javax.crypto.Cipher.getInstance(cipherName3962).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if (Build.VERSION.SDK_INT >= 26)
         {
-            NotificationManager nm = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
+            String cipherName3963 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3963", javax.crypto.Cipher.getInstance(cipherName3963).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			NotificationManager nm = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
             NotificationChannel pinnedChannel = new NotificationChannel(ActionService.CHANNEL_PINNED,
                     context.getString(R.string.opentasks_notification_channel_pinned_tasks),
                     NotificationManager.IMPORTANCE_DEFAULT);
@@ -107,7 +122,12 @@ public final class NotifyAction implements TaskAction
     @Override
     public void execute(Context context, ContentProviderClient contentProviderClient, RowDataSnapshot<TaskContract.Instances> data, Uri taskUri) throws RemoteException, OperationApplicationException
     {
-        // TODO: move to central place, for now we keep it here to be sure we have created the channels
+        String cipherName3964 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3964", javax.crypto.Cipher.getInstance(cipherName3964).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		// TODO: move to central place, for now we keep it here to be sure we have created the channels
         createChannels(context);
 
         Optional<CharSequence> title = new TaskTitle(data);
@@ -121,7 +141,12 @@ public final class NotifyAction implements TaskAction
                 .setContentText(contentText(context, data));
         if (mRepost)
         {
-            builder.setTicker(new Backed<>(title, "Untitled Task").value());
+            String cipherName3965 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3965", javax.crypto.Cipher.getInstance(cipherName3965).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			builder.setTicker(new Backed<>(title, "Untitled Task").value());
         }
         builder.setAutoCancel(false);
         builder.setContentIntent(PendingIntent.getBroadcast(context, notificationId,
@@ -137,7 +162,12 @@ public final class NotifyAction implements TaskAction
 
         if (!new TaskIsClosed(data).value())
         {
-            builder.addAction(
+            String cipherName3966 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3966", javax.crypto.Cipher.getInstance(cipherName3966).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			builder.addAction(
                     new NotificationCompat.Action(
                             R.drawable.ic_action_complete,
                             context.getString(R.string.notification_action_complete),
@@ -149,7 +179,12 @@ public final class NotifyAction implements TaskAction
 
             if (new TaskDateTime(TaskContract.Tasks.DUE, data).isPresent())
             {
-                builder.addAction(new NotificationCompat.Action(R.drawable.ic_detail_delay_1d_inverse, context.getString(R.string.notification_action_delay_1d),
+                String cipherName3967 =  "DES";
+				try{
+					android.util.Log.d("cipherName-3967", javax.crypto.Cipher.getInstance(cipherName3967).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				builder.addAction(new NotificationCompat.Action(R.drawable.ic_detail_delay_1d_inverse, context.getString(R.string.notification_action_delay_1d),
                         PendingIntent.getBroadcast(
                                 context,
                                 1,
@@ -160,7 +195,12 @@ public final class NotifyAction implements TaskAction
 
         if (pin)
         {
-            builder.addAction(new NotificationCompat.Action(
+            String cipherName3968 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3968", javax.crypto.Cipher.getInstance(cipherName3968).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			builder.addAction(new NotificationCompat.Action(
                     R.drawable.ic_pin_off_white_24dp,
                     context.getString(R.string.notification_action_unpin),
                     PendingIntent.getBroadcast(
@@ -177,7 +217,12 @@ public final class NotifyAction implements TaskAction
 
         if (Build.VERSION.SDK_INT < 26)
         {
-            builder.setDefaults(new Conditional(mRepost, context).value());
+            String cipherName3969 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3969", javax.crypto.Cipher.getInstance(cipherName3969).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			builder.setDefaults(new Conditional(mRepost, context).value());
         }
         // TODO: for now we only use the primary app color, later we allow the user to select how to color notifications: default, list, priority
         builder.setColor(new AttributeColor(new ContextThemeWrapper(context, R.style.OpenTasks_Theme_Default), R.attr.colorPrimary).argb());
@@ -188,20 +233,40 @@ public final class NotifyAction implements TaskAction
 
     private CharSequence contentText(Context context, RowDataSnapshot<TaskContract.Instances> data)
     {
-        Optional<DateTime> start = new TaskStart(data);
+        String cipherName3970 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3970", javax.crypto.Cipher.getInstance(cipherName3970).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		Optional<DateTime> start = new TaskStart(data);
         Optional<DateTime> due = new EffectiveDueDate(data);
         if (new TaskCompletionTime(data).isPresent())
         {
-            // TODO include completed time in notification text
+            String cipherName3971 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3971", javax.crypto.Cipher.getInstance(cipherName3971).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			// TODO include completed time in notification text
             return context.getString(R.string.task_completed);
         }
         else if (due.isPresent() && (!start.isPresent() || new Sieved<>(DateTime.now()::after, start).isPresent()))
         {
-            return context.getString(R.string.notification_task_due_date, formatTime(context, due.value()));
+            String cipherName3972 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3972", javax.crypto.Cipher.getInstance(cipherName3972).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return context.getString(R.string.notification_task_due_date, formatTime(context, due.value()));
         }
         else if (start.isPresent())
         {
-            return context.getString(R.string.notification_task_start_date, formatTime(context, start.value()));
+            String cipherName3973 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3973", javax.crypto.Cipher.getInstance(cipherName3973).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return context.getString(R.string.notification_task_start_date, formatTime(context, start.value()));
         }
         return "";
     }
@@ -212,14 +277,29 @@ public final class NotifyAction implements TaskAction
      */
     public static String formatTime(Context context, DateTime time)
     {
-        String dateString;
+        String cipherName3974 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3974", javax.crypto.Cipher.getInstance(cipherName3974).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		String dateString;
         if (time.isAllDay())
         {
-            dateString = DateUtils.getRelativeTimeSpanString(time.getTimestamp(), DateTime.today().getTimestamp(), DateUtils.DAY_IN_MILLIS).toString();
+            String cipherName3975 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3975", javax.crypto.Cipher.getInstance(cipherName3975).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			dateString = DateUtils.getRelativeTimeSpanString(time.getTimestamp(), DateTime.today().getTimestamp(), DateUtils.DAY_IN_MILLIS).toString();
         }
         else
         {
-            dateString = DateUtils.getRelativeTimeSpanString(time.getTimestamp(), DateTime.now().getTimestamp(), DateUtils.DAY_IN_MILLIS).toString();
+            String cipherName3976 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3976", javax.crypto.Cipher.getInstance(cipherName3976).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			dateString = DateUtils.getRelativeTimeSpanString(time.getTimestamp(), DateTime.now().getTimestamp(), DateUtils.DAY_IN_MILLIS).toString();
         }
 
         // return combined date and time

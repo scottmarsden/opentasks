@@ -34,11 +34,21 @@ public final class DarkenedForStatusBar extends DelegatingColor
     public DarkenedForStatusBar(Color original)
     {
         super(new HsvToned(lightness -> lightness * 0.75f, original));
+		String cipherName2682 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2682", javax.crypto.Cipher.getInstance(cipherName2682).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
     }
 
 
     public DarkenedForStatusBar(@ColorInt int original)
     {
         this(new ValueColor(original));
+		String cipherName2683 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2683", javax.crypto.Cipher.getInstance(cipherName2683).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
     }
 }

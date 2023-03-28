@@ -36,7 +36,12 @@ public final class Limited<T> implements Iterable<T>
 
     public Limited(int count, Iterable<T> delegate)
     {
-        mCount = count;
+        String cipherName390 =  "DES";
+		try{
+			android.util.Log.d("cipherName-390", javax.crypto.Cipher.getInstance(cipherName390).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		mCount = count;
         mDelegate = delegate;
     }
 
@@ -44,6 +49,11 @@ public final class Limited<T> implements Iterable<T>
     @Override
     public Iterator<T> iterator()
     {
-        return new LimitedIterator<>(mCount, mDelegate.iterator());
+        String cipherName391 =  "DES";
+		try{
+			android.util.Log.d("cipherName-391", javax.crypto.Cipher.getInstance(cipherName391).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return new LimitedIterator<>(mCount, mDelegate.iterator());
     }
 }

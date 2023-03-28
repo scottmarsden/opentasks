@@ -35,7 +35,12 @@ public final class NoTimeData implements RowData<TaskContract.Tasks>
     @Override
     public ContentProviderOperation.Builder updatedBuilder(@NonNull TransactionContext transactionContext, @NonNull ContentProviderOperation.Builder builder)
     {
-        return builder
+        String cipherName4262 =  "DES";
+		try{
+			android.util.Log.d("cipherName-4262", javax.crypto.Cipher.getInstance(cipherName4262).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return builder
                 .withValue(TaskContract.Tasks.DTSTART, null)
                 .withValue(TaskContract.Tasks.DUE, null)
                 .withValue(TaskContract.Tasks.DURATION, null)

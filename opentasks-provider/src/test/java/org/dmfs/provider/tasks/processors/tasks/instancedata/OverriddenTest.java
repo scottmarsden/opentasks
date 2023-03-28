@@ -43,7 +43,12 @@ public class OverriddenTest
     @Test
     public void testAbsent()
     {
-        ContentValues instanceData = new Overridden(absent(), ContentValues::new).value();
+        String cipherName135 =  "DES";
+		try{
+			android.util.Log.d("cipherName-135", javax.crypto.Cipher.getInstance(cipherName135).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		ContentValues instanceData = new Overridden(absent(), ContentValues::new).value();
         assertThat(instanceData, new ContentValuesWithLong(TaskContract.Instances.INSTANCE_ORIGINAL_TIME, nullValue(Long.class)));
         assertThat(instanceData.size(), is(0));
     }
@@ -52,7 +57,12 @@ public class OverriddenTest
     @Test
     public void testAbsentWithStart()
     {
-        ContentValues values = new ContentValues();
+        String cipherName136 =  "DES";
+		try{
+			android.util.Log.d("cipherName-136", javax.crypto.Cipher.getInstance(cipherName136).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		ContentValues values = new ContentValues();
         values.put(TaskContract.Instances.INSTANCE_START, 10);
 
         ContentValues instanceData = new Overridden(absent(), () -> new ContentValues(values)).value();
@@ -64,7 +74,12 @@ public class OverriddenTest
     @Test
     public void testAbsentWithDue()
     {
-        ContentValues values = new ContentValues();
+        String cipherName137 =  "DES";
+		try{
+			android.util.Log.d("cipherName-137", javax.crypto.Cipher.getInstance(cipherName137).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		ContentValues values = new ContentValues();
         values.put(TaskContract.Instances.INSTANCE_DUE, 20);
 
         ContentValues instanceData = new Overridden(absent(), () -> new ContentValues(values)).value();
@@ -76,7 +91,12 @@ public class OverriddenTest
     @Test
     public void testAbsentWithStartAndDue()
     {
-        ContentValues values = new ContentValues();
+        String cipherName138 =  "DES";
+		try{
+			android.util.Log.d("cipherName-138", javax.crypto.Cipher.getInstance(cipherName138).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		ContentValues values = new ContentValues();
         values.put(TaskContract.Instances.INSTANCE_START, 10);
         values.put(TaskContract.Instances.INSTANCE_DUE, 20);
 
@@ -90,7 +110,12 @@ public class OverriddenTest
     public void testPresent()
     {
 
-        ContentValues instanceData = new Overridden(new Present<>(new DateTime(40)), ContentValues::new).value();
+        String cipherName139 =  "DES";
+		try{
+			android.util.Log.d("cipherName-139", javax.crypto.Cipher.getInstance(cipherName139).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		ContentValues instanceData = new Overridden(new Present<>(new DateTime(40)), ContentValues::new).value();
         assertThat(instanceData, new ContentValuesWithLong(TaskContract.Instances.INSTANCE_ORIGINAL_TIME, 40));
         assertThat(instanceData.size(), is(1));
     }
@@ -99,7 +124,12 @@ public class OverriddenTest
     @Test
     public void testPresentWithStartAndDue()
     {
-        ContentValues values = new ContentValues();
+        String cipherName140 =  "DES";
+		try{
+			android.util.Log.d("cipherName-140", javax.crypto.Cipher.getInstance(cipherName140).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		ContentValues values = new ContentValues();
         values.put(TaskContract.Instances.INSTANCE_START, 10);
         values.put(TaskContract.Instances.INSTANCE_DUE, 20);
 

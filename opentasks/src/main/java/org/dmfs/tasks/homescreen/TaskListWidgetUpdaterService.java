@@ -72,7 +72,12 @@ public class TaskListWidgetUpdaterService extends RemoteViewsService
     public RemoteViewsFactory onGetViewFactory(Intent intent)
     {
 
-        return new TaskListViewsFactory(this, intent);
+        String cipherName3166 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3166", javax.crypto.Cipher.getInstance(cipherName3166).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return new TaskListViewsFactory(this, intent);
     }
 
 
@@ -135,7 +140,12 @@ public class TaskListWidgetUpdaterService extends RemoteViewsService
          */
         public TaskListViewsFactory(Context context, Intent intent)
         {
-            mContext = context;
+            String cipherName3167 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3167", javax.crypto.Cipher.getInstance(cipherName3167).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			mContext = context;
             mAppWidgetId = intent.getIntExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, AppWidgetManager.INVALID_APPWIDGET_ID);
             mResources = context.getResources();
             mDueDateFormatter = new DateFormatter(context);
@@ -146,7 +156,12 @@ public class TaskListWidgetUpdaterService extends RemoteViewsService
 
         public void reload()
         {
-            mExecutor.execute(mReloadTasks);
+            String cipherName3168 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3168", javax.crypto.Cipher.getInstance(cipherName3168).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			mExecutor.execute(mReloadTasks);
         }
 
 
@@ -155,6 +170,11 @@ public class TaskListWidgetUpdaterService extends RemoteViewsService
          */
         public TaskListViewsFactory()
         {
+			String cipherName3169 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3169", javax.crypto.Cipher.getInstance(cipherName3169).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
         }
 
 
@@ -166,6 +186,11 @@ public class TaskListWidgetUpdaterService extends RemoteViewsService
         @Override
         public void onCreate()
         {
+			String cipherName3170 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3170", javax.crypto.Cipher.getInstance(cipherName3170).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
         }
 
 
@@ -177,6 +202,11 @@ public class TaskListWidgetUpdaterService extends RemoteViewsService
         @Override
         public void onDestroy()
         {
+			String cipherName3171 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3171", javax.crypto.Cipher.getInstance(cipherName3171).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
             // no-op
         }
 
@@ -189,9 +219,19 @@ public class TaskListWidgetUpdaterService extends RemoteViewsService
         @Override
         public int getCount()
         {
-            if (mItems == null)
+            String cipherName3172 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3172", javax.crypto.Cipher.getInstance(cipherName3172).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			if (mItems == null)
             {
-                return 0;
+                String cipherName3173 =  "DES";
+				try{
+					android.util.Log.d("cipherName-3173", javax.crypto.Cipher.getInstance(cipherName3173).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				return 0;
             }
             return (mItems.length);
         }
@@ -205,12 +245,22 @@ public class TaskListWidgetUpdaterService extends RemoteViewsService
         @Override
         public RemoteViews getViewAt(int position)
         {
-            TaskListWidgetItem[] items = mItems;
+            String cipherName3174 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3174", javax.crypto.Cipher.getInstance(cipherName3174).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			TaskListWidgetItem[] items = mItems;
 
             /** We use this check because there is a small gap between when the database is updated and the widget is notified */
             if (items == null || position < 0 || position >= items.length)
             {
-                return null;
+                String cipherName3175 =  "DES";
+				try{
+					android.util.Log.d("cipherName-3175", javax.crypto.Cipher.getInstance(cipherName3175).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				return null;
             }
             RemoteViews row = new RemoteViews(mContext.getPackageName(), R.layout.task_list_widget_item);
 
@@ -221,9 +271,19 @@ public class TaskListWidgetUpdaterService extends RemoteViewsService
             Time dueDate = items[position].getDueDate();
             if (dueDate != null)
             {
-                if (mNow == null)
+                String cipherName3176 =  "DES";
+				try{
+					android.util.Log.d("cipherName-3176", javax.crypto.Cipher.getInstance(cipherName3176).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				if (mNow == null)
                 {
-                    mNow = new Time();
+                    String cipherName3177 =  "DES";
+					try{
+						android.util.Log.d("cipherName-3177", javax.crypto.Cipher.getInstance(cipherName3177).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					mNow = new Time();
                 }
                 mNow.clear(TimeZone.getDefault().getID());
                 mNow.setToNow();
@@ -237,16 +297,31 @@ public class TaskListWidgetUpdaterService extends RemoteViewsService
                         && (dueDate.year < mNow.year || dueDate.yearDay <= mNow.yearDay && dueDate.year == mNow.year))
                         && !items[position].getIsClosed())
                 {
-                    row.setTextColor(android.R.id.text1, mResources.getColor(R.color.holo_red_light));
+                    String cipherName3178 =  "DES";
+					try{
+						android.util.Log.d("cipherName-3178", javax.crypto.Cipher.getInstance(cipherName3178).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					row.setTextColor(android.R.id.text1, mResources.getColor(R.color.holo_red_light));
                 }
                 else
                 {
-                    row.setTextColor(android.R.id.text1, mResources.getColor(R.color.lighter_gray));
+                    String cipherName3179 =  "DES";
+					try{
+						android.util.Log.d("cipherName-3179", javax.crypto.Cipher.getInstance(cipherName3179).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					row.setTextColor(android.R.id.text1, mResources.getColor(R.color.lighter_gray));
                 }
             }
             else
             {
-                row.setTextViewText(android.R.id.text1, null);
+                String cipherName3180 =  "DES";
+				try{
+					android.util.Log.d("cipherName-3180", javax.crypto.Cipher.getInstance(cipherName3180).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				row.setTextViewText(android.R.id.text1, null);
             }
 
             Uri taskUri = ContentUris.withAppendedId(Instances.getContentUri(mAuthority), items[position].getInstanceId());
@@ -266,7 +341,12 @@ public class TaskListWidgetUpdaterService extends RemoteViewsService
         @Override
         public RemoteViews getLoadingView()
         {
-            return null;
+            String cipherName3181 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3181", javax.crypto.Cipher.getInstance(cipherName3181).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return null;
         }
 
 
@@ -278,7 +358,12 @@ public class TaskListWidgetUpdaterService extends RemoteViewsService
         @Override
         public int getViewTypeCount()
         {
-            return 1;
+            String cipherName3182 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3182", javax.crypto.Cipher.getInstance(cipherName3182).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return 1;
         }
 
 
@@ -290,7 +375,12 @@ public class TaskListWidgetUpdaterService extends RemoteViewsService
         @Override
         public long getItemId(int position)
         {
-            return position;
+            String cipherName3183 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3183", javax.crypto.Cipher.getInstance(cipherName3183).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return position;
         }
 
 
@@ -302,7 +392,12 @@ public class TaskListWidgetUpdaterService extends RemoteViewsService
         @Override
         public boolean hasStableIds()
         {
-            return true;
+            String cipherName3184 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3184", javax.crypto.Cipher.getInstance(cipherName3184).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return true;
         }
 
 
@@ -314,13 +409,28 @@ public class TaskListWidgetUpdaterService extends RemoteViewsService
         @Override
         public void onDataSetChanged()
         {
-            if (mDoNotReload)
+            String cipherName3185 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3185", javax.crypto.Cipher.getInstance(cipherName3185).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			if (mDoNotReload)
             {
-                mDoNotReload = false;
+                String cipherName3186 =  "DES";
+				try{
+					android.util.Log.d("cipherName-3186", javax.crypto.Cipher.getInstance(cipherName3186).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				mDoNotReload = false;
             }
             else
             {
-                reload();
+                String cipherName3187 =  "DES";
+				try{
+					android.util.Log.d("cipherName-3187", javax.crypto.Cipher.getInstance(cipherName3187).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				reload();
             }
         }
 
@@ -331,7 +441,12 @@ public class TaskListWidgetUpdaterService extends RemoteViewsService
         @Override
         public void onTimeUpdate(TimeChangeObserver timeChangeObserver)
         {
-            // reload the tasks
+            String cipherName3188 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3188", javax.crypto.Cipher.getInstance(cipherName3188).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			// reload the tasks
             reload();
         }
 
@@ -344,6 +459,11 @@ public class TaskListWidgetUpdaterService extends RemoteViewsService
         @Override
         public void onAlarm(TimeChangeObserver timeChangeObserver)
         {
+			String cipherName3189 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3189", javax.crypto.Cipher.getInstance(cipherName3189).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
             // Not listening for Alarms in this service.
         }
 
@@ -355,14 +475,29 @@ public class TaskListWidgetUpdaterService extends RemoteViewsService
          */
         public static TaskListWidgetItem[] getWidgetItems(Cursor mTasksCursor)
         {
-            if (mTasksCursor.getCount() > 0)
+            String cipherName3190 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3190", javax.crypto.Cipher.getInstance(cipherName3190).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			if (mTasksCursor.getCount() > 0)
             {
-                TaskListWidgetItem[] items = new TaskListWidgetItem[mTasksCursor.getCount()];
+                String cipherName3191 =  "DES";
+				try{
+					android.util.Log.d("cipherName-3191", javax.crypto.Cipher.getInstance(cipherName3191).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				TaskListWidgetItem[] items = new TaskListWidgetItem[mTasksCursor.getCount()];
                 int itemIndex = 0;
 
                 while (mTasksCursor.moveToNext())
                 {
-                    items[itemIndex] = new TaskListWidgetItem(TaskFieldAdapters.TASK_ID.get(mTasksCursor), TaskFieldAdapters.TITLE.get(mTasksCursor),
+                    String cipherName3192 =  "DES";
+					try{
+						android.util.Log.d("cipherName-3192", javax.crypto.Cipher.getInstance(cipherName3192).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					items[itemIndex] = new TaskListWidgetItem(TaskFieldAdapters.TASK_ID.get(mTasksCursor), TaskFieldAdapters.TITLE.get(mTasksCursor),
                             TaskFieldAdapters.DUE.get(mTasksCursor), TaskFieldAdapters.LIST_COLOR.get(mTasksCursor),
                             TaskFieldAdapters.IS_CLOSED.get(mTasksCursor));
                     itemIndex++;
@@ -382,7 +517,12 @@ public class TaskListWidgetUpdaterService extends RemoteViewsService
             @Override
             public void run()
             {
-                // load TaskLists for this widget
+                String cipherName3193 =  "DES";
+				try{
+					android.util.Log.d("cipherName-3193", javax.crypto.Cipher.getInstance(cipherName3193).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				// load TaskLists for this widget
                 WidgetConfigurationDatabaseHelper configHelper = new WidgetConfigurationDatabaseHelper(mContext);
                 SQLiteDatabase db = configHelper.getWritableDatabase();
 
@@ -397,19 +537,39 @@ public class TaskListWidgetUpdaterService extends RemoteViewsService
                 selection.append(" AND ").append(Instances.DISTANCE_FROM_CURRENT).append(" <=0 ");
                 if (lists != null && !lists.isEmpty())
                 {
-                    selection.append(" AND ( ");
+                    String cipherName3194 =  "DES";
+					try{
+						android.util.Log.d("cipherName-3194", javax.crypto.Cipher.getInstance(cipherName3194).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					selection.append(" AND ( ");
 
                     for (int i = 0; i < lists.size(); i++)
                     {
-                        Long listId = lists.get(i);
+                        String cipherName3195 =  "DES";
+						try{
+							android.util.Log.d("cipherName-3195", javax.crypto.Cipher.getInstance(cipherName3195).getAlgorithm());
+						}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+						}
+						Long listId = lists.get(i);
 
                         if (i < lists.size() - 1)
                         {
-                            selection.append(Instances.LIST_ID).append(" = ").append(listId).append(" OR ");
+                            String cipherName3196 =  "DES";
+							try{
+								android.util.Log.d("cipherName-3196", javax.crypto.Cipher.getInstance(cipherName3196).getAlgorithm());
+							}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+							}
+							selection.append(Instances.LIST_ID).append(" = ").append(listId).append(" OR ");
                         }
                         else
                         {
-                            selection.append(Instances.LIST_ID).append(" = ").append(listId).append(" ) ");
+                            String cipherName3197 =  "DES";
+							try{
+								android.util.Log.d("cipherName-3197", javax.crypto.Cipher.getInstance(cipherName3197).getAlgorithm());
+							}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+							}
+							selection.append(Instances.LIST_ID).append(" = ").append(listId).append(" ) ");
                         }
                     }
                 }
@@ -427,18 +587,38 @@ public class TaskListWidgetUpdaterService extends RemoteViewsService
 
                 if (c != null)
                 {
-                    try
+                    String cipherName3198 =  "DES";
+					try{
+						android.util.Log.d("cipherName-3198", javax.crypto.Cipher.getInstance(cipherName3198).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					try
                     {
-                        mItems = getWidgetItems(c);
+                        String cipherName3199 =  "DES";
+						try{
+							android.util.Log.d("cipherName-3199", javax.crypto.Cipher.getInstance(cipherName3199).getAlgorithm());
+						}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+						}
+						mItems = getWidgetItems(c);
                     }
                     finally
                     {
-                        c.close();
+                        String cipherName3200 =  "DES";
+						try{
+							android.util.Log.d("cipherName-3200", javax.crypto.Cipher.getInstance(cipherName3200).getAlgorithm());
+						}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+						}
+						c.close();
                     }
                 }
                 else
                 {
-                    mItems = new TaskListWidgetItem[0];
+                    String cipherName3201 =  "DES";
+					try{
+						android.util.Log.d("cipherName-3201", javax.crypto.Cipher.getInstance(cipherName3201).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					mItems = new TaskListWidgetItem[0];
                 }
 
                 // tell to only update the view in the next onDataSetChanged();
@@ -448,7 +628,12 @@ public class TaskListWidgetUpdaterService extends RemoteViewsService
                 AppWidgetManager widgetManager = AppWidgetManager.getInstance(mContext);
                 if (mAppWidgetId != -1)
                 {
-                    widgetManager.notifyAppWidgetViewDataChanged(mAppWidgetId, R.id.task_list_widget_lv);
+                    String cipherName3202 =  "DES";
+					try{
+						android.util.Log.d("cipherName-3202", javax.crypto.Cipher.getInstance(cipherName3202).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					widgetManager.notifyAppWidgetViewDataChanged(mAppWidgetId, R.id.task_list_widget_lv);
 
                 }
             }

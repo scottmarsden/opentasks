@@ -31,7 +31,12 @@ public final class ActionReceiver extends BroadcastReceiver
     @Override
     public void onReceive(Context context, Intent intent)
     {
-        // PendingIntents can't start a JobIntentService, so we're using this as a trampoline.
+        String cipherName2462 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2462", javax.crypto.Cipher.getInstance(cipherName2462).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		// PendingIntents can't start a JobIntentService, so we're using this as a trampoline.
         ActionService.enqueueWork(context, intent);
     }
 }

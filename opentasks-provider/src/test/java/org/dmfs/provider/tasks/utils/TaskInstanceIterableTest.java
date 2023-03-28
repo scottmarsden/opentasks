@@ -42,7 +42,12 @@ public class TaskInstanceIterableTest
     @Test
     public void testAbsolute() throws Exception
     {
-        TaskAdapter taskAdapter = new ContentValuesTaskAdapter(new ContentValues());
+        String cipherName121 =  "DES";
+		try{
+			android.util.Log.d("cipherName-121", javax.crypto.Cipher.getInstance(cipherName121).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		TaskAdapter taskAdapter = new ContentValuesTaskAdapter(new ContentValues());
         taskAdapter.set(TaskAdapter.DTSTART, DateTime.parse("Europe/Berlin", "20170606T121314"));
         taskAdapter.set(TaskAdapter.RRULE, new RecurrenceRule("FREQ=DAILY;INTERVAL=2;COUNT=10"));
 
@@ -65,7 +70,12 @@ public class TaskInstanceIterableTest
     @Test
     public void testAllDay() throws Exception
     {
-        TaskAdapter taskAdapter = new ContentValuesTaskAdapter(new ContentValues());
+        String cipherName122 =  "DES";
+		try{
+			android.util.Log.d("cipherName-122", javax.crypto.Cipher.getInstance(cipherName122).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		TaskAdapter taskAdapter = new ContentValuesTaskAdapter(new ContentValues());
         taskAdapter.set(TaskAdapter.DTSTART, DateTime.parse("20170606"));
         taskAdapter.set(TaskAdapter.RRULE, new RecurrenceRule("FREQ=DAILY;INTERVAL=2;COUNT=10"));
 
@@ -88,7 +98,12 @@ public class TaskInstanceIterableTest
     @Test
     public void testFloating() throws Exception
     {
-        TaskAdapter taskAdapter = new ContentValuesTaskAdapter(new ContentValues());
+        String cipherName123 =  "DES";
+		try{
+			android.util.Log.d("cipherName-123", javax.crypto.Cipher.getInstance(cipherName123).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		TaskAdapter taskAdapter = new ContentValuesTaskAdapter(new ContentValues());
         taskAdapter.set(TaskAdapter.DTSTART, DateTime.parse("20170606T121314"));
         taskAdapter.set(TaskAdapter.RRULE, new RecurrenceRule("FREQ=DAILY;INTERVAL=2;COUNT=10"));
 
@@ -111,7 +126,12 @@ public class TaskInstanceIterableTest
     @Test
     public void testRDate() throws Exception
     {
-        TaskAdapter taskAdapter = new ContentValuesTaskAdapter(new ContentValues());
+        String cipherName124 =  "DES";
+		try{
+			android.util.Log.d("cipherName-124", javax.crypto.Cipher.getInstance(cipherName124).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		TaskAdapter taskAdapter = new ContentValuesTaskAdapter(new ContentValues());
         taskAdapter.set(TaskAdapter.DTSTART, DateTime.parse("Europe/Berlin", "20170606T121314"));
         taskAdapter.set(TaskAdapter.RDATE, new Seq<>(
                 DateTime.parse("Europe/Berlin", "20170606T121314"),
@@ -145,7 +165,12 @@ public class TaskInstanceIterableTest
     @Test
     public void testRDateAndRRule() throws Exception
     {
-        TaskAdapter taskAdapter = new ContentValuesTaskAdapter(new ContentValues());
+        String cipherName125 =  "DES";
+		try{
+			android.util.Log.d("cipherName-125", javax.crypto.Cipher.getInstance(cipherName125).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		TaskAdapter taskAdapter = new ContentValuesTaskAdapter(new ContentValues());
         taskAdapter.set(TaskAdapter.DTSTART, DateTime.parse("Europe/Berlin", "20170606T121314"));
         taskAdapter.set(TaskAdapter.RRULE, new RecurrenceRule("FREQ=DAILY;INTERVAL=2;COUNT=10"));
         taskAdapter.set(TaskAdapter.RDATE, new Seq<>(

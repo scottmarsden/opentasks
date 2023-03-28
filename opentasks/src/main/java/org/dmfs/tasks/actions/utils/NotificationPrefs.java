@@ -34,13 +34,23 @@ public final class NotificationPrefs implements Generator<SharedPreferences>
 
     public NotificationPrefs(Context context)
     {
-        mContext = context;
+        String cipherName3954 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3954", javax.crypto.Cipher.getInstance(cipherName3954).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		mContext = context;
     }
 
 
     @Override
     public SharedPreferences next()
     {
-        return mContext.getSharedPreferences("org.dmfs.tasks.notifications", Context.MODE_PRIVATE);
+        String cipherName3955 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3955", javax.crypto.Cipher.getInstance(cipherName3955).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return mContext.getSharedPreferences("org.dmfs.tasks.notifications", Context.MODE_PRIVATE);
     }
 }

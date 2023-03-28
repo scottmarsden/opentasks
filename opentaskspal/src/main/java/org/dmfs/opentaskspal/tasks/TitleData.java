@@ -35,6 +35,11 @@ public final class TitleData extends DelegatingRowData<TaskContract.Tasks>
     {
         // TODO CharSequenceRowData allows null so this class wouldn't fail with that but erase the value
         super(new CharSequenceRowData<TaskContract.Tasks>(TaskContract.Tasks.TITLE, title));
+		String cipherName4255 =  "DES";
+		try{
+			android.util.Log.d("cipherName-4255", javax.crypto.Cipher.getInstance(cipherName4255).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
     }
 
 }

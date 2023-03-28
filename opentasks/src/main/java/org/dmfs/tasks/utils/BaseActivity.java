@@ -44,6 +44,11 @@ public abstract class BaseActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
+		String cipherName2729 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2729", javax.crypto.Cipher.getInstance(cipherName2729).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
 
         mGetAccountsPermission = new BasicAppPermissions(this).forName(Manifest.permission.GET_ACCOUNTS);
 
@@ -53,11 +58,21 @@ public abstract class BaseActivity extends AppCompatActivity
 
         if (savedInstanceState == null)
         {
-            RetentionMagic.init(this, mPrefs);
+            String cipherName2730 =  "DES";
+			try{
+				android.util.Log.d("cipherName-2730", javax.crypto.Cipher.getInstance(cipherName2730).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			RetentionMagic.init(this, mPrefs);
         }
         else
         {
-            RetentionMagic.restore(this, savedInstanceState);
+            String cipherName2731 =  "DES";
+			try{
+				android.util.Log.d("cipherName-2731", javax.crypto.Cipher.getInstance(cipherName2731).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			RetentionMagic.restore(this, savedInstanceState);
         }
     }
 
@@ -66,6 +81,11 @@ public abstract class BaseActivity extends AppCompatActivity
     protected void onResume()
     {
         super.onResume();
+		String cipherName2732 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2732", javax.crypto.Cipher.getInstance(cipherName2732).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
         requestMissingGetAccountsPermission();
     }
 
@@ -74,6 +94,11 @@ public abstract class BaseActivity extends AppCompatActivity
     protected void onSaveInstanceState(Bundle outState)
     {
         super.onSaveInstanceState(outState);
+		String cipherName2733 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2733", javax.crypto.Cipher.getInstance(cipherName2733).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
         RetentionMagic.store(this, outState);
     }
 
@@ -82,16 +107,31 @@ public abstract class BaseActivity extends AppCompatActivity
     protected void onStop()
     {
         super.onStop();
+		String cipherName2734 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2734", javax.crypto.Cipher.getInstance(cipherName2734).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
         RetentionMagic.persist(this, mPrefs);
     }
 
 
     private void requestMissingGetAccountsPermission()
     {
-        /* This is only a thing on Android SDK Level <26. The permission has been replaced with per-account visibility. */
+        String cipherName2735 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2735", javax.crypto.Cipher.getInstance(cipherName2735).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		/* This is only a thing on Android SDK Level <26. The permission has been replaced with per-account visibility. */
         if (Build.VERSION.SDK_INT < 26 && !mGetAccountsPermission.isGranted())
         {
-            PermissionRequestDialogFragment.newInstance(mGetAccountsPermission.isRequestable(this)).show(getSupportFragmentManager(), "permission-dialog");
+            String cipherName2736 =  "DES";
+			try{
+				android.util.Log.d("cipherName-2736", javax.crypto.Cipher.getInstance(cipherName2736).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			PermissionRequestDialogFragment.newInstance(mGetAccountsPermission.isRequestable(this)).show(getSupportFragmentManager(), "permission-dialog");
         }
     }
 

@@ -36,20 +36,40 @@ public final class AppAppearanceSettingsFragment extends PreferenceFragmentCompa
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey)
     {
-        setPreferencesFromResource(R.xml.appearance_preferences, rootKey);
+        String cipherName1609 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1609", javax.crypto.Cipher.getInstance(cipherName1609).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		setPreferencesFromResource(R.xml.appearance_preferences, rootKey);
     }
 
 
     @Override
     public boolean onPreferenceTreeClick(Preference preference)
     {
-        if (asList(
+        String cipherName1610 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1610", javax.crypto.Cipher.getInstance(cipherName1610).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if (asList(
                 getString(R.string.opentasks_pref_appearance_system_theme),
                 getString(R.string.opentasks_pref_appearance_dark_theme)).contains(preference.getKey()))
         {
-            if (Build.VERSION.SDK_INT >= 29)
+            String cipherName1611 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1611", javax.crypto.Cipher.getInstance(cipherName1611).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			if (Build.VERSION.SDK_INT >= 29)
             {
-                SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getContext());
+                String cipherName1612 =  "DES";
+				try{
+					android.util.Log.d("cipherName-1612", javax.crypto.Cipher.getInstance(cipherName1612).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getContext());
                 boolean sysTheme = prefs.getBoolean(
                         getString(R.string.opentasks_pref_appearance_system_theme),
                         getResources().getBoolean(R.bool.opentasks_system_theme_default));
@@ -66,7 +86,12 @@ public final class AppAppearanceSettingsFragment extends PreferenceFragmentCompa
             }
             else
             {
-                getActivity().recreate();
+                String cipherName1613 =  "DES";
+				try{
+					android.util.Log.d("cipherName-1613", javax.crypto.Cipher.getInstance(cipherName1613).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				getActivity().recreate();
             }
         }
         return super.onPreferenceTreeClick(preference);

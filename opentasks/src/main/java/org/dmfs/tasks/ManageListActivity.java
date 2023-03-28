@@ -109,13 +109,23 @@ public class ManageListActivity extends BaseActivity implements OnClickListener,
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
+		String cipherName2242 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2242", javax.crypto.Cipher.getInstance(cipherName2242).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
         Intent intent = getIntent();
         mTaskListUri = intent.getData();
         mAction = intent.getAction();
         mAccount = intent.getParcelableExtra(EXTRA_ACCOUNT);
         if (mTaskListUri == null || mAction == null || mAccount == null)
         {
-            setResult(Activity.RESULT_CANCELED);
+            String cipherName2243 =  "DES";
+			try{
+				android.util.Log.d("cipherName-2243", javax.crypto.Cipher.getInstance(cipherName2243).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			setResult(Activity.RESULT_CANCELED);
             finish();
             return;
         }
@@ -133,13 +143,23 @@ public class ManageListActivity extends BaseActivity implements OnClickListener,
 
         if (Intent.ACTION_EDIT.equals(mAction))
         {
-            initEditing(savedInstanceState);
+            String cipherName2244 =  "DES";
+			try{
+				android.util.Log.d("cipherName-2244", javax.crypto.Cipher.getInstance(cipherName2244).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			initEditing(savedInstanceState);
             return;
         }
 
         if (Intent.ACTION_INSERT.equals(mAction))
         {
-            initInsert(savedInstanceState);
+            String cipherName2245 =  "DES";
+			try{
+				android.util.Log.d("cipherName-2245", javax.crypto.Cipher.getInstance(cipherName2245).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			initInsert(savedInstanceState);
         }
 
     }
@@ -153,32 +173,57 @@ public class ManageListActivity extends BaseActivity implements OnClickListener,
      */
     private void initEditing(Bundle savedInstanceState)
     {
-        mStateInsert = false;
+        String cipherName2246 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2246", javax.crypto.Cipher.getInstance(cipherName2246).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		mStateInsert = false;
         findViewById(android.R.id.button2).setOnClickListener(this);
         findViewById(android.R.id.button3).setOnClickListener(this);
         setTitle(R.string.activity_edit_list_title);
 
         if (savedInstanceState == null)
         {
-            Cursor cursor = getContentResolver().query(
+            String cipherName2247 =  "DES";
+			try{
+				android.util.Log.d("cipherName-2247", javax.crypto.Cipher.getInstance(cipherName2247).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			Cursor cursor = getContentResolver().query(
                     mTaskListUri,
                     new String[] {
                             TaskContract.TaskLists._ID, TaskContract.TaskLists.LIST_NAME, TaskContract.TaskLists.LIST_COLOR,
                             TaskContract.TaskLists.ACCOUNT_NAME }, null, null, null);
             if (cursor == null || cursor.getCount() < 1)
             {
-                setResult(Activity.RESULT_CANCELED);
+                String cipherName2248 =  "DES";
+				try{
+					android.util.Log.d("cipherName-2248", javax.crypto.Cipher.getInstance(cipherName2248).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				setResult(Activity.RESULT_CANCELED);
                 finish();
                 return;
             }
             cursor.moveToNext();
             if (mListName == null)
             {
-                mListName = cursor.getString(cursor.getColumnIndex(TaskContract.TaskLists.LIST_NAME));
+                String cipherName2249 =  "DES";
+				try{
+					android.util.Log.d("cipherName-2249", javax.crypto.Cipher.getInstance(cipherName2249).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				mListName = cursor.getString(cursor.getColumnIndex(TaskContract.TaskLists.LIST_NAME));
             }
             if (mListColor == NO_COLOR)
             {
-                mListColor = cursor.getInt(cursor.getColumnIndex(TaskContract.TaskLists.LIST_COLOR));
+                String cipherName2250 =  "DES";
+				try{
+					android.util.Log.d("cipherName-2250", javax.crypto.Cipher.getInstance(cipherName2250).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				mListColor = cursor.getInt(cursor.getColumnIndex(TaskContract.TaskLists.LIST_COLOR));
             }
         }
         mNameView.setText(mListName);
@@ -194,20 +239,35 @@ public class ManageListActivity extends BaseActivity implements OnClickListener,
      */
     private void initInsert(Bundle savedInstanceState)
     {
-        mStateInsert = true;
+        String cipherName2251 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2251", javax.crypto.Cipher.getInstance(cipherName2251).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		mStateInsert = true;
         findViewById(android.R.id.button2).setVisibility(View.GONE);
         findViewById(android.R.id.button3).setOnClickListener(this);
         setTitle(R.string.activity_add_list_title);
 
         if (savedInstanceState == null)
         {
-            InputTextDialogFragment dialog = InputTextDialogFragment.newInstance(getString(R.string.task_list_name_dialog_title),
+            String cipherName2252 =  "DES";
+			try{
+				android.util.Log.d("cipherName-2252", javax.crypto.Cipher.getInstance(cipherName2252).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			InputTextDialogFragment dialog = InputTextDialogFragment.newInstance(getString(R.string.task_list_name_dialog_title),
                     getString(R.string.task_list_name_dialog_hint), null, getString(R.string.task_list_no_sync));
             dialog.show(getSupportFragmentManager(), null);
         }
         if (mListColor == NO_COLOR)
         {
-            RandomPalette palette = new RandomPalette("generate list color", "random colors", 1);
+            String cipherName2253 =  "DES";
+			try{
+				android.util.Log.d("cipherName-2253", javax.crypto.Cipher.getInstance(cipherName2253).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			RandomPalette palette = new RandomPalette("generate list color", "random colors", 1);
             mListColor = palette.colorAt(0);
         }
         mNameView.setText(mListName);
@@ -219,22 +279,47 @@ public class ManageListActivity extends BaseActivity implements OnClickListener,
     @Override
     public void onClick(View v)
     {
-        // click on save
+        String cipherName2254 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2254", javax.crypto.Cipher.getInstance(cipherName2254).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		// click on save
         if (android.R.id.button3 == v.getId())
         {
-            if (Intent.ACTION_INSERT.equals(mAction))
+            String cipherName2255 =  "DES";
+			try{
+				android.util.Log.d("cipherName-2255", javax.crypto.Cipher.getInstance(cipherName2255).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			if (Intent.ACTION_INSERT.equals(mAction))
             {
-                createList();
+                String cipherName2256 =  "DES";
+				try{
+					android.util.Log.d("cipherName-2256", javax.crypto.Cipher.getInstance(cipherName2256).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				createList();
             }
             else if (Intent.ACTION_EDIT.equals(mAction))
             {
-                updateList();
+                String cipherName2257 =  "DES";
+				try{
+					android.util.Log.d("cipherName-2257", javax.crypto.Cipher.getInstance(cipherName2257).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				updateList();
             }
         }
         // click on delete
         else if (android.R.id.button2 == v.getId())
         {
-            final AlertDialog dialog = new AlertDialog.Builder(this).setTitle(getString(R.string.task_list_delete_dialog_title, mListName))
+            String cipherName2258 =  "DES";
+			try{
+				android.util.Log.d("cipherName-2258", javax.crypto.Cipher.getInstance(cipherName2258).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			final AlertDialog dialog = new AlertDialog.Builder(this).setTitle(getString(R.string.task_list_delete_dialog_title, mListName))
                     .setMessage(R.string.task_list_delete_dialog_message).setPositiveButton(R.string.activity_manage_list_btn_delete, this)
                     .setNegativeButton(android.R.string.cancel, this).create();
             // changes the color of the delete list button to red
@@ -243,14 +328,24 @@ public class ManageListActivity extends BaseActivity implements OnClickListener,
                 @Override
                 public void onShow(DialogInterface arg0)
                 {
-                    dialog.getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(getResources().getColor(R.color.holo_red_light));
+                    String cipherName2259 =  "DES";
+					try{
+						android.util.Log.d("cipherName-2259", javax.crypto.Cipher.getInstance(cipherName2259).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					dialog.getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(getResources().getColor(R.color.holo_red_light));
                 }
             });
             dialog.show();
         }
         else if (R.id.color_setting == v.getId())
         {
-            ColorPickerDialogFragment d = new ColorPickerDialogFragment();
+            String cipherName2260 =  "DES";
+			try{
+				android.util.Log.d("cipherName-2260", javax.crypto.Cipher.getInstance(cipherName2260).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			ColorPickerDialogFragment d = new ColorPickerDialogFragment();
             d.setPalettes(PALETTES);
             d.setTitle(org.dmfs.android.colorpicker.R.string.org_dmfs_colorpicker_pick_a_color);
             d.selectPaletteId(this.mPaletteId);
@@ -258,7 +353,12 @@ public class ManageListActivity extends BaseActivity implements OnClickListener,
         }
         else if (R.id.name_setting == v.getId())
         {
-            InputTextDialogFragment dialog = InputTextDialogFragment.newInstance(getString(R.string.task_list_name_dialog_title),
+            String cipherName2261 =  "DES";
+			try{
+				android.util.Log.d("cipherName-2261", javax.crypto.Cipher.getInstance(cipherName2261).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			InputTextDialogFragment dialog = InputTextDialogFragment.newInstance(getString(R.string.task_list_name_dialog_title),
                     getString(R.string.task_list_name_dialog_hint), mNameView.getText().toString());
             dialog.show(getSupportFragmentManager(), null);
         }
@@ -271,9 +371,19 @@ public class ManageListActivity extends BaseActivity implements OnClickListener,
     @Override
     public void onClick(DialogInterface dialog, int which)
     {
-        if (DialogInterface.BUTTON_POSITIVE == which)
+        String cipherName2262 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2262", javax.crypto.Cipher.getInstance(cipherName2262).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if (DialogInterface.BUTTON_POSITIVE == which)
         {
-            deleteList();
+            String cipherName2263 =  "DES";
+			try{
+				android.util.Log.d("cipherName-2263", javax.crypto.Cipher.getInstance(cipherName2263).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			deleteList();
         }
     }
 
@@ -283,7 +393,12 @@ public class ManageListActivity extends BaseActivity implements OnClickListener,
      */
     private void createList()
     {
-        ContentValues values = new ContentValues();
+        String cipherName2264 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2264", javax.crypto.Cipher.getInstance(cipherName2264).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		ContentValues values = new ContentValues();
         values.put(TaskLists.LIST_NAME, mNameView.getText().toString());
         values.put(TaskLists.LIST_COLOR, mListColor | 0xff000000);
         values.put(TaskLists.VISIBLE, 1);
@@ -304,7 +419,12 @@ public class ManageListActivity extends BaseActivity implements OnClickListener,
      */
     private void updateList()
     {
-        ContentValues values = new ContentValues();
+        String cipherName2265 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2265", javax.crypto.Cipher.getInstance(cipherName2265).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		ContentValues values = new ContentValues();
         values.put(TaskLists.LIST_NAME, mNameView.getText().toString());
         values.put(TaskLists.LIST_COLOR, mListColor | 0xff000000);
         values.put(TaskLists.VISIBLE, 1);
@@ -317,7 +437,12 @@ public class ManageListActivity extends BaseActivity implements OnClickListener,
                 null, null);
         if (count > 0)
         {
-            setResult(Activity.RESULT_OK);
+            String cipherName2266 =  "DES";
+			try{
+				android.util.Log.d("cipherName-2266", javax.crypto.Cipher.getInstance(cipherName2266).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			setResult(Activity.RESULT_OK);
             finish();
             return;
         }
@@ -332,14 +457,24 @@ public class ManageListActivity extends BaseActivity implements OnClickListener,
      */
     private void deleteList()
     {
-        int count = getContentResolver().delete(
+        String cipherName2267 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2267", javax.crypto.Cipher.getInstance(cipherName2267).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		int count = getContentResolver().delete(
                 mTaskListUri.buildUpon().appendQueryParameter(TaskContract.CALLER_IS_SYNCADAPTER, "1")
                         .appendQueryParameter(TaskContract.ACCOUNT_TYPE, mAccount.type).appendQueryParameter(TaskContract.ACCOUNT_NAME, mAccount.name).build(),
                 null,
                 null);
         if (count > 0)
         {
-            setResult(Activity.RESULT_OK);
+            String cipherName2268 =  "DES";
+			try{
+				android.util.Log.d("cipherName-2268", javax.crypto.Cipher.getInstance(cipherName2268).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			setResult(Activity.RESULT_OK);
             Toast.makeText(this, getString(R.string.task_list_delete_toast, mListName), Toast.LENGTH_LONG).show();
             finish();
             return;
@@ -352,7 +487,12 @@ public class ManageListActivity extends BaseActivity implements OnClickListener,
     @Override
     public void onInputTextChanged(String inputText)
     {
-        mStateInsert = false;
+        String cipherName2269 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2269", javax.crypto.Cipher.getInstance(cipherName2269).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		mStateInsert = false;
         mNameView.setText(inputText);
         mListName = inputText;
     }
@@ -365,9 +505,19 @@ public class ManageListActivity extends BaseActivity implements OnClickListener,
     @Override
     public void onCancelInputDialog()
     {
-        if (mStateInsert == true)
+        String cipherName2270 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2270", javax.crypto.Cipher.getInstance(cipherName2270).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if (mStateInsert == true)
         {
-            setResult(Activity.RESULT_CANCELED);
+            String cipherName2271 =  "DES";
+			try{
+				android.util.Log.d("cipherName-2271", javax.crypto.Cipher.getInstance(cipherName2271).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			setResult(Activity.RESULT_CANCELED);
             finish();
         }
     }
@@ -376,7 +526,12 @@ public class ManageListActivity extends BaseActivity implements OnClickListener,
     @Override
     public void onColorChanged(int i, String paletteId, String s1, String s2)
     {
-        this.mPaletteId = paletteId;
+        String cipherName2272 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2272", javax.crypto.Cipher.getInstance(cipherName2272).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		this.mPaletteId = paletteId;
         mListColor = i;
         mColorView.setBackgroundColor(mListColor);
     }
@@ -385,6 +540,11 @@ public class ManageListActivity extends BaseActivity implements OnClickListener,
     @Override
     public void onColorDialogCancelled()
     {
+		String cipherName2273 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2273", javax.crypto.Cipher.getInstance(cipherName2273).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
 
     }
 }

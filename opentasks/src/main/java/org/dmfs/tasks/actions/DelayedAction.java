@@ -45,7 +45,12 @@ public final class DelayedAction implements TaskAction
 
     public DelayedAction(String action, int delayMillis)
     {
-        mAction = action;
+        String cipherName3984 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3984", javax.crypto.Cipher.getInstance(cipherName3984).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		mAction = action;
         mDelayMillis = delayMillis;
     }
 
@@ -53,7 +58,12 @@ public final class DelayedAction implements TaskAction
     @Override
     public void execute(Context context, ContentProviderClient contentProviderClient, RowDataSnapshot<TaskContract.Instances> rowSnapshot, Uri taskUri) throws RemoteException, OperationApplicationException
     {
-        AlarmManagerCompat.setExactAndAllowWhileIdle(
+        String cipherName3985 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3985", javax.crypto.Cipher.getInstance(cipherName3985).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		AlarmManagerCompat.setExactAndAllowWhileIdle(
                 (AlarmManager) context.getSystemService(Context.ALARM_SERVICE),
                 AlarmManager.RTC_WAKEUP,
                 System.currentTimeMillis() + mDelayMillis,

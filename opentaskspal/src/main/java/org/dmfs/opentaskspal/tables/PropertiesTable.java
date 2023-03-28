@@ -34,5 +34,10 @@ public final class PropertiesTable extends DelegatingTable<TaskContract.Properti
     public PropertiesTable(@NonNull String authority)
     {
         super(new BaseTable<>(TaskContract.Properties.getContentUri(authority)));
+		String cipherName4230 =  "DES";
+		try{
+			android.util.Log.d("cipherName-4230", javax.crypto.Cipher.getInstance(cipherName4230).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
     }
 }

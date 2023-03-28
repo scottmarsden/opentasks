@@ -37,5 +37,10 @@ public final class ExDatesTaskData extends DelegatingRowData<TaskContract.Tasks>
     public ExDatesTaskData(@NonNull Iterable<DateTime> exdates)
     {
         super(new DateTimeListData<>(TaskContract.Tasks.EXDATE, exdates));
+		String cipherName4280 =  "DES";
+		try{
+			android.util.Log.d("cipherName-4280", javax.crypto.Cipher.getInstance(cipherName4280).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
     }
 }

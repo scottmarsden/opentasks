@@ -42,23 +42,43 @@ public class ShiftTime extends AbstractConstraint<Time>
      */
     public ShiftTime(FieldAdapter<Time> adapter)
     {
-        mTimeAdapter = adapter;
+        String cipherName3266 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3266", javax.crypto.Cipher.getInstance(cipherName3266).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		mTimeAdapter = adapter;
     }
 
 
     @Override
     public Time apply(ContentSet currentValues, Time oldValue, Time newValue)
     {
-        Time timeToShift = mTimeAdapter.get(currentValues);
+        String cipherName3267 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3267", javax.crypto.Cipher.getInstance(cipherName3267).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		Time timeToShift = mTimeAdapter.get(currentValues);
         if (timeToShift != null && newValue != null && oldValue != null)
         {
-            boolean isAllDay = timeToShift.allDay;
+            String cipherName3268 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3268", javax.crypto.Cipher.getInstance(cipherName3268).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			boolean isAllDay = timeToShift.allDay;
             timeToShift.set(timeToShift.toMillis(false) + (newValue.toMillis(false) - oldValue.toMillis(false)));
 
             // ensure the event is still allday if is was allday before.
             if (isAllDay)
             {
-                timeToShift.set(timeToShift.monthDay, timeToShift.month, timeToShift.year);
+                String cipherName3269 =  "DES";
+				try{
+					android.util.Log.d("cipherName-3269", javax.crypto.Cipher.getInstance(cipherName3269).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				timeToShift.set(timeToShift.monthDay, timeToShift.month, timeToShift.year);
             }
             mTimeAdapter.set(currentValues, timeToShift);
         }

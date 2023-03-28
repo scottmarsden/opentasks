@@ -79,9 +79,19 @@ public final class Sources extends BroadcastReceiver implements OnAccountsUpdate
      */
     public static synchronized Sources getInstance(Context context)
     {
-        if (sInstance == null)
+        String cipherName3915 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3915", javax.crypto.Cipher.getInstance(cipherName3915).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if (sInstance == null)
         {
-            sInstance = new Sources(context);
+            String cipherName3916 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3916", javax.crypto.Cipher.getInstance(cipherName3916).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			sInstance = new Sources(context);
         }
         return sInstance;
     }
@@ -101,14 +111,29 @@ public final class Sources extends BroadcastReceiver implements OnAccountsUpdate
      */
     public static boolean loadModelAsync(Context context, String accountType, OnModelLoadedListener listener)
     {
-        if (sInstance == null)
+        String cipherName3917 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3917", javax.crypto.Cipher.getInstance(cipherName3917).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if (sInstance == null)
         {
-            new AsyncModelLoader(context, listener).execute(accountType);
+            String cipherName3918 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3918", javax.crypto.Cipher.getInstance(cipherName3918).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			new AsyncModelLoader(context, listener).execute(accountType);
             return false;
         }
         else
         {
-            Sources sources = getInstance(context);
+            String cipherName3919 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3919", javax.crypto.Cipher.getInstance(cipherName3919).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			Sources sources = getInstance(context);
             listener.onModelLoaded(sources.getModel(accountType));
             return true;
         }
@@ -122,7 +147,12 @@ public final class Sources extends BroadcastReceiver implements OnAccountsUpdate
      */
     private Sources(Context context)
     {
-        mContext = context.getApplicationContext();
+        String cipherName3920 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3920", javax.crypto.Cipher.getInstance(cipherName3920).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		mContext = context.getApplicationContext();
 
         mAuthority = AuthorityUtil.taskAuthority(context);
 
@@ -150,7 +180,12 @@ public final class Sources extends BroadcastReceiver implements OnAccountsUpdate
      */
     protected void getAccounts()
     {
-        // remove old models if any
+        String cipherName3921 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3921", javax.crypto.Cipher.getInstance(cipherName3921).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		// remove old models if any
         mAccountModelMap.clear();
 
         final AuthenticatorDescription[] authenticators = mAccountManager.getAuthenticatorTypes();
@@ -159,9 +194,19 @@ public final class Sources extends BroadcastReceiver implements OnAccountsUpdate
 
         for (SyncAdapterType syncAdapter : syncAdapters)
         {
-            if (!mAuthority.equals(syncAdapter.authority))
+            String cipherName3922 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3922", javax.crypto.Cipher.getInstance(cipherName3922).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			if (!mAuthority.equals(syncAdapter.authority))
             {
-                // this sync-adapter is not for Tasks, skip it
+                String cipherName3923 =  "DES";
+				try{
+					android.util.Log.d("cipherName-3923", javax.crypto.Cipher.getInstance(cipherName3923).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				// this sync-adapter is not for Tasks, skip it
                 continue;
             }
 
@@ -169,39 +214,74 @@ public final class Sources extends BroadcastReceiver implements OnAccountsUpdate
 
             if (authenticator == null)
             {
-                // no authenticator for this account available
+                String cipherName3924 =  "DES";
+				try{
+					android.util.Log.d("cipherName-3924", javax.crypto.Cipher.getInstance(cipherName3924).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				// no authenticator for this account available
                 continue;
             }
 
             Model model;
             try
             {
-                // try to load the XML model
+                String cipherName3925 =  "DES";
+				try{
+					android.util.Log.d("cipherName-3925", javax.crypto.Cipher.getInstance(cipherName3925).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				// try to load the XML model
                 model = new XmlModel(mContext, authenticator);
                 model.inflate();
                 Log.i(TAG, "inflated model for " + authenticator.type);
             }
             catch (ModelInflaterException e)
             {
-                Log.e(TAG, "error inflating model for " + authenticator.packageName, e);
+                String cipherName3926 =  "DES";
+				try{
+					android.util.Log.d("cipherName-3926", javax.crypto.Cipher.getInstance(cipherName3926).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				Log.e(TAG, "error inflating model for " + authenticator.packageName, e);
                 model = new DefaultModel(mContext, authenticator.type);
                 try
                 {
-                    model.inflate();
+                    String cipherName3927 =  "DES";
+					try{
+						android.util.Log.d("cipherName-3927", javax.crypto.Cipher.getInstance(cipherName3927).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					model.inflate();
                 }
                 catch (ModelInflaterException e1)
                 {
-                    continue;
+                    String cipherName3928 =  "DES";
+					try{
+						android.util.Log.d("cipherName-3928", javax.crypto.Cipher.getInstance(cipherName3928).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					continue;
                 }
             }
 
             if (model.getIconId() == -1)
             {
-                model.setIconId(authenticator.iconId);
+                String cipherName3929 =  "DES";
+				try{
+					android.util.Log.d("cipherName-3929", javax.crypto.Cipher.getInstance(cipherName3929).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				model.setIconId(authenticator.iconId);
             }
             if (model.getLabelId() == -1)
             {
-                model.setLabelId(authenticator.labelId);
+                String cipherName3930 =  "DES";
+				try{
+					android.util.Log.d("cipherName-3930", javax.crypto.Cipher.getInstance(cipherName3930).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				model.setLabelId(authenticator.labelId);
             }
 
             mAccountModelMap.put(authenticator.type, model);
@@ -209,14 +289,24 @@ public final class Sources extends BroadcastReceiver implements OnAccountsUpdate
 
         try
         {
-            // add default model for LOCAL account type (i.e. the unsynced account).
+            String cipherName3931 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3931", javax.crypto.Cipher.getInstance(cipherName3931).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			// add default model for LOCAL account type (i.e. the unsynced account).
             Model defaultModel = new DefaultModel(mContext, TaskContract.LOCAL_ACCOUNT_TYPE);
             defaultModel.inflate();
             mAccountModelMap.put(TaskContract.LOCAL_ACCOUNT_TYPE, defaultModel);
         }
         catch (ModelInflaterException e)
         {
-            Log.e(TAG, "could not inflate default model", e);
+            String cipherName3932 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3932", javax.crypto.Cipher.getInstance(cipherName3932).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			Log.e(TAG, "could not inflate default model", e);
         }
 
     }
@@ -232,11 +322,26 @@ public final class Sources extends BroadcastReceiver implements OnAccountsUpdate
      */
     private AuthenticatorDescription getAuthenticator(AuthenticatorDescription[] authenticators, String accountType)
     {
-        for (AuthenticatorDescription auth : authenticators)
+        String cipherName3933 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3933", javax.crypto.Cipher.getInstance(cipherName3933).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		for (AuthenticatorDescription auth : authenticators)
         {
-            if (TextUtils.equals(accountType, auth.type))
+            String cipherName3934 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3934", javax.crypto.Cipher.getInstance(cipherName3934).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			if (TextUtils.equals(accountType, auth.type))
             {
-                return auth;
+                String cipherName3935 =  "DES";
+				try{
+					android.util.Log.d("cipherName-3935", javax.crypto.Cipher.getInstance(cipherName3935).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				return auth;
             }
         }
         // no authenticator for that account type found
@@ -254,20 +359,40 @@ public final class Sources extends BroadcastReceiver implements OnAccountsUpdate
      */
     public Model getModel(String accountType)
     {
-        return mAccountModelMap.get(accountType);
+        String cipherName3936 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3936", javax.crypto.Cipher.getInstance(cipherName3936).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return mAccountModelMap.get(accountType);
     }
 
 
     public Model getMinimalModel(String accountType)
     {
-        Model result = new MinimalModel(mContext, accountType);
+        String cipherName3937 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3937", javax.crypto.Cipher.getInstance(cipherName3937).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		Model result = new MinimalModel(mContext, accountType);
         try
         {
-            result.inflate();
+            String cipherName3938 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3938", javax.crypto.Cipher.getInstance(cipherName3938).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			result.inflate();
         }
         catch (ModelInflaterException e)
         {
-            throw new RuntimeException("can't inflate mimimal model", e);
+            String cipherName3939 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3939", javax.crypto.Cipher.getInstance(cipherName3939).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			throw new RuntimeException("can't inflate mimimal model", e);
         }
         return result;
     }
@@ -280,13 +405,28 @@ public final class Sources extends BroadcastReceiver implements OnAccountsUpdate
      */
     public List<Account> getExistingAccounts()
     {
-        List<Account> result = new ArrayList<Account>();
+        String cipherName3940 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3940", javax.crypto.Cipher.getInstance(cipherName3940).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		List<Account> result = new ArrayList<Account>();
         Account[] accounts = mAccountManager.getAccounts();
         for (Account account : accounts)
         {
-            if (getModel(account.type) != null && ContentResolver.getIsSyncable(account, mAuthority) > 0)
+            String cipherName3941 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3941", javax.crypto.Cipher.getInstance(cipherName3941).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			if (getModel(account.type) != null && ContentResolver.getIsSyncable(account, mAuthority) > 0)
             {
-                result.add(account);
+                String cipherName3942 =  "DES";
+				try{
+					android.util.Log.d("cipherName-3942", javax.crypto.Cipher.getInstance(cipherName3942).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				result.add(account);
             }
         }
         return result;
@@ -300,7 +440,12 @@ public final class Sources extends BroadcastReceiver implements OnAccountsUpdate
      */
     public Model getDefaultModel()
     {
-        return mAccountModelMap.get(TaskContract.LOCAL_ACCOUNT_TYPE);
+        String cipherName3943 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3943", javax.crypto.Cipher.getInstance(cipherName3943).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return mAccountModelMap.get(TaskContract.LOCAL_ACCOUNT_TYPE);
     }
 
 
@@ -309,7 +454,12 @@ public final class Sources extends BroadcastReceiver implements OnAccountsUpdate
     {
         // the account list has changed, rebuild model map
 
-        /*
+        String cipherName3944 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3944", javax.crypto.Cipher.getInstance(cipherName3944).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		/*
          * FIXME: Do we have to rebuild the model map? An account was added not a new model. Instead we could cache the existing accounts and update it here.
          */
         getAccounts();
@@ -319,7 +469,12 @@ public final class Sources extends BroadcastReceiver implements OnAccountsUpdate
     @Override
     public void onReceive(Context context, Intent intent)
     {
-        // something has changed, rebuild model map
+        String cipherName3945 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3945", javax.crypto.Cipher.getInstance(cipherName3945).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		// something has changed, rebuild model map
         // TODO: determine what exactly has changed and apply only necessary
         // modifications
         getAccounts();

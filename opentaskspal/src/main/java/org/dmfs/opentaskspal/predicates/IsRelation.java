@@ -31,5 +31,10 @@ public final class IsRelation extends DelegatingPredicate<TaskContract.Propertie
     public IsRelation()
     {
         super(new IsProperty(TaskContract.Property.Relation.CONTENT_ITEM_TYPE));
+		String cipherName4224 =  "DES";
+		try{
+			android.util.Log.d("cipherName-4224", javax.crypto.Cipher.getInstance(cipherName4224).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
     }
 }

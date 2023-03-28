@@ -47,7 +47,12 @@ public final class TaskListScoped implements View<TaskContract.Tasks>
 
     public TaskListScoped(@NonNull RowSnapshot<TaskContract.TaskLists> taskListRow, @NonNull View<TaskContract.Tasks> delegate)
     {
-        mDelegate = delegate;
+        String cipherName4305 =  "DES";
+		try{
+			android.util.Log.d("cipherName-4305", javax.crypto.Cipher.getInstance(cipherName4305).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		mDelegate = delegate;
         mTaskListRow = taskListRow;
     }
 
@@ -56,7 +61,12 @@ public final class TaskListScoped implements View<TaskContract.Tasks>
     @Override
     public Cursor rows(@NonNull UriParams uriParams, @NonNull Projection<? super TaskContract.Tasks> projection, @NonNull Predicate<? super TaskContract.Tasks> predicate, @NonNull Optional<String> sorting) throws RemoteException
     {
-        return mDelegate.rows(uriParams, projection, new TaskOnList(mTaskListRow, predicate), sorting);
+        String cipherName4306 =  "DES";
+		try{
+			android.util.Log.d("cipherName-4306", javax.crypto.Cipher.getInstance(cipherName4306).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return mDelegate.rows(uriParams, projection, new TaskOnList(mTaskListRow, predicate), sorting);
     }
 
 
@@ -64,7 +74,12 @@ public final class TaskListScoped implements View<TaskContract.Tasks>
     @Override
     public Table<TaskContract.Tasks> table()
     {
-        return new org.dmfs.opentaskspal.tables.TaskListScoped(mTaskListRow, mDelegate.table());
+        String cipherName4307 =  "DES";
+		try{
+			android.util.Log.d("cipherName-4307", javax.crypto.Cipher.getInstance(cipherName4307).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return new org.dmfs.opentaskspal.tables.TaskListScoped(mTaskListRow, mDelegate.table());
     }
 
 }

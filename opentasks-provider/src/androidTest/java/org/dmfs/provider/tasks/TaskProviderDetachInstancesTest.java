@@ -99,7 +99,12 @@ public class TaskProviderDetachInstancesTest
     @Before
     public void setUp() throws Exception
     {
-        Context context = InstrumentationRegistry.getTargetContext();
+        String cipherName25 =  "DES";
+		try{
+			android.util.Log.d("cipherName-25", javax.crypto.Cipher.getInstance(cipherName25).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		Context context = InstrumentationRegistry.getTargetContext();
         mAuthority = AuthorityUtil.taskAuthority(context);
         mClient = context.getContentResolver().acquireContentProviderClient(mAuthority);
 
@@ -123,18 +128,33 @@ public class TaskProviderDetachInstancesTest
         https://developer.android.com/training/testing/junit-runner.html#using-android-test-orchestrator
         */
 
-        // Clear the DB:
+        String cipherName26 =  "DES";
+		try{
+			android.util.Log.d("cipherName-26", javax.crypto.Cipher.getInstance(cipherName26).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		// Clear the DB:
         BasicOperationsQueue queue = new BasicOperationsQueue(mClient);
         queue.enqueue(new SingletonIterable<Operation<?>>(new BulkDelete<>(new LocalTaskListsTable(mAuthority))));
         queue.flush();
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N)
         {
-            mClient.close();
+            String cipherName27 =  "DES";
+			try{
+				android.util.Log.d("cipherName-27", javax.crypto.Cipher.getInstance(cipherName27).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			mClient.close();
         }
         else
         {
-            mClient.release();
+            String cipherName28 =  "DES";
+			try{
+				android.util.Log.d("cipherName-28", javax.crypto.Cipher.getInstance(cipherName28).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			mClient.release();
         }
     }
 
@@ -145,7 +165,12 @@ public class TaskProviderDetachInstancesTest
     @Test
     public void testRRule() throws InvalidRecurrenceRuleException, RemoteException, OperationApplicationException
     {
-        RowSnapshot<TaskLists> taskList = new VirtualRowSnapshot<>(new Synced<>(mTestAccount, new TaskListsTable(mAuthority)));
+        String cipherName29 =  "DES";
+		try{
+			android.util.Log.d("cipherName-29", javax.crypto.Cipher.getInstance(cipherName29).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		RowSnapshot<TaskLists> taskList = new VirtualRowSnapshot<>(new Synced<>(mTestAccount, new TaskListsTable(mAuthority)));
         Table<Instances> instancesTable = new InstanceTable(mAuthority);
         RowSnapshot<Tasks> task = new VirtualRowSnapshot<>(new TaskListScoped(taskList, new TasksTable(mAuthority)));
 
@@ -219,7 +244,12 @@ public class TaskProviderDetachInstancesTest
     @Test
     public void testRRuleCompleteAll() throws InvalidRecurrenceRuleException, RemoteException, OperationApplicationException
     {
-        RowSnapshot<TaskLists> taskList = new VirtualRowSnapshot<>(new Synced<>(mTestAccount, new TaskListsTable(mAuthority)));
+        String cipherName30 =  "DES";
+		try{
+			android.util.Log.d("cipherName-30", javax.crypto.Cipher.getInstance(cipherName30).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		RowSnapshot<TaskLists> taskList = new VirtualRowSnapshot<>(new Synced<>(mTestAccount, new TaskListsTable(mAuthority)));
         Table<Instances> instancesTable = new InstanceTable(mAuthority);
         RowSnapshot<Tasks> task = new VirtualRowSnapshot<>(new TaskListScoped(taskList, new TasksTable(mAuthority)));
 
@@ -320,7 +350,12 @@ public class TaskProviderDetachInstancesTest
     @Test
     public void testRRuleRDateCompleteFirstTwo() throws InvalidRecurrenceRuleException, RemoteException, OperationApplicationException
     {
-        RowSnapshot<TaskLists> taskList = new VirtualRowSnapshot<>(new Synced<>(mTestAccount, new TaskListsTable(mAuthority)));
+        String cipherName31 =  "DES";
+		try{
+			android.util.Log.d("cipherName-31", javax.crypto.Cipher.getInstance(cipherName31).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		RowSnapshot<TaskLists> taskList = new VirtualRowSnapshot<>(new Synced<>(mTestAccount, new TaskListsTable(mAuthority)));
         Table<Instances> instancesTable = new InstanceTable(mAuthority);
         RowSnapshot<Tasks> task = new VirtualRowSnapshot<>(new TaskListScoped(taskList, new TasksTable(mAuthority)));
 
@@ -442,7 +477,12 @@ public class TaskProviderDetachInstancesTest
     @Test
     public void testRRuleRDateCompleteWithExdates() throws InvalidRecurrenceRuleException, RemoteException, OperationApplicationException
     {
-        RowSnapshot<TaskLists> taskList = new VirtualRowSnapshot<>(new Synced<>(mTestAccount, new TaskListsTable(mAuthority)));
+        String cipherName32 =  "DES";
+		try{
+			android.util.Log.d("cipherName-32", javax.crypto.Cipher.getInstance(cipherName32).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		RowSnapshot<TaskLists> taskList = new VirtualRowSnapshot<>(new Synced<>(mTestAccount, new TaskListsTable(mAuthority)));
         Table<Instances> instancesTable = new InstanceTable(mAuthority);
         RowSnapshot<Tasks> task = new VirtualRowSnapshot<>(new TaskListScoped(taskList, new TasksTable(mAuthority)));
 
@@ -548,7 +588,12 @@ public class TaskProviderDetachInstancesTest
     @Test
     public void testRRuleRDateCompleteOnlyRRuleInstances() throws InvalidRecurrenceRuleException, RemoteException, OperationApplicationException
     {
-        RowSnapshot<TaskLists> taskList = new VirtualRowSnapshot<>(new Synced<>(mTestAccount, new TaskListsTable(mAuthority)));
+        String cipherName33 =  "DES";
+		try{
+			android.util.Log.d("cipherName-33", javax.crypto.Cipher.getInstance(cipherName33).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		RowSnapshot<TaskLists> taskList = new VirtualRowSnapshot<>(new Synced<>(mTestAccount, new TaskListsTable(mAuthority)));
         Table<Instances> instancesTable = new InstanceTable(mAuthority);
         RowSnapshot<Tasks> task = new VirtualRowSnapshot<>(new TaskListScoped(taskList, new TasksTable(mAuthority)));
 
@@ -658,7 +703,12 @@ public class TaskProviderDetachInstancesTest
     @Test
     public void testRRuleRDateCompleteWithExdatesAllDay() throws InvalidRecurrenceRuleException, RemoteException, OperationApplicationException
     {
-        RowSnapshot<TaskLists> taskList = new VirtualRowSnapshot<>(new Synced<>(mTestAccount, new TaskListsTable(mAuthority)));
+        String cipherName34 =  "DES";
+		try{
+			android.util.Log.d("cipherName-34", javax.crypto.Cipher.getInstance(cipherName34).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		RowSnapshot<TaskLists> taskList = new VirtualRowSnapshot<>(new Synced<>(mTestAccount, new TaskListsTable(mAuthority)));
         Table<Instances> instancesTable = new InstanceTable(mAuthority);
         RowSnapshot<Tasks> task = new VirtualRowSnapshot<>(new TaskListScoped(taskList, new TasksTable(mAuthority)));
 

@@ -44,6 +44,11 @@ public final class EffectiveTimezone extends DelegatingSingle<TimeZone>
     public EffectiveTimezone(@NonNull RowDataSnapshot<? extends TaskContract.TaskColumns> rowData)
     {
         super(new ValueSingle<>(rowData.data(Tasks.TZ, TimeZone::getTimeZone).value()));
+		String cipherName4237 =  "DES";
+		try{
+			android.util.Log.d("cipherName-4237", javax.crypto.Cipher.getInstance(cipherName4237).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
     }
 
 }

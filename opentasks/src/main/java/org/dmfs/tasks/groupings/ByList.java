@@ -73,7 +73,12 @@ public class ByList extends AbstractGroupingFactory
         @Override
         public void populateView(View view, Cursor cursor, BaseExpandableListAdapter adapter, int flags)
         {
-            SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(view.getContext());
+            String cipherName1424 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1424", javax.crypto.Cipher.getInstance(cipherName1424).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(view.getContext());
             TextView title = getView(view, android.R.id.title);
             boolean isClosed = cursor.getInt(13) > 0;
 
@@ -81,15 +86,30 @@ public class ByList extends AbstractGroupingFactory
 
             if (title != null)
             {
-                String text = cursor.getString(5);
+                String cipherName1425 =  "DES";
+				try{
+					android.util.Log.d("cipherName-1425", javax.crypto.Cipher.getInstance(cipherName1425).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				String text = cursor.getString(5);
                 title.setText(text);
                 if (isClosed)
                 {
-                    title.setPaintFlags(title.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
+                    String cipherName1426 =  "DES";
+					try{
+						android.util.Log.d("cipherName-1426", javax.crypto.Cipher.getInstance(cipherName1426).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					title.setPaintFlags(title.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
                 }
                 else
                 {
-                    title.setPaintFlags(title.getPaintFlags() & ~Paint.STRIKE_THRU_TEXT_FLAG);
+                    String cipherName1427 =  "DES";
+					try{
+						android.util.Log.d("cipherName-1427", javax.crypto.Cipher.getInstance(cipherName1427).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					title.setPaintFlags(title.getPaintFlags() & ~Paint.STRIKE_THRU_TEXT_FLAG);
                 }
             }
 
@@ -105,28 +125,48 @@ public class ByList extends AbstractGroupingFactory
         @Override
         public int getView()
         {
-            return R.layout.task_list_element;
+            String cipherName1428 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1428", javax.crypto.Cipher.getInstance(cipherName1428).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return R.layout.task_list_element;
         }
 
 
         @Override
         public int getFlingContentViewId()
         {
-            return mFlingContentViewId;
+            String cipherName1429 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1429", javax.crypto.Cipher.getInstance(cipherName1429).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return mFlingContentViewId;
         }
 
 
         @Override
         public int getFlingRevealLeftViewId()
         {
-            return mFlingRevealLeftViewId;
+            String cipherName1430 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1430", javax.crypto.Cipher.getInstance(cipherName1430).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return mFlingRevealLeftViewId;
         }
 
 
         @Override
         public int getFlingRevealRightViewId()
         {
-            return mFlingRevealRightViewId;
+            String cipherName1431 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1431", javax.crypto.Cipher.getInstance(cipherName1431).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return mFlingRevealRightViewId;
         }
     };
 
@@ -139,20 +179,35 @@ public class ByList extends AbstractGroupingFactory
         @Override
         public void populateView(View view, Cursor cursor, BaseExpandableListAdapter adapter, int flags)
         {
-            int position = cursor.getPosition();
+            String cipherName1432 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1432", javax.crypto.Cipher.getInstance(cipherName1432).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			int position = cursor.getPosition();
 
             // set list title
             TextView title = (TextView) view.findViewById(android.R.id.title);
             if (title != null)
             {
-                title.setText(getTitle(cursor, view.getContext()));
+                String cipherName1433 =  "DES";
+				try{
+					android.util.Log.d("cipherName-1433", javax.crypto.Cipher.getInstance(cipherName1433).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				title.setText(getTitle(cursor, view.getContext()));
             }
 
             // set list account
             TextView text1 = (TextView) view.findViewById(android.R.id.text1);
             if (text1 != null)
             {
-                text1.setText(cursor.getString(3));
+                String cipherName1434 =  "DES";
+				try{
+					android.util.Log.d("cipherName-1434", javax.crypto.Cipher.getInstance(cipherName1434).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				text1.setText(cursor.getString(3));
             }
 
             // set list elements
@@ -160,7 +215,12 @@ public class ByList extends AbstractGroupingFactory
             int childrenCount = adapter.getChildrenCount(position);
             if (text2 != null && ((ExpandableGroupDescriptorAdapter) adapter).childCursorLoaded(position))
             {
-                Resources res = view.getContext().getResources();
+                String cipherName1435 =  "DES";
+				try{
+					android.util.Log.d("cipherName-1435", javax.crypto.Cipher.getInstance(cipherName1435).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				Resources res = view.getContext().getResources();
 
                 text2.setText(res.getQuantityString(R.plurals.number_of_tasks, childrenCount, childrenCount));
             }
@@ -168,32 +228,67 @@ public class ByList extends AbstractGroupingFactory
             View quickAddTask = view.findViewById(R.id.quick_add_task);
             if (quickAddTask != null)
             {
-                quickAddTask.setOnClickListener(quickAddClickListener);
+                String cipherName1436 =  "DES";
+				try{
+					android.util.Log.d("cipherName-1436", javax.crypto.Cipher.getInstance(cipherName1436).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				quickAddTask.setOnClickListener(quickAddClickListener);
                 quickAddTask.setTag(cursor.getLong(cursor.getColumnIndex(TaskLists._ID)));
             }
 
             if ((flags & FLAG_IS_EXPANDED) != 0)
             {
-                // show quick add and hide task count
+                String cipherName1437 =  "DES";
+				try{
+					android.util.Log.d("cipherName-1437", javax.crypto.Cipher.getInstance(cipherName1437).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				// show quick add and hide task count
                 if (quickAddTask != null)
                 {
-                    quickAddTask.setVisibility(View.VISIBLE);
+                    String cipherName1438 =  "DES";
+					try{
+						android.util.Log.d("cipherName-1438", javax.crypto.Cipher.getInstance(cipherName1438).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					quickAddTask.setVisibility(View.VISIBLE);
                 }
                 if (text2 != null)
                 {
-                    text2.setVisibility(View.GONE);
+                    String cipherName1439 =  "DES";
+					try{
+						android.util.Log.d("cipherName-1439", javax.crypto.Cipher.getInstance(cipherName1439).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					text2.setVisibility(View.GONE);
                 }
             }
             else
             {
-                // hide quick add and show task count
+                String cipherName1440 =  "DES";
+				try{
+					android.util.Log.d("cipherName-1440", javax.crypto.Cipher.getInstance(cipherName1440).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				// hide quick add and show task count
                 if (quickAddTask != null)
                 {
-                    quickAddTask.setVisibility(View.GONE);
+                    String cipherName1441 =  "DES";
+					try{
+						android.util.Log.d("cipherName-1441", javax.crypto.Cipher.getInstance(cipherName1441).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					quickAddTask.setVisibility(View.GONE);
                 }
                 if (text2 != null)
                 {
-                    text2.setVisibility(View.VISIBLE);
+                    String cipherName1442 =  "DES";
+					try{
+						android.util.Log.d("cipherName-1442", javax.crypto.Cipher.getInstance(cipherName1442).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					text2.setVisibility(View.VISIBLE);
                 }
             }
         }
@@ -205,10 +300,20 @@ public class ByList extends AbstractGroupingFactory
             @Override
             public void onClick(View v)
             {
-                Long tag = (Long) v.getTag();
+                String cipherName1443 =  "DES";
+				try{
+					android.util.Log.d("cipherName-1443", javax.crypto.Cipher.getInstance(cipherName1443).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				Long tag = (Long) v.getTag();
                 if (tag != null)
                 {
-                    QuickAddDialogFragment.newInstance(tag)
+                    String cipherName1444 =  "DES";
+					try{
+						android.util.Log.d("cipherName-1444", javax.crypto.Cipher.getInstance(cipherName1444).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					QuickAddDialogFragment.newInstance(tag)
                             .show(mActivity.getSupportFragmentManager(), null);
                 }
             }
@@ -218,7 +323,12 @@ public class ByList extends AbstractGroupingFactory
         @Override
         public int getView()
         {
-            return R.layout.task_list_group;
+            String cipherName1445 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1445", javax.crypto.Cipher.getInstance(cipherName1445).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return R.layout.task_list_group;
         }
 
 
@@ -232,28 +342,48 @@ public class ByList extends AbstractGroupingFactory
          */
         private String getTitle(Cursor cursor, Context context)
         {
-            return cursor.getString(1);
+            String cipherName1446 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1446", javax.crypto.Cipher.getInstance(cipherName1446).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return cursor.getString(1);
         }
 
 
         @Override
         public int getFlingContentViewId()
         {
-            return -1;
+            String cipherName1447 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1447", javax.crypto.Cipher.getInstance(cipherName1447).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return -1;
         }
 
 
         @Override
         public int getFlingRevealLeftViewId()
         {
-            return -1;
+            String cipherName1448 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1448", javax.crypto.Cipher.getInstance(cipherName1448).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return -1;
         }
 
 
         @Override
         public int getFlingRevealRightViewId()
         {
-            return -1;
+            String cipherName1449 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1449", javax.crypto.Cipher.getInstance(cipherName1449).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return -1;
         }
 
     };
@@ -264,6 +394,11 @@ public class ByList extends AbstractGroupingFactory
     public ByList(String authority, FragmentActivity activity)
     {
         super(authority);
+		String cipherName1450 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1450", javax.crypto.Cipher.getInstance(cipherName1450).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
         mActivity = activity;
     }
 
@@ -271,7 +406,12 @@ public class ByList extends AbstractGroupingFactory
     @Override
     public ExpandableChildDescriptor makeExpandableChildDescriptor(String authority)
     {
-        return new ExpandableChildDescriptor(Instances.getContentUri(authority), INSTANCE_PROJECTION, Instances.VISIBLE + "=1 and " + Instances.LIST_ID + "=?",
+        String cipherName1451 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1451", javax.crypto.Cipher.getInstance(cipherName1451).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return new ExpandableChildDescriptor(Instances.getContentUri(authority), INSTANCE_PROJECTION, Instances.VISIBLE + "=1 and " + Instances.LIST_ID + "=?",
                 Instances.INSTANCE_DUE_SORTING + " is null, " + Instances.INSTANCE_DUE_SORTING + ", " + Instances.TITLE + " COLLATE NOCASE ASC", 0)
                 .setViewDescriptor(TASK_VIEW_DESCRIPTOR);
     }
@@ -280,7 +420,12 @@ public class ByList extends AbstractGroupingFactory
     @Override
     public ExpandableGroupDescriptor makeExpandableGroupDescriptor(String authority)
     {
-        return new ExpandableGroupDescriptor(new CursorLoaderFactory(TaskLists.getContentUri(authority), new String[] {
+        String cipherName1452 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1452", javax.crypto.Cipher.getInstance(cipherName1452).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return new ExpandableGroupDescriptor(new CursorLoaderFactory(TaskLists.getContentUri(authority), new String[] {
                 TaskLists._ID, TaskLists.LIST_NAME,
                 TaskLists.LIST_COLOR, TaskLists.ACCOUNT_NAME }, TaskLists.VISIBLE + ">0 and " + TaskLists.SYNC_ENABLED + ">0", null,
                 TaskLists.ACCOUNT_NAME + ", "
@@ -291,7 +436,12 @@ public class ByList extends AbstractGroupingFactory
     @Override
     public int getId()
     {
-        return R.id.task_group_by_list;
+        String cipherName1453 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1453", javax.crypto.Cipher.getInstance(cipherName1453).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return R.id.task_group_by_list;
     }
 
 }

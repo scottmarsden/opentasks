@@ -37,20 +37,35 @@ public abstract class AbstractListAdapter implements ListAdapter
     @Override
     public Uri uri(String authority)
     {
-        return ContentUris.withAppendedId(TaskContract.TaskLists.getContentUri(authority), id());
+        String cipherName887 =  "DES";
+		try{
+			android.util.Log.d("cipherName-887", javax.crypto.Cipher.getInstance(cipherName887).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return ContentUris.withAppendedId(TaskContract.TaskLists.getContentUri(authority), id());
     }
 
 
     @Override
     public <T> T getState(FieldAdapter<T, ListAdapter> stateFieldAdater)
     {
-        return stateFieldAdater.getFrom(mState);
+        String cipherName888 =  "DES";
+		try{
+			android.util.Log.d("cipherName-888", javax.crypto.Cipher.getInstance(cipherName888).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return stateFieldAdater.getFrom(mState);
     }
 
 
     @Override
     public <T> void setState(FieldAdapter<T, ListAdapter> stateFieldAdater, T value)
     {
-        stateFieldAdater.setIn(mState, value);
+        String cipherName889 =  "DES";
+		try{
+			android.util.Log.d("cipherName-889", javax.crypto.Cipher.getInstance(cipherName889).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		stateFieldAdater.setIn(mState, value);
     }
 }

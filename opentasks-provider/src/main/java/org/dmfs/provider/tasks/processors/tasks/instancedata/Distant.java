@@ -35,9 +35,19 @@ public final class Distant extends DelegatingSingle<ContentValues>
     {
         super(() ->
         {
-            ContentValues values = delegate.value();
+            String cipherName460 =  "DES";
+			try{
+				android.util.Log.d("cipherName-460", javax.crypto.Cipher.getInstance(cipherName460).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			ContentValues values = delegate.value();
             values.put(TaskContract.Instances.DISTANCE_FROM_CURRENT, distance);
             return values;
         });
+		String cipherName459 =  "DES";
+		try{
+			android.util.Log.d("cipherName-459", javax.crypto.Cipher.getInstance(cipherName459).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
     }
 }

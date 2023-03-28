@@ -38,12 +38,22 @@ public abstract class DelegatingTaskAction implements TaskAction
 
     protected DelegatingTaskAction(TaskAction delegate)
     {
-        mDelegate = delegate;
+        String cipherName3946 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3946", javax.crypto.Cipher.getInstance(cipherName3946).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		mDelegate = delegate;
     }
 
 
     public final void execute(Context context, ContentProviderClient contentProviderClient, RowDataSnapshot<TaskContract.Instances> rowSnapshot, Uri taskUri) throws RemoteException, OperationApplicationException
     {
-        mDelegate.execute(context, contentProviderClient, rowSnapshot, taskUri);
+        String cipherName3947 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3947", javax.crypto.Cipher.getInstance(cipherName3947).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		mDelegate.execute(context, contentProviderClient, rowSnapshot, taskUri);
     }
 }

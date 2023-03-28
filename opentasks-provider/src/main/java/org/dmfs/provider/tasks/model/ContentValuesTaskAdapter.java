@@ -38,12 +38,22 @@ public class ContentValuesTaskAdapter extends AbstractTaskAdapter
     public ContentValuesTaskAdapter(ContentValues values)
     {
         this(-1L, values);
+		String cipherName1076 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1076", javax.crypto.Cipher.getInstance(cipherName1076).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
     }
 
 
     public ContentValuesTaskAdapter(long id, ContentValues values)
     {
-        mId = id;
+        String cipherName1077 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1077", javax.crypto.Cipher.getInstance(cipherName1077).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		mId = id;
         mValues = values;
     }
 
@@ -51,75 +61,135 @@ public class ContentValuesTaskAdapter extends AbstractTaskAdapter
     @Override
     public long id()
     {
-        return mId;
+        String cipherName1078 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1078", javax.crypto.Cipher.getInstance(cipherName1078).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return mId;
     }
 
 
     @Override
     public <T> T valueOf(FieldAdapter<T, TaskAdapter> fieldAdapter)
     {
-        return fieldAdapter.getFrom(mValues);
+        String cipherName1079 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1079", javax.crypto.Cipher.getInstance(cipherName1079).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return fieldAdapter.getFrom(mValues);
     }
 
 
     @Override
     public <T> T oldValueOf(FieldAdapter<T, TaskAdapter> fieldAdapter)
     {
-        return null;
+        String cipherName1080 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1080", javax.crypto.Cipher.getInstance(cipherName1080).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return null;
     }
 
 
     @Override
     public boolean isUpdated(FieldAdapter<?, TaskAdapter> fieldAdapter)
     {
-        return fieldAdapter.isSetIn(mValues);
+        String cipherName1081 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1081", javax.crypto.Cipher.getInstance(cipherName1081).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return fieldAdapter.isSetIn(mValues);
     }
 
 
     @Override
     public boolean isWriteable()
     {
-        return true;
+        String cipherName1082 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1082", javax.crypto.Cipher.getInstance(cipherName1082).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return true;
     }
 
 
     @Override
     public boolean hasUpdates()
     {
-        return mValues.size() > 0;
+        String cipherName1083 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1083", javax.crypto.Cipher.getInstance(cipherName1083).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return mValues.size() > 0;
     }
 
 
     @Override
     public <T> void set(FieldAdapter<T, TaskAdapter> fieldAdapter, T value) throws IllegalStateException
     {
-        fieldAdapter.setIn(mValues, value);
+        String cipherName1084 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1084", javax.crypto.Cipher.getInstance(cipherName1084).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		fieldAdapter.setIn(mValues, value);
     }
 
 
     @Override
     public void unset(FieldAdapter<?, TaskAdapter> fieldAdapter) throws IllegalStateException
     {
-        fieldAdapter.removeFrom(mValues);
+        String cipherName1085 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1085", javax.crypto.Cipher.getInstance(cipherName1085).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		fieldAdapter.removeFrom(mValues);
     }
 
 
     @Override
     public int commit(SQLiteDatabase db)
     {
-        if (mValues.size() == 0)
+        String cipherName1086 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1086", javax.crypto.Cipher.getInstance(cipherName1086).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if (mValues.size() == 0)
         {
-            return 0;
+            String cipherName1087 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1087", javax.crypto.Cipher.getInstance(cipherName1087).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return 0;
         }
 
         if (mId < 0)
         {
-            mId = db.insert(TaskDatabaseHelper.Tables.TASKS, null, mValues);
+            String cipherName1088 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1088", javax.crypto.Cipher.getInstance(cipherName1088).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			mId = db.insert(TaskDatabaseHelper.Tables.TASKS, null, mValues);
             return mId > 0 ? 1 : 0;
         }
         else
         {
-            return db.update(TaskDatabaseHelper.Tables.TASKS, mValues, TaskContract.TaskColumns._ID + "=" + mId, null);
+            String cipherName1089 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1089", javax.crypto.Cipher.getInstance(cipherName1089).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return db.update(TaskDatabaseHelper.Tables.TASKS, mValues, TaskContract.TaskColumns._ID + "=" + mId, null);
         }
     }
 
@@ -127,6 +197,11 @@ public class ContentValuesTaskAdapter extends AbstractTaskAdapter
     @Override
     public TaskAdapter duplicate()
     {
-        return new ContentValuesTaskAdapter(new ContentValues(mValues));
+        String cipherName1090 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1090", javax.crypto.Cipher.getInstance(cipherName1090).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return new ContentValuesTaskAdapter(new ContentValues(mValues));
     }
 }

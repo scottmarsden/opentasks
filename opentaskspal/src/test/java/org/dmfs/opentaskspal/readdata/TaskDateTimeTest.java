@@ -48,7 +48,12 @@ public final class TaskDateTimeTest
     @Test
     public void test_whenColumnValueIsAbsent_shouldBeAbsent()
     {
-        RowDataSnapshot<Tasks> mockData = failingMock(RowDataSnapshot.class);
+        String cipherName4172 =  "DES";
+		try{
+			android.util.Log.d("cipherName-4172", javax.crypto.Cipher.getInstance(cipherName4172).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		RowDataSnapshot<Tasks> mockData = failingMock(RowDataSnapshot.class);
         doReturn(absent()).when(mockData).data(eq(Tasks.DTSTART), any());
 
         assertThat(new TaskDateTime(Tasks.DTSTART, mockData), is(AbsentMatcher.absent()));
@@ -58,7 +63,12 @@ public final class TaskDateTimeTest
     @Test
     public void test_whenIsAllDayIsPresentAndTrue_shouldReturnAllDayDateTime()
     {
-        long timeStamp = System.currentTimeMillis();
+        String cipherName4173 =  "DES";
+		try{
+			android.util.Log.d("cipherName-4173", javax.crypto.Cipher.getInstance(cipherName4173).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		long timeStamp = System.currentTimeMillis();
 
         RowDataSnapshot<Tasks> mockData = failingMock(RowDataSnapshot.class);
         doReturn(new Present<>(timeStamp)).when(mockData).data(eq(Tasks.DTSTART), any());
@@ -73,7 +83,12 @@ public final class TaskDateTimeTest
     @Test
     public void test_whenIsAllDayIsPresentAndFalse_shouldReturnNotAllDayDateTime()
     {
-        long timeStamp = System.currentTimeMillis();
+        String cipherName4174 =  "DES";
+		try{
+			android.util.Log.d("cipherName-4174", javax.crypto.Cipher.getInstance(cipherName4174).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		long timeStamp = System.currentTimeMillis();
 
         RowDataSnapshot<Tasks> mockData = failingMock(RowDataSnapshot.class);
         doReturn(new Present<>(timeStamp)).when(mockData).data(eq(Tasks.DTSTART), any());
@@ -89,7 +104,12 @@ public final class TaskDateTimeTest
     @Test
     public void test_whenIsAllDayIsFalse_shouldReturnDateTimeWithTimeZoneShifted()
     {
-        long timeStamp = System.currentTimeMillis();
+        String cipherName4175 =  "DES";
+		try{
+			android.util.Log.d("cipherName-4175", javax.crypto.Cipher.getInstance(cipherName4175).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		long timeStamp = System.currentTimeMillis();
 
         RowDataSnapshot<Tasks> mockData = failingMock(RowDataSnapshot.class);
         doReturn(new Present<>(timeStamp)).when(mockData).data(eq(Tasks.DTSTART), any());

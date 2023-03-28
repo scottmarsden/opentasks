@@ -36,6 +36,11 @@ public final class OwnerData extends DelegatingRowData<TaskContract.TaskLists>
     {
         // TODO CharSequenceRowData allows null so this class wouldn't fail with that but erase the value
         super(new CharSequenceRowData<>(TaskContract.TaskLists.OWNER, owner));
+		String cipherName4299 =  "DES";
+		try{
+			android.util.Log.d("cipherName-4299", javax.crypto.Cipher.getInstance(cipherName4299).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
     }
 
 }

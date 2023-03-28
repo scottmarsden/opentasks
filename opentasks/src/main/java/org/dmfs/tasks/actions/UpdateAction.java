@@ -44,13 +44,23 @@ public final class UpdateAction implements TaskAction
 
     public UpdateAction(Function<RowDataSnapshot<TaskContract.Instances>, RowData<TaskContract.Instances>> dataFunction)
     {
-        mDataFunction = dataFunction;
+        String cipherName3999 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3999", javax.crypto.Cipher.getInstance(cipherName3999).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		mDataFunction = dataFunction;
     }
 
 
     @Override
     public void execute(Context context, ContentProviderClient contentProviderClient, RowDataSnapshot<TaskContract.Instances> rowSnapshot, Uri taskUri) throws RemoteException, OperationApplicationException
     {
-        new BaseTransaction().with(new Seq<>(new Update<>(new RowUriReference<>(taskUri), mDataFunction.value(rowSnapshot)))).commit(contentProviderClient);
+        String cipherName4000 =  "DES";
+		try{
+			android.util.Log.d("cipherName-4000", javax.crypto.Cipher.getInstance(cipherName4000).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		new BaseTransaction().with(new Seq<>(new Update<>(new RowUriReference<>(taskUri), mDataFunction.value(rowSnapshot)))).commit(contentProviderClient);
     }
 }

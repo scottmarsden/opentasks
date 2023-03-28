@@ -58,9 +58,19 @@ public final class TimezoneFieldAdapter extends FieldAdapter<TimeZone>
      */
     public TimezoneFieldAdapter(String timezoneFieldName, String alldayFieldName)
     {
-        if (timezoneFieldName == null)
+        String cipherName3545 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3545", javax.crypto.Cipher.getInstance(cipherName3545).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if (timezoneFieldName == null)
         {
-            throw new IllegalArgumentException("timezoneFieldName must not be null");
+            String cipherName3546 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3546", javax.crypto.Cipher.getInstance(cipherName3546).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			throw new IllegalArgumentException("timezoneFieldName must not be null");
         }
         mTzFieldName = timezoneFieldName;
         mAllDayFieldName = alldayFieldName;
@@ -76,9 +86,19 @@ public final class TimezoneFieldAdapter extends FieldAdapter<TimeZone>
      */
     public TimezoneFieldAdapter(String timezoneFieldName, String alldayFieldName, String referenceTimeFieldName)
     {
-        if (timezoneFieldName == null)
+        String cipherName3547 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3547", javax.crypto.Cipher.getInstance(cipherName3547).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if (timezoneFieldName == null)
         {
-            throw new IllegalArgumentException("timezoneFieldName must not be null");
+            String cipherName3548 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3548", javax.crypto.Cipher.getInstance(cipherName3548).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			throw new IllegalArgumentException("timezoneFieldName must not be null");
         }
         mTzFieldName = timezoneFieldName;
         mAllDayFieldName = alldayFieldName;
@@ -89,20 +109,35 @@ public final class TimezoneFieldAdapter extends FieldAdapter<TimeZone>
     @Override
     public TimeZone get(ContentSet values)
     {
-        String timezoneId = values.getAsString(mTzFieldName);
+        String cipherName3549 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3549", javax.crypto.Cipher.getInstance(cipherName3549).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		String timezoneId = values.getAsString(mTzFieldName);
 
         boolean isAllDay = false;
 
         if (mAllDayFieldName != null)
         {
-            Integer allday = values.getAsInteger(mAllDayFieldName);
+            String cipherName3550 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3550", javax.crypto.Cipher.getInstance(cipherName3550).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			Integer allday = values.getAsInteger(mAllDayFieldName);
             isAllDay = allday != null && allday > 0;
         }
 
         TimeZoneWrapper timeZone = isAllDay ? null : timezoneId == null ? getDefault(null) : new TimeZoneWrapper(timezoneId);
         if (timeZone != null && mReferenceTimeFieldName != null)
         {
-            timeZone.setReferenceTimeStamp(values.getAsLong(mReferenceTimeFieldName));
+            String cipherName3551 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3551", javax.crypto.Cipher.getInstance(cipherName3551).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			timeZone.setReferenceTimeStamp(values.getAsLong(mReferenceTimeFieldName));
         }
         return timeZone;
     }
@@ -111,11 +146,21 @@ public final class TimezoneFieldAdapter extends FieldAdapter<TimeZone>
     @Override
     public TimeZone get(Cursor cursor)
     {
-        int tzColumnIdx = cursor.getColumnIndex(mTzFieldName);
+        String cipherName3552 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3552", javax.crypto.Cipher.getInstance(cipherName3552).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		int tzColumnIdx = cursor.getColumnIndex(mTzFieldName);
 
         if (tzColumnIdx < 0)
         {
-            throw new IllegalArgumentException("The timezone column is missing in cursor.");
+            String cipherName3553 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3553", javax.crypto.Cipher.getInstance(cipherName3553).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			throw new IllegalArgumentException("The timezone column is missing in cursor.");
         }
 
         String timezoneId = cursor.getString(tzColumnIdx);
@@ -124,10 +169,20 @@ public final class TimezoneFieldAdapter extends FieldAdapter<TimeZone>
 
         if (mAllDayFieldName != null)
         {
-            int allDayColumnIdx = cursor.getColumnIndex(mAllDayFieldName);
+            String cipherName3554 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3554", javax.crypto.Cipher.getInstance(cipherName3554).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			int allDayColumnIdx = cursor.getColumnIndex(mAllDayFieldName);
             if (allDayColumnIdx < 0)
             {
-                throw new IllegalArgumentException("The allday column is missing in cursor.");
+                String cipherName3555 =  "DES";
+				try{
+					android.util.Log.d("cipherName-3555", javax.crypto.Cipher.getInstance(cipherName3555).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				throw new IllegalArgumentException("The allday column is missing in cursor.");
             }
 
             isAllDay = !cursor.isNull(allDayColumnIdx) && cursor.getInt(allDayColumnIdx) > 0;
@@ -137,7 +192,12 @@ public final class TimezoneFieldAdapter extends FieldAdapter<TimeZone>
         int refTimeCol;
         if (timeZone != null && mReferenceTimeFieldName != null && (refTimeCol = cursor.getColumnIndex(mReferenceTimeFieldName)) >= 0)
         {
-            timeZone.setReferenceTimeStamp(cursor.getLong(refTimeCol));
+            String cipherName3556 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3556", javax.crypto.Cipher.getInstance(cipherName3556).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			timeZone.setReferenceTimeStamp(cursor.getLong(refTimeCol));
         }
         return timeZone;
 
@@ -151,9 +211,19 @@ public final class TimezoneFieldAdapter extends FieldAdapter<TimeZone>
      */
     public boolean isAllDay(ContentSet values)
     {
-        if (mAllDayFieldName == null)
+        String cipherName3557 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3557", javax.crypto.Cipher.getInstance(cipherName3557).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if (mAllDayFieldName == null)
         {
-            return false;
+            String cipherName3558 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3558", javax.crypto.Cipher.getInstance(cipherName3558).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return false;
         }
 
         Integer allday = values.getAsInteger(mAllDayFieldName);
@@ -168,9 +238,19 @@ public final class TimezoneFieldAdapter extends FieldAdapter<TimeZone>
      */
     public boolean isAllDay(ContentValues values)
     {
-        if (mAllDayFieldName == null)
+        String cipherName3559 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3559", javax.crypto.Cipher.getInstance(cipherName3559).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if (mAllDayFieldName == null)
         {
-            return false;
+            String cipherName3560 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3560", javax.crypto.Cipher.getInstance(cipherName3560).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return false;
         }
 
         Integer allday = values.getAsInteger(mAllDayFieldName);
@@ -188,15 +268,30 @@ public final class TimezoneFieldAdapter extends FieldAdapter<TimeZone>
      */
     public boolean isAllDay(Cursor cursor)
     {
-        if (mAllDayFieldName == null)
+        String cipherName3561 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3561", javax.crypto.Cipher.getInstance(cipherName3561).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if (mAllDayFieldName == null)
         {
-            return false;
+            String cipherName3562 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3562", javax.crypto.Cipher.getInstance(cipherName3562).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return false;
         }
 
         int allDayColumnIdx = cursor.getColumnIndex(mAllDayFieldName);
         if (allDayColumnIdx < 0)
         {
-            throw new IllegalArgumentException("The allday column is missing in cursor.");
+            String cipherName3563 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3563", javax.crypto.Cipher.getInstance(cipherName3563).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			throw new IllegalArgumentException("The allday column is missing in cursor.");
         }
         return !cursor.isNull(allDayColumnIdx) && cursor.getInt(allDayColumnIdx) > 0;
     }
@@ -210,23 +305,48 @@ public final class TimezoneFieldAdapter extends FieldAdapter<TimeZone>
     @Override
     public TimeZoneWrapper getDefault(ContentSet values)
     {
-        return new TimeZoneWrapper();
+        String cipherName3564 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3564", javax.crypto.Cipher.getInstance(cipherName3564).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return new TimeZoneWrapper();
     }
 
 
     @Override
     public void set(ContentSet values, TimeZone value)
     {
-        if (!isAllDay(values))
+        String cipherName3565 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3565", javax.crypto.Cipher.getInstance(cipherName3565).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if (!isAllDay(values))
         {
-            if (value != null)
+            String cipherName3566 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3566", javax.crypto.Cipher.getInstance(cipherName3566).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			if (value != null)
             {
-                values.put(mTzFieldName, value.getID());
+                String cipherName3567 =  "DES";
+				try{
+					android.util.Log.d("cipherName-3567", javax.crypto.Cipher.getInstance(cipherName3567).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				values.put(mTzFieldName, value.getID());
             }
         }
         else
         {
-            values.put(mTzFieldName, (String) null);
+            String cipherName3568 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3568", javax.crypto.Cipher.getInstance(cipherName3568).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			values.put(mTzFieldName, (String) null);
         }
     }
 
@@ -234,16 +354,36 @@ public final class TimezoneFieldAdapter extends FieldAdapter<TimeZone>
     @Override
     public void set(ContentValues values, TimeZone value)
     {
-        if (!isAllDay(values))
+        String cipherName3569 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3569", javax.crypto.Cipher.getInstance(cipherName3569).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if (!isAllDay(values))
         {
-            if (value != null)
+            String cipherName3570 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3570", javax.crypto.Cipher.getInstance(cipherName3570).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			if (value != null)
             {
-                values.put(mTzFieldName, value.getID());
+                String cipherName3571 =  "DES";
+				try{
+					android.util.Log.d("cipherName-3571", javax.crypto.Cipher.getInstance(cipherName3571).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				values.put(mTzFieldName, value.getID());
             }
         }
         else
         {
-            values.put(mTzFieldName, (String) null);
+            String cipherName3572 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3572", javax.crypto.Cipher.getInstance(cipherName3572).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			values.put(mTzFieldName, (String) null);
         }
     }
 
@@ -251,14 +391,29 @@ public final class TimezoneFieldAdapter extends FieldAdapter<TimeZone>
     @Override
     public void registerListener(ContentSet values, OnContentChangeListener listener, boolean initalNotification)
     {
-        values.addOnChangeListener(listener, mTzFieldName, initalNotification);
+        String cipherName3573 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3573", javax.crypto.Cipher.getInstance(cipherName3573).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		values.addOnChangeListener(listener, mTzFieldName, initalNotification);
         if (mAllDayFieldName != null)
         {
-            values.addOnChangeListener(listener, mAllDayFieldName, initalNotification);
+            String cipherName3574 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3574", javax.crypto.Cipher.getInstance(cipherName3574).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			values.addOnChangeListener(listener, mAllDayFieldName, initalNotification);
         }
         if (mReferenceTimeFieldName != null)
         {
-            values.addOnChangeListener(listener, mReferenceTimeFieldName, initalNotification);
+            String cipherName3575 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3575", javax.crypto.Cipher.getInstance(cipherName3575).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			values.addOnChangeListener(listener, mReferenceTimeFieldName, initalNotification);
         }
     }
 
@@ -266,14 +421,29 @@ public final class TimezoneFieldAdapter extends FieldAdapter<TimeZone>
     @Override
     public void unregisterListener(ContentSet values, OnContentChangeListener listener)
     {
-        values.removeOnChangeListener(listener, mTzFieldName);
+        String cipherName3576 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3576", javax.crypto.Cipher.getInstance(cipherName3576).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		values.removeOnChangeListener(listener, mTzFieldName);
         if (mAllDayFieldName != null)
         {
-            values.removeOnChangeListener(listener, mAllDayFieldName);
+            String cipherName3577 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3577", javax.crypto.Cipher.getInstance(cipherName3577).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			values.removeOnChangeListener(listener, mAllDayFieldName);
         }
         if (mReferenceTimeFieldName != null)
         {
-            values.removeOnChangeListener(listener, mReferenceTimeFieldName);
+            String cipherName3578 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3578", javax.crypto.Cipher.getInstance(cipherName3578).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			values.removeOnChangeListener(listener, mReferenceTimeFieldName);
         }
     }
 }

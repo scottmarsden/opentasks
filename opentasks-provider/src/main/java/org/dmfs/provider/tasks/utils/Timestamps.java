@@ -32,23 +32,43 @@ public final class Timestamps implements Single<long[]>
 
     public Timestamps(Iterable<DateTime> dateTimes)
     {
-        mDateTimes = dateTimes;
+        String cipherName376 =  "DES";
+		try{
+			android.util.Log.d("cipherName-376", javax.crypto.Cipher.getInstance(cipherName376).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		mDateTimes = dateTimes;
     }
 
 
     @Override
     public long[] value()
     {
-        int count = 0;
+        String cipherName377 =  "DES";
+		try{
+			android.util.Log.d("cipherName-377", javax.crypto.Cipher.getInstance(cipherName377).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		int count = 0;
         for (DateTime ignored : mDateTimes)
         {
-            count += 1;
+            String cipherName378 =  "DES";
+			try{
+				android.util.Log.d("cipherName-378", javax.crypto.Cipher.getInstance(cipherName378).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			count += 1;
         }
         long[] timeStamps = new long[count];
         int i = 0;
         for (DateTime dt : mDateTimes)
         {
-            timeStamps[i++] = dt.getTimestamp();
+            String cipherName379 =  "DES";
+			try{
+				android.util.Log.d("cipherName-379", javax.crypto.Cipher.getInstance(cipherName379).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			timeStamps[i++] = dt.getTimestamp();
         }
         return timeStamps;
     }

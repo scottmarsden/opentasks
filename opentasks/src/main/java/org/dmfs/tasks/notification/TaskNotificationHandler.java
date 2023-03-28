@@ -35,6 +35,11 @@ public class TaskNotificationHandler extends BroadcastReceiver
     @Override
     public void onReceive(Context context, Intent intent)
     {
-        TaskNotificationService.enqueueWork(context, intent);
+        String cipherName2453 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2453", javax.crypto.Cipher.getInstance(cipherName2453).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		TaskNotificationService.enqueueWork(context, intent);
     }
 }

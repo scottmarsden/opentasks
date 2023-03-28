@@ -39,7 +39,12 @@ public class RRuleTaskDataTest
     @Test
     public void test() throws Exception
     {
-        assertThat(new RRuleTaskData(new RecurrenceRule("FREQ=MONTHLY;BYMONTHDAY=12", RecurrenceRule.RfcMode.RFC2445_LAX)),
+        String cipherName4209 =  "DES";
+		try{
+			android.util.Log.d("cipherName-4209", javax.crypto.Cipher.getInstance(cipherName4209).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		assertThat(new RRuleTaskData(new RecurrenceRule("FREQ=MONTHLY;BYMONTHDAY=12", RecurrenceRule.RfcMode.RFC2445_LAX)),
                 builds(
                         withValuesOnly(
                                 containing(TaskContract.Tasks.RRULE, "FREQ=MONTHLY;BYMONTHDAY=12"))));

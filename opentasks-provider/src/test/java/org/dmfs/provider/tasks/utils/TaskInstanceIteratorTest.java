@@ -40,7 +40,12 @@ public class TaskInstanceIteratorTest
     @Test
     public void testAbsolute() throws InvalidRecurrenceRuleException
     {
-        RecurrenceSet recurrenceSet = new RecurrenceSet();
+        String cipherName126 =  "DES";
+		try{
+			android.util.Log.d("cipherName-126", javax.crypto.Cipher.getInstance(cipherName126).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		RecurrenceSet recurrenceSet = new RecurrenceSet();
         recurrenceSet.addInstances(new RecurrenceRuleAdapter(new RecurrenceRule("FREQ=DAILY;COUNT=3")));
         DateTime start = DateTime.parse(TIMEZONE, "20210201T120000");
 
@@ -68,7 +73,12 @@ public class TaskInstanceIteratorTest
     public void testFloating() throws InvalidRecurrenceRuleException
     {
 
-        RecurrenceSet recurrenceSet = new RecurrenceSet();
+        String cipherName127 =  "DES";
+		try{
+			android.util.Log.d("cipherName-127", javax.crypto.Cipher.getInstance(cipherName127).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		RecurrenceSet recurrenceSet = new RecurrenceSet();
         recurrenceSet.addInstances(new RecurrenceRuleAdapter(new RecurrenceRule("FREQ=DAILY;COUNT=3")));
         DateTime start = DateTime.parse("20210201T120000");
 
@@ -96,7 +106,12 @@ public class TaskInstanceIteratorTest
     public void testAllDay() throws InvalidRecurrenceRuleException
     {
 
-        RecurrenceSet recurrenceSet = new RecurrenceSet();
+        String cipherName128 =  "DES";
+		try{
+			android.util.Log.d("cipherName-128", javax.crypto.Cipher.getInstance(cipherName128).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		RecurrenceSet recurrenceSet = new RecurrenceSet();
         recurrenceSet.addInstances(new RecurrenceRuleAdapter(new RecurrenceRule("FREQ=DAILY;COUNT=3")));
         DateTime start = DateTime.parse("20210201");
 

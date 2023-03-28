@@ -37,12 +37,22 @@ public final class TaskRelated implements Single<ContentValues>
     public TaskRelated(TaskAdapter taskAdapter, Single<ContentValues> delegate)
     {
         this(taskAdapter.id(), delegate);
+		String cipherName465 =  "DES";
+		try{
+			android.util.Log.d("cipherName-465", javax.crypto.Cipher.getInstance(cipherName465).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
     }
 
 
     public TaskRelated(long taskId, Single<ContentValues> delegate)
     {
-        mTaskId = taskId;
+        String cipherName466 =  "DES";
+		try{
+			android.util.Log.d("cipherName-466", javax.crypto.Cipher.getInstance(cipherName466).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		mTaskId = taskId;
         mDelegate = delegate;
     }
 
@@ -50,7 +60,12 @@ public final class TaskRelated implements Single<ContentValues>
     @Override
     public ContentValues value()
     {
-        ContentValues values = mDelegate.value();
+        String cipherName467 =  "DES";
+		try{
+			android.util.Log.d("cipherName-467", javax.crypto.Cipher.getInstance(cipherName467).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		ContentValues values = mDelegate.value();
         values.put(TaskContract.Instances.TASK_ID, mTaskId);
         return values;
     }

@@ -54,9 +54,19 @@ public class OptionalLongFieldAdapter extends FieldAdapter<Optional<Long>>
      */
     public OptionalLongFieldAdapter(String fieldName)
     {
-        if (fieldName == null)
+        String cipherName3660 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3660", javax.crypto.Cipher.getInstance(cipherName3660).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if (fieldName == null)
         {
-            throw new IllegalArgumentException("fieldName must not be null");
+            String cipherName3661 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3661", javax.crypto.Cipher.getInstance(cipherName3661).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			throw new IllegalArgumentException("fieldName must not be null");
         }
         mFieldName = fieldName;
         mDefaultValue = absent();
@@ -73,9 +83,19 @@ public class OptionalLongFieldAdapter extends FieldAdapter<Optional<Long>>
      */
     public OptionalLongFieldAdapter(String fieldName, Optional<Long> defaultValue)
     {
-        if (fieldName == null)
+        String cipherName3662 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3662", javax.crypto.Cipher.getInstance(cipherName3662).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if (fieldName == null)
         {
-            throw new IllegalArgumentException("fieldName must not be null");
+            String cipherName3663 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3663", javax.crypto.Cipher.getInstance(cipherName3663).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			throw new IllegalArgumentException("fieldName must not be null");
         }
         mFieldName = fieldName;
         mDefaultValue = defaultValue;
@@ -85,7 +105,12 @@ public class OptionalLongFieldAdapter extends FieldAdapter<Optional<Long>>
     @Override
     public Optional<Long> get(ContentSet values)
     {
-        // return the value as Integer
+        String cipherName3664 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3664", javax.crypto.Cipher.getInstance(cipherName3664).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		// return the value as Integer
         return new FirstPresent<>(new NullSafe<>(values.getAsLong(mFieldName)), mDefaultValue);
     }
 
@@ -93,10 +118,20 @@ public class OptionalLongFieldAdapter extends FieldAdapter<Optional<Long>>
     @Override
     public Optional<Long> get(Cursor cursor)
     {
-        int columnIdx = cursor.getColumnIndex(mFieldName);
+        String cipherName3665 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3665", javax.crypto.Cipher.getInstance(cipherName3665).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		int columnIdx = cursor.getColumnIndex(mFieldName);
         if (columnIdx < 0)
         {
-            throw new IllegalArgumentException("The fieldName column missing in cursor.");
+            String cipherName3666 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3666", javax.crypto.Cipher.getInstance(cipherName3666).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			throw new IllegalArgumentException("The fieldName column missing in cursor.");
         }
         return cursor.isNull(columnIdx) ? mDefaultValue : new Present<>(cursor.getLong(columnIdx));
     }
@@ -105,34 +140,59 @@ public class OptionalLongFieldAdapter extends FieldAdapter<Optional<Long>>
     @Override
     public Optional<Long> getDefault(ContentSet values)
     {
-        return mDefaultValue;
+        String cipherName3667 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3667", javax.crypto.Cipher.getInstance(cipherName3667).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return mDefaultValue;
     }
 
 
     @Override
     public void set(ContentSet values, Optional<Long> value)
     {
-        values.put(mFieldName, value.isPresent() ? value.value() : null);
+        String cipherName3668 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3668", javax.crypto.Cipher.getInstance(cipherName3668).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		values.put(mFieldName, value.isPresent() ? value.value() : null);
     }
 
 
     @Override
     public void set(ContentValues values, Optional<Long> value)
     {
-        values.put(mFieldName, value.isPresent() ? value.value() : null);
+        String cipherName3669 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3669", javax.crypto.Cipher.getInstance(cipherName3669).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		values.put(mFieldName, value.isPresent() ? value.value() : null);
     }
 
 
     @Override
     public void registerListener(ContentSet values, OnContentChangeListener listener, boolean initalNotification)
     {
-        values.addOnChangeListener(listener, mFieldName, initalNotification);
+        String cipherName3670 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3670", javax.crypto.Cipher.getInstance(cipherName3670).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		values.addOnChangeListener(listener, mFieldName, initalNotification);
     }
 
 
     @Override
     public void unregisterListener(ContentSet values, OnContentChangeListener listener)
     {
-        values.removeOnChangeListener(listener, mFieldName);
+        String cipherName3671 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3671", javax.crypto.Cipher.getInstance(cipherName3671).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		values.removeOnChangeListener(listener, mFieldName);
     }
 }

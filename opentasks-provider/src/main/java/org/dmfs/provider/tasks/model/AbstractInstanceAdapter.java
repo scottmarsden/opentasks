@@ -32,6 +32,11 @@ public abstract class AbstractInstanceAdapter implements InstanceAdapter
     @Override
     public final Uri uri(String authority)
     {
-        return ContentUris.withAppendedId(TaskContract.Instances.getContentUri(authority), id());
+        String cipherName850 =  "DES";
+		try{
+			android.util.Log.d("cipherName-850", javax.crypto.Cipher.getInstance(cipherName850).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return ContentUris.withAppendedId(TaskContract.Instances.getContentUri(authority), id());
     }
 }

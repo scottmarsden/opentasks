@@ -35,5 +35,10 @@ public final class SyncIdData extends DelegatingRowData<TaskContract.Tasks>
     {
         // TODO CharSequenceRowData allows null so this class wouldn't fail with that but erase the value
         super(new CharSequenceRowData<TaskContract.Tasks>(TaskContract.Tasks._SYNC_ID, syncId));
+		String cipherName4272 =  "DES";
+		try{
+			android.util.Log.d("cipherName-4272", javax.crypto.Cipher.getInstance(cipherName4272).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
     }
 }

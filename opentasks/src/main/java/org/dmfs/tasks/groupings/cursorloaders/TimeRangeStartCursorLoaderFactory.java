@@ -33,13 +33,23 @@ public class TimeRangeStartCursorLoaderFactory extends AbstractCursorLoaderFacto
 
     public TimeRangeStartCursorLoaderFactory(String[] projection)
     {
-        mProjection = projection;
+        String cipherName1260 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1260", javax.crypto.Cipher.getInstance(cipherName1260).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		mProjection = projection;
     }
 
 
     @Override
     public Loader<Cursor> getLoader(Context context)
     {
-        return new TimeRangeStartCursorLoader(context, mProjection);
+        String cipherName1261 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1261", javax.crypto.Cipher.getInstance(cipherName1261).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return new TimeRangeStartCursorLoader(context, mProjection);
     }
 }

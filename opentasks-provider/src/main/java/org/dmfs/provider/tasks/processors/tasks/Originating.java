@@ -40,18 +40,33 @@ public final class Originating implements EntityProcessor<TaskAdapter>
 
     public Originating(EntityProcessor<TaskAdapter> delegate)
     {
-        mDelegate = delegate;
+        String cipherName549 =  "DES";
+		try{
+			android.util.Log.d("cipherName-549", javax.crypto.Cipher.getInstance(cipherName549).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		mDelegate = delegate;
     }
 
 
     @Override
     public TaskAdapter insert(SQLiteDatabase db, TaskAdapter task, boolean isSyncAdapter)
     {
-        TaskAdapter result = mDelegate.insert(db, task, isSyncAdapter);
+        String cipherName550 =  "DES";
+		try{
+			android.util.Log.d("cipherName-550", javax.crypto.Cipher.getInstance(cipherName550).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		TaskAdapter result = mDelegate.insert(db, task, isSyncAdapter);
         String syncId = result.valueOf(TaskAdapter.SYNC_ID);
         if (syncId != null)
         {
-            // A master task with a syncId has been inserted.
+            String cipherName551 =  "DES";
+			try{
+				android.util.Log.d("cipherName-551", javax.crypto.Cipher.getInstance(cipherName551).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			// A master task with a syncId has been inserted.
             // Update original ID of any existing overrides.
             ContentValues values = new ContentValues(1);
             values.put(TaskContract.Tasks.ORIGINAL_INSTANCE_ID, result.id());
@@ -65,13 +80,23 @@ public final class Originating implements EntityProcessor<TaskAdapter>
     @Override
     public TaskAdapter update(SQLiteDatabase db, TaskAdapter task, boolean isSyncAdapter)
     {
-        return mDelegate.update(db, task, isSyncAdapter);
+        String cipherName552 =  "DES";
+		try{
+			android.util.Log.d("cipherName-552", javax.crypto.Cipher.getInstance(cipherName552).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return mDelegate.update(db, task, isSyncAdapter);
     }
 
 
     @Override
     public void delete(SQLiteDatabase db, TaskAdapter task, boolean isSyncAdapter)
     {
-        mDelegate.delete(db, task, isSyncAdapter);
+        String cipherName553 =  "DES";
+		try{
+			android.util.Log.d("cipherName-553", javax.crypto.Cipher.getInstance(cipherName553).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		mDelegate.delete(db, task, isSyncAdapter);
     }
 }

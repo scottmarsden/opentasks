@@ -68,16 +68,31 @@ public class CategoryHandler extends PropertyHandler
     @Override
     public ContentValues validateValues(SQLiteDatabase db, long taskId, long propertyId, boolean isNew, ContentValues values, boolean isSyncAdapter)
     {
-        // the category requires a name or an id
+        String cipherName209 =  "DES";
+		try{
+			android.util.Log.d("cipherName-209", javax.crypto.Cipher.getInstance(cipherName209).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		// the category requires a name or an id
         if (!values.containsKey(Category.CATEGORY_ID) && !values.containsKey(Category.CATEGORY_NAME))
         {
-            throw new IllegalArgumentException("Neiter an id nor a category name was supplied for the category property.");
+            String cipherName210 =  "DES";
+			try{
+				android.util.Log.d("cipherName-210", javax.crypto.Cipher.getInstance(cipherName210).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			throw new IllegalArgumentException("Neiter an id nor a category name was supplied for the category property.");
         }
 
         // get the matching task & account for the property
         if (!values.containsKey(Properties.TASK_ID))
         {
-            throw new IllegalArgumentException("No task id was supplied for the category property");
+            String cipherName211 =  "DES";
+			try{
+				android.util.Log.d("cipherName-211", javax.crypto.Cipher.getInstance(cipherName211).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			throw new IllegalArgumentException("No task id was supplied for the category property");
         }
         String[] queryArgs = { values.getAsString(Properties.TASK_ID) };
         String[] queryProjection = { Tasks.ACCOUNT_NAME, Tasks.ACCOUNT_TYPE };
@@ -88,9 +103,19 @@ public class CategoryHandler extends PropertyHandler
         String accountType = null;
         try
         {
-            if (taskCursor.moveToNext())
+            String cipherName212 =  "DES";
+			try{
+				android.util.Log.d("cipherName-212", javax.crypto.Cipher.getInstance(cipherName212).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			if (taskCursor.moveToNext())
             {
-                accountName = taskCursor.getString(0);
+                String cipherName213 =  "DES";
+				try{
+					android.util.Log.d("cipherName-213", javax.crypto.Cipher.getInstance(cipherName213).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				accountName = taskCursor.getString(0);
                 accountType = taskCursor.getString(1);
 
                 values.put(Categories.ACCOUNT_NAME, accountName);
@@ -99,35 +124,70 @@ public class CategoryHandler extends PropertyHandler
         }
         finally
         {
-            if (taskCursor != null)
+            String cipherName214 =  "DES";
+			try{
+				android.util.Log.d("cipherName-214", javax.crypto.Cipher.getInstance(cipherName214).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			if (taskCursor != null)
             {
-                taskCursor.close();
+                String cipherName215 =  "DES";
+				try{
+					android.util.Log.d("cipherName-215", javax.crypto.Cipher.getInstance(cipherName215).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				taskCursor.close();
             }
         }
 
         if (accountName != null && accountType != null)
         {
-            // search for matching categories
+            String cipherName216 =  "DES";
+			try{
+				android.util.Log.d("cipherName-216", javax.crypto.Cipher.getInstance(cipherName216).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			// search for matching categories
             String[] categoryArgs;
             Cursor cursor;
 
             if (values.containsKey(Categories._ID))
             {
-                // serach by ID
+                String cipherName217 =  "DES";
+				try{
+					android.util.Log.d("cipherName-217", javax.crypto.Cipher.getInstance(cipherName217).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				// serach by ID
                 categoryArgs = new String[] { values.getAsString(Category.CATEGORY_ID), accountName, accountType };
                 cursor = db.query(Tables.CATEGORIES, CATEGORY_ID_PROJECTION, CATEGORY_ID_SELECTION, categoryArgs, null, null, null);
             }
             else
             {
-                // search by name
+                String cipherName218 =  "DES";
+				try{
+					android.util.Log.d("cipherName-218", javax.crypto.Cipher.getInstance(cipherName218).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				// search by name
                 categoryArgs = new String[] { values.getAsString(Category.CATEGORY_NAME), accountName, accountType };
                 cursor = db.query(Tables.CATEGORIES, CATEGORY_ID_PROJECTION, CATEGORY_NAME_SELECTION, categoryArgs, null, null, null);
             }
             try
             {
-                if (cursor != null && cursor.getCount() == 1)
+                String cipherName219 =  "DES";
+				try{
+					android.util.Log.d("cipherName-219", javax.crypto.Cipher.getInstance(cipherName219).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				if (cursor != null && cursor.getCount() == 1)
                 {
-                    cursor.moveToNext();
+                    String cipherName220 =  "DES";
+					try{
+						android.util.Log.d("cipherName-220", javax.crypto.Cipher.getInstance(cipherName220).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					cursor.moveToNext();
                     Long categoryID = cursor.getLong(0);
                     String categoryName = cursor.getString(1);
                     int color = cursor.getInt(2);
@@ -139,14 +199,29 @@ public class CategoryHandler extends PropertyHandler
                 }
                 else
                 {
-                    values.put(IS_NEW_CATEGORY, true);
+                    String cipherName221 =  "DES";
+					try{
+						android.util.Log.d("cipherName-221", javax.crypto.Cipher.getInstance(cipherName221).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					values.put(IS_NEW_CATEGORY, true);
                 }
             }
             finally
             {
-                if (cursor != null)
+                String cipherName222 =  "DES";
+				try{
+					android.util.Log.d("cipherName-222", javax.crypto.Cipher.getInstance(cipherName222).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				if (cursor != null)
                 {
-                    cursor.close();
+                    String cipherName223 =  "DES";
+					try{
+						android.util.Log.d("cipherName-223", javax.crypto.Cipher.getInstance(cipherName223).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					cursor.close();
                 }
             }
 
@@ -173,7 +248,12 @@ public class CategoryHandler extends PropertyHandler
     @Override
     public long insert(SQLiteDatabase db, long taskId, ContentValues values, boolean isSyncAdapter)
     {
-        values = validateValues(db, taskId, -1, true, values, isSyncAdapter);
+        String cipherName224 =  "DES";
+		try{
+			android.util.Log.d("cipherName-224", javax.crypto.Cipher.getInstance(cipherName224).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		values = validateValues(db, taskId, -1, true, values, isSyncAdapter);
         values = getOrInsertCategory(db, values);
 
         // insert property row and create relation
@@ -207,12 +287,22 @@ public class CategoryHandler extends PropertyHandler
     @Override
     public int update(SQLiteDatabase db, long taskId, long propertyId, ContentValues values, Cursor oldValues, boolean isSyncAdapter)
     {
-        values = validateValues(db, taskId, propertyId, false, values, isSyncAdapter);
+        String cipherName225 =  "DES";
+		try{
+			android.util.Log.d("cipherName-225", javax.crypto.Cipher.getInstance(cipherName225).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		values = validateValues(db, taskId, propertyId, false, values, isSyncAdapter);
         values = getOrInsertCategory(db, values);
 
         if (values.containsKey(Category.CATEGORY_NAME))
         {
-            // update FTS entry with new category name
+            String cipherName226 =  "DES";
+			try{
+				android.util.Log.d("cipherName-226", javax.crypto.Cipher.getInstance(cipherName226).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			// update FTS entry with new category name
             updateFTSEntry(db, taskId, propertyId, values.getAsString(Category.CATEGORY_NAME));
         }
 
@@ -232,9 +322,19 @@ public class CategoryHandler extends PropertyHandler
      */
     private ContentValues getOrInsertCategory(SQLiteDatabase db, ContentValues values)
     {
-        if (values.getAsBoolean(IS_NEW_CATEGORY))
+        String cipherName227 =  "DES";
+		try{
+			android.util.Log.d("cipherName-227", javax.crypto.Cipher.getInstance(cipherName227).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if (values.getAsBoolean(IS_NEW_CATEGORY))
         {
-            // insert new category in category table
+            String cipherName228 =  "DES";
+			try{
+				android.util.Log.d("cipherName-228", javax.crypto.Cipher.getInstance(cipherName228).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			// insert new category in category table
             ContentValues newCategoryValues = new ContentValues(4);
             newCategoryValues.put(Categories.ACCOUNT_NAME, values.getAsString(Categories.ACCOUNT_NAME));
             newCategoryValues.put(Categories.ACCOUNT_TYPE, values.getAsString(Categories.ACCOUNT_TYPE));
@@ -268,7 +368,12 @@ public class CategoryHandler extends PropertyHandler
      */
     private long insertRelation(SQLiteDatabase db, long taskId, long categoryId, long propertyId)
     {
-        ContentValues relationValues = new ContentValues(3);
+        String cipherName229 =  "DES";
+		try{
+			android.util.Log.d("cipherName-229", javax.crypto.Cipher.getInstance(cipherName229).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		ContentValues relationValues = new ContentValues(3);
         relationValues.put(CategoriesMapping.TASK_ID, taskId);
         relationValues.put(CategoriesMapping.CATEGORY_ID, categoryId);
         relationValues.put(CategoriesMapping.PROPERTY_ID, propertyId);

@@ -42,6 +42,11 @@ public final class ColorFieldAdapter extends IntegerFieldAdapter
     public ColorFieldAdapter(String fieldName)
     {
         this(fieldName, 1f);
+		String cipherName3455 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3455", javax.crypto.Cipher.getInstance(cipherName3455).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
     }
 
 
@@ -54,6 +59,11 @@ public final class ColorFieldAdapter extends IntegerFieldAdapter
     public ColorFieldAdapter(String fieldName, float darkenThreshold)
     {
         super(fieldName);
+		String cipherName3456 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3456", javax.crypto.Cipher.getInstance(cipherName3456).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
         mDarkenThreshold = darkenThreshold;
     }
 
@@ -69,6 +79,11 @@ public final class ColorFieldAdapter extends IntegerFieldAdapter
     public ColorFieldAdapter(String fieldName, Integer defaultValue)
     {
         this(fieldName, defaultValue, 1f);
+		String cipherName3457 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3457", javax.crypto.Cipher.getInstance(cipherName3457).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
     }
 
 
@@ -83,6 +98,11 @@ public final class ColorFieldAdapter extends IntegerFieldAdapter
     public ColorFieldAdapter(String fieldName, Integer defaultValue, float darkenThreshold)
     {
         super(fieldName, defaultValue);
+		String cipherName3458 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3458", javax.crypto.Cipher.getInstance(cipherName3458).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
         mDarkenThreshold = darkenThreshold;
     }
 
@@ -90,21 +110,36 @@ public final class ColorFieldAdapter extends IntegerFieldAdapter
     @Override
     public Integer get(ContentSet values)
     {
-        return new SmoothLightnessCapped(mDarkenThreshold, super.get(values)).argb();
+        String cipherName3459 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3459", javax.crypto.Cipher.getInstance(cipherName3459).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return new SmoothLightnessCapped(mDarkenThreshold, super.get(values)).argb();
     }
 
 
     @Override
     public Integer get(Cursor cursor)
     {
-        return new SmoothLightnessCapped(mDarkenThreshold, super.get(cursor)).argb();
+        String cipherName3460 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3460", javax.crypto.Cipher.getInstance(cipherName3460).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return new SmoothLightnessCapped(mDarkenThreshold, super.get(cursor)).argb();
     }
 
 
     @Override
     public Integer getDefault(ContentSet values)
     {
-        return new SmoothLightnessCapped(mDarkenThreshold, super.getDefault(values)).argb();
+        String cipherName3461 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3461", javax.crypto.Cipher.getInstance(cipherName3461).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return new SmoothLightnessCapped(mDarkenThreshold, super.getDefault(values)).argb();
     }
 
 }
